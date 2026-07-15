@@ -1,0 +1,60 @@
+name: Poll wastewater data
+
+# Scheduled poll of the CDPHE wastewater feature service. Detects notable
+# changes and (once the feed adapters land) regenerates the RSS feed / posts to
+# ATProto. Dedup state is committed back to the repo so each run resumes cleanly.
+#
+# NOTE: this needs the live FeatureServer URL + field names to be correct. Run
+# `uv run cowastewater describe-schema` once and set the COWW_* repo variables
+# (Settings -> Secrets and variables -> Actions -> Variables) if the defaults
+# in config.py don't match. Until then this job may fail against a wrong URL —
+# that's expected and harmless.
+
+on:
+  schedule:
+    # Daily at 15:00 UTC (~9am Mountain). CDPHE updates roughly weekly, so this
+    # is comfortably frequent. Adjust as needed.
+    - cron: "0 15 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    env:
+      # Override the schema here if the defaults in config.py are wrong.
+      COWW_FEATURESERVER_URL: ${{ vars.COWW_FEATURESERVER_URL }}
+      COWW_FIELD_SITE: ${{ vars.COWW_FIELD_SITE }}
+      COWW_FIELD_PATHOGEN: ${{ vars.COWW_FIELD_PATHOGEN }}
+      COWW_FIELD_DATE: ${{ vars.COWW_FIELD_DATE }}
+      COWW_FIELD_VALUE: ${{ vars.COWW_FIELD_VALUE }}
+      COWW_STATE_PATH: data/state.json
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync
+        run: uv sync
+
+      - name: Poll for notable changes
+        run: uv run cowastewater poll --limit 1000
+
+      - name: Commit updated state
+        run: |
+          if [[ -n "$(git status --porcelain data/state.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/state.json
+            git commit -m "chore: update wastewater poll state"
+            git push
+          else
+            echo "No state change."
+          fi

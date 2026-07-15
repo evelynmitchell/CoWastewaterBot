@@ -1,0 +1,114 @@
+"""Small operator CLI: confirm the schema, peek at data, dry-run the poller.
+
+    uv run cowastewater describe-schema
+    uv run cowastewater sites
+    uv run cowastewater latest --pathogen "SARS-CoV-2"
+    uv run cowastewater poll --dry-run
+
+The MCP server (``cowastewater-mcp``) is the LLM-facing surface; this CLI is for
+humans setting things up and for the GitHub Actions poll job.
+"""
+
+from __future__ import annotations
+
+import argparse
+import asyncio
+import json
+import sys
+
+from .analysis import find_notable, summarize
+from .client import WastewaterClient
+from .config import load_config
+from .state import State
+
+
+async def _describe_schema() -> int:
+    async with WastewaterClient() as client:
+        fields = await client.describe_schema()
+    print(json.dumps(fields, indent=2))
+    return 0
+
+
+async def _sites() -> int:
+    async with WastewaterClient() as client:
+        for s in await client.distinct_sites():
+            print(s)
+    return 0
+
+
+async def _pathogens() -> int:
+    async with WastewaterClient() as client:
+        for p in await client.distinct_pathogens():
+            print(p)
+    return 0
+
+
+async def _latest(site: str | None, pathogen: str | None) -> int:
+    async with WastewaterClient() as client:
+        readings = await client.latest_for(site=site, pathogen=pathogen, per_group=1)
+    print(json.dumps([r.to_dict() for r in readings], indent=2))
+    return 0
+
+
+async def _poll(dry_run: bool, limit: int) -> int:
+    """Fetch recent readings, find notable *and new* changes, report them.
+
+    Emitting to RSS/ATProto is layered on later; today this proves the pipeline
+    (fetch -> detect -> dedup against state) end to end.
+    """
+    config = load_config()
+    state = State.load(config.state_path)
+    async with WastewaterClient(config) as client:
+        readings = await client.fetch(where="1=1", order_desc=True, limit=limit)
+
+    changes = find_notable(readings, config)
+    fresh = [c for c in changes if state.is_new(c.reading)]
+
+    for c in fresh:
+        print(summarize(c))
+
+    if not fresh:
+        print("(no new notable changes)", file=sys.stderr)
+
+    if not dry_run:
+        for c in fresh:
+            state.mark(c.reading)
+        state.save()
+        print(f"state saved to {config.state_path} ({len(state.seen_keys)} keys)", file=sys.stderr)
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(prog="cowastewater", description=__doc__)
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    sub.add_parser("describe-schema", help="Print the feature layer field definitions")
+    sub.add_parser("sites", help="List monitoring sites")
+    sub.add_parser("pathogens", help="List pathogens/targets")
+
+    p_latest = sub.add_parser("latest", help="Show the latest reading(s)")
+    p_latest.add_argument("--site")
+    p_latest.add_argument("--pathogen")
+
+    p_poll = sub.add_parser("poll", help="Detect new notable changes")
+    p_poll.add_argument("--dry-run", action="store_true", help="Don't write state")
+    p_poll.add_argument("--limit", type=int, default=500)
+
+    args = parser.parse_args(argv)
+
+    if args.cmd == "describe-schema":
+        return asyncio.run(_describe_schema())
+    if args.cmd == "sites":
+        return asyncio.run(_sites())
+    if args.cmd == "pathogens":
+        return asyncio.run(_pathogens())
+    if args.cmd == "latest":
+        return asyncio.run(_latest(args.site, args.pathogen))
+    if args.cmd == "poll":
+        return asyncio.run(_poll(args.dry_run, args.limit))
+    parser.error(f"unknown command {args.cmd!r}")
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
