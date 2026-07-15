@@ -4,16 +4,19 @@ from cowastewater.models import Reading
 
 
 def _reading(site, pathogen, date_ms, value, trend=None):
+    # Use a FieldMap that also maps the (normally absent) trend/county columns so
+    # these tests can exercise trend-based detection and the county in summaries.
+    fields = FieldMap(trend="trend", county="county")
     return Reading.from_attributes(
         {
-            "Utility": site,
-            "Pathogen": pathogen,
-            "Date": date_ms,
-            "Concentration": value,
-            "Trend": trend,
-            "County": "Denver",
+            "utility": site,
+            "pcr_target": pathogen,
+            "measure_date": date_ms,
+            "viral_conc_raw_LP1": value,
+            "trend": trend,
+            "county": "Denver",
         },
-        FieldMap(),
+        fields,
     )
 
 

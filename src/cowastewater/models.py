@@ -51,15 +51,29 @@ class Reading:
     @classmethod
     def from_attributes(cls, attrs: dict[str, Any], fields: FieldMap) -> "Reading":
         return cls(
-            site=_as_str(attrs.get(fields.site)),
-            pathogen=_as_str(attrs.get(fields.pathogen)),
-            date=_parse_date(attrs.get(fields.date)),
-            value=_as_float(attrs.get(fields.value)),
-            trend=_as_str(attrs.get(fields.trend)),
-            county=_as_str(attrs.get(fields.county)),
-            unit=_as_str(attrs.get(fields.unit)),
+            site=_lookup_str(attrs, fields.site),
+            pathogen=_lookup_str(attrs, fields.pathogen),
+            date=_parse_date(attrs.get(fields.date)) if fields.date else None,
+            value=_first_float(attrs, fields.value_fields),
+            trend=_lookup_str(attrs, fields.trend),
+            county=_lookup_str(attrs, fields.county),
+            unit=_lookup_str(attrs, fields.unit),
             raw=attrs,
         )
+
+
+def _lookup_str(attrs: dict[str, Any], name: str) -> str | None:
+    """Look up ``name`` in ``attrs`` as a string; empty name means 'column absent'."""
+    return _as_str(attrs.get(name)) if name else None
+
+
+def _first_float(attrs: dict[str, Any], names: tuple[str, ...]) -> float | None:
+    """First non-null float among ``names`` (coalesces the lab-phase columns)."""
+    for name in names:
+        v = _as_float(attrs.get(name))
+        if v is not None:
+            return v
+    return None
 
 
 def _as_str(v: Any) -> str | None:

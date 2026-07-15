@@ -1,52 +1,56 @@
 {
-  "objectIdFieldName": "OBJECTID",
+  "objectIdFieldName": "ObjectId",
   "globalIdFieldName": "",
   "fields": [
-    { "name": "OBJECTID", "type": "esriFieldTypeOID", "alias": "OBJECTID" },
-    { "name": "Utility", "type": "esriFieldTypeString", "alias": "Utility" },
-    { "name": "Pathogen", "type": "esriFieldTypeString", "alias": "Pathogen" },
-    { "name": "Date", "type": "esriFieldTypeDate", "alias": "Sample Date" },
-    { "name": "Concentration", "type": "esriFieldTypeDouble", "alias": "Concentration" },
-    { "name": "Trend", "type": "esriFieldTypeString", "alias": "Trend" },
-    { "name": "County", "type": "esriFieldTypeString", "alias": "County" },
-    { "name": "Units", "type": "esriFieldTypeString", "alias": "Units" }
+    { "name": "utility", "type": "esriFieldTypeString", "alias": "utility" },
+    { "name": "pcr_target", "type": "esriFieldTypeString", "alias": "pcr_target" },
+    { "name": "measure_date", "type": "esriFieldTypeDate", "alias": "measure_date" },
+    { "name": "viral_conc_raw_LP1", "type": "esriFieldTypeDouble", "alias": "viral_conc_raw_LP1" },
+    { "name": "viral_conc_raw_LP2", "type": "esriFieldTypeDouble", "alias": "viral_conc_raw_LP2" },
+    { "name": "viral_conc_raw_LP3", "type": "esriFieldTypeDouble", "alias": "viral_conc_raw_LP3" },
+    { "name": "lab_phase", "type": "esriFieldTypeString", "alias": "lab_phase" },
+    { "name": "publish_date", "type": "esriFieldTypeString", "alias": "publish_date" },
+    { "name": "ObjectId", "type": "esriFieldTypeOID", "alias": "ObjectId" }
   ],
   "exceededTransferLimit": false,
   "features": [
     {
       "attributes": {
-        "OBJECTID": 1,
-        "Utility": "Metro Denver",
-        "Pathogen": "SARS-CoV-2",
-        "Date": 1718150400000,
-        "Concentration": 100.0,
-        "Trend": "Stable",
-        "County": "Denver",
-        "Units": "copies/L"
+        "utility": "Metro Denver",
+        "pcr_target": "SARS-CoV-2",
+        "measure_date": 1718150400000,
+        "viral_conc_raw_LP1": 100.0,
+        "viral_conc_raw_LP2": null,
+        "viral_conc_raw_LP3": null,
+        "lab_phase": "LP1",
+        "publish_date": "2024-06-13",
+        "ObjectId": 1
       }
     },
     {
       "attributes": {
-        "OBJECTID": 2,
-        "Utility": "Metro Denver",
-        "Pathogen": "SARS-CoV-2",
-        "Date": 1718755200000,
-        "Concentration": 250.0,
-        "Trend": "Increasing",
-        "County": "Denver",
-        "Units": "copies/L"
+        "utility": "Metro Denver",
+        "pcr_target": "SARS-CoV-2",
+        "measure_date": 1718755200000,
+        "viral_conc_raw_LP1": 250.0,
+        "viral_conc_raw_LP2": null,
+        "viral_conc_raw_LP3": null,
+        "lab_phase": "LP1",
+        "publish_date": "2024-06-20",
+        "ObjectId": 2
       }
     },
     {
       "attributes": {
-        "OBJECTID": 3,
-        "Utility": "Boulder",
-        "Pathogen": "Influenza",
-        "Date": 1718755200000,
-        "Concentration": 40.0,
-        "Trend": "Stable",
-        "County": "Boulder",
-        "Units": "copies/L"
+        "utility": "Boulder",
+        "pcr_target": "Influenza A",
+        "measure_date": 1718755200000,
+        "viral_conc_raw_LP1": null,
+        "viral_conc_raw_LP2": 40.0,
+        "viral_conc_raw_LP3": null,
+        "lab_phase": "LP2",
+        "publish_date": "2024-06-20",
+        "ObjectId": 3
       }
     }
   ]

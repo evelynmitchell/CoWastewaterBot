@@ -5,7 +5,12 @@ from cowastewater.state import State
 
 def _reading(value, date_ms=1718755200000):
     return Reading.from_attributes(
-        {"Utility": "Metro Denver", "Pathogen": "SARS-CoV-2", "Date": date_ms, "Concentration": value},
+        {
+            "utility": "Metro Denver",
+            "pcr_target": "SARS-CoV-2",
+            "measure_date": date_ms,
+            "viral_conc_raw_LP1": value,
+        },
         FieldMap(),
     )
 

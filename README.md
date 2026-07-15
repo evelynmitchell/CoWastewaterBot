@@ -115,24 +115,27 @@ the dataset's stable **item id** (`54a508b3c9c543559a367054fc956e6d`) via the
 ArcGIS sharing API. Nothing to configure. To pin an exact URL and skip
 resolution, set `COWW_FEATURESERVER_URL`.
 
-**Column names** still ship as defaults (`Utility`/`Pathogen`/`Date`/
-`Concentration`). Confirm them against the live layer:
+**Column names** match the live layer (confirmed 2026-07):
+
+| Meaning | Column | Notes |
+| --- | --- | --- |
+| Site | `utility` | |
+| Pathogen / target | `pcr_target` | e.g. SARS-CoV-2, Influenza A, RSV |
+| Date | `measure_date` | Esri epoch-millis |
+| Concentration | `viral_conc_raw_LP1` / `_LP2` / `_LP3` | one per row by lab phase; **coalesced** to the first non-null |
+
+The layer has no trend/county/units columns, so notable-change detection relies
+on the **concentration spike**, not a reported trend. Re-confirm any time with:
 
 ```bash
-uv run cowastewater describe-schema           # or: docker run --rm <image> cowastewater describe-schema
+docker run --rm ghcr.io/evelynmitchell/cowastewaterbot:latest cowastewater describe-schema
 ```
 
-If any differ, override without touching code — every value in
-[`config.py`](src/cowastewater/config.py) reads from an environment variable:
-
-```bash
-export COWW_FIELD_SITE="Utility"
-export COWW_FIELD_PATHOGEN="Pathogen"
-export COWW_FIELD_DATE="Date"
-export COWW_FIELD_VALUE="Concentration"
-# optional: pin the endpoint instead of auto-resolving
-export COWW_FEATURESERVER_URL="https://services3.arcgis.com/kfmqp6kwSeDnDKNY/arcgis/rest/services/<RealServiceName>/FeatureServer/0"
-```
+Override any mapping without touching code — every value in
+[`config.py`](src/cowastewater/config.py) reads from an environment variable
+(`COWW_FIELD_SITE`, `COWW_FIELD_PATHOGEN`, `COWW_FIELD_DATE`,
+`COWW_FIELD_VALUE` — comma-separated for coalescing). To pin the endpoint and
+skip auto-resolution, set `COWW_FEATURESERVER_URL` to a `FeatureServer/<n>` URL.
 
 ## What counts as a "notable change"
 

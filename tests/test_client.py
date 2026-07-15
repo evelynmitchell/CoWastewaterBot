@@ -45,8 +45,8 @@ async def test_latest_for_builds_filtered_where():
     async with WastewaterClient(cfg()) as client:
         await client.latest_for(site="Metro Denver", pathogen="SARS-CoV-2", per_group=1)
     where = route.calls.last.request.url.params["where"]
-    assert "Utility = 'Metro Denver'" in where
-    assert "Pathogen = 'SARS-CoV-2'" in where
+    assert "utility = 'Metro Denver'" in where
+    assert "pcr_target = 'SARS-CoV-2'" in where
 
 
 @respx.mock

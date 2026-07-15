@@ -45,18 +45,29 @@ _DEFAULT_PORTAL_SHARING_URL = "https://www.arcgis.com/sharing/rest"
 class FieldMap:
     """Names of the columns we rely on, so a schema change is a one-line fix.
 
-    Defaults reflect the columns typically present in CDPHE's wastewater table.
-    Confirm them with ``cowastewater describe-schema``; override via env if needed.
+    Defaults match the live CDPHE layer as of 2026-07 (confirm with
+    ``cowastewater describe-schema``; override any via ``COWW_FIELD_*`` env vars).
     """
 
-    site: str = _env("COWW_FIELD_SITE", "Utility")
-    pathogen: str = _env("COWW_FIELD_PATHOGEN", "Pathogen")
-    date: str = _env("COWW_FIELD_DATE", "Date")
-    value: str = _env("COWW_FIELD_VALUE", "Concentration")
-    # Optional columns — used when present, tolerated when absent.
-    trend: str = _env("COWW_FIELD_TREND", "Trend")
-    county: str = _env("COWW_FIELD_COUNTY", "County")
-    unit: str = _env("COWW_FIELD_UNIT", "Units")
+    site: str = _env("COWW_FIELD_SITE", "utility")
+    pathogen: str = _env("COWW_FIELD_PATHOGEN", "pcr_target")
+    date: str = _env("COWW_FIELD_DATE", "measure_date")
+    # The viral concentration lives in one of three lab-phase columns; a given
+    # row populates the one matching its lab phase. Comma-separated, tried in
+    # order — the first non-null wins (see models.Reading.from_attributes).
+    value: str = _env(
+        "COWW_FIELD_VALUE", "viral_conc_raw_LP1,viral_conc_raw_LP2,viral_conc_raw_LP3"
+    )
+    # Not present in the CDPHE layer today; used if you point at a layer that has
+    # them. Empty string = "column absent, skip it".
+    trend: str = _env("COWW_FIELD_TREND", "")
+    county: str = _env("COWW_FIELD_COUNTY", "")
+    unit: str = _env("COWW_FIELD_UNIT", "")
+
+    @property
+    def value_fields(self) -> tuple[str, ...]:
+        """The candidate value columns, in coalesce order."""
+        return tuple(v.strip() for v in self.value.split(",") if v.strip())
 
 
 @dataclass(frozen=True)
