@@ -1,0 +1,56 @@
+name: Inspect live data
+
+# Run this from the browser to confirm the CDPHE feature service against the
+# live API — no local Python or uv needed. GitHub's runner reaches arcgis.com,
+# installs everything itself, and prints the results to the run log.
+#
+# How to run:
+#   GitHub -> Actions tab -> "Inspect live data" -> "Run workflow".
+#   Optionally paste the real FeatureServer/<n> URL if the default is wrong
+#   (find it on the dataset page: "I want to use this" -> "View API Resources").
+
+on:
+  workflow_dispatch:
+    inputs:
+      featureserver_url:
+        description: "Override FeatureServer/<n> URL (leave blank to use the default in config.py)"
+        required: false
+        default: ""
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    env:
+      COWW_FEATURESERVER_URL: ${{ inputs.featureserver_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync
+        run: uv sync
+
+      - name: Schema (field names + types)
+        run: |
+          echo "::group::describe-schema"
+          uv run cowastewater describe-schema
+          echo "::endgroup::"
+
+      - name: Monitoring sites
+        run: |
+          echo "::group::sites"
+          uv run cowastewater sites
+          echo "::endgroup::"
+
+      - name: Pathogens tracked
+        run: |
+          echo "::group::pathogens"
+          uv run cowastewater pathogens
+          echo "::endgroup::"
+
+      - name: Notable changes right now (dry run)
+        run: |
+          echo "::group::notable changes"
+          uv run cowastewater poll --dry-run --limit 1000
+          echo "::endgroup::"

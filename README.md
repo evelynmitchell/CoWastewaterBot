@@ -21,7 +21,53 @@ so "notable change" means the same thing everywhere.
 [dashboard]: https://cdphe.colorado.gov/dcphr/wastewater
 [explore]: https://data-cdphe.opendata.arcgis.com/datasets/54a508b3c9c543559a367054fc956e6d_0/explore
 
-## Quick start
+## Run with Docker (no Python needed)
+
+If you don't have Python or `uv`, the container is the easiest path — you only
+need Docker.
+
+Pull the published image (built by CI to GHCR — make the package public, or
+`docker login ghcr.io` first):
+
+```bash
+docker pull ghcr.io/evelynmitchell/cowastewaterbot:latest
+```
+
+…or build it yourself from a clone:
+
+```bash
+docker build -t cowastewaterbot .
+```
+
+Run the CLI (swap the image name for the local `cowastewaterbot` if you built it):
+
+```bash
+docker run --rm ghcr.io/evelynmitchell/cowastewaterbot:latest cowastewater describe-schema
+docker run --rm ghcr.io/evelynmitchell/cowastewaterbot:latest cowastewater sites
+```
+
+Point an MCP client (e.g. Claude Desktop) at the container — this is the whole
+setup, no Python on your machine:
+
+```json
+{
+  "mcpServers": {
+    "cowastewater": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "ghcr.io/evelynmitchell/cowastewaterbot:latest"]
+    }
+  }
+}
+```
+
+Override the schema with `-e`, e.g.
+`docker run -i --rm -e COWW_FEATURESERVER_URL="https://.../FeatureServer/0" ghcr.io/evelynmitchell/cowastewaterbot:latest`.
+
+> No Docker either? You can confirm the live schema straight from the browser:
+> **Actions → "Inspect live data" → Run workflow** prints the schema, sites, and
+> pathogens from a GitHub runner.
+
+## Quick start (local dev)
 
 Requires [uv](https://docs.astral.sh/uv/).
 
