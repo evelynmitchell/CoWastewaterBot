@@ -34,14 +34,11 @@ ORG_ID = "kfmqp6kwSeDnDKNY"
 # Explore:   https://data-cdphe.opendata.arcgis.com/datasets/54a508b3c9c543559a367054fc956e6d_0/explore
 DATASET_ITEM_ID = "54a508b3c9c543559a367054fc956e6d"
 
-# The service *name* is not published on the portal page; the item id resolves to
-# a FeatureServer whose URL looks like the default below. If the default 404s,
-# open the dataset's "I want to use this" -> "View API Resources -> GeoJSON" on
-# the Open Data page and copy the FeatureServer/<n> URL here (or set COWW_FEATURESERVER_URL).
-_DEFAULT_FEATURESERVER_URL = (
-    "https://services3.arcgis.com/kfmqp6kwSeDnDKNY/arcgis/rest/services/"
-    "CDPHE_Colorado_Wastewater_Surveillance_Data/FeatureServer/0"
-)
+# The service *name* isn't published on the portal page, so rather than guess it
+# we resolve the FeatureServer URL at runtime from the stable item id via the
+# ArcGIS "sharing" REST API (see WastewaterClient._resolve_from_item). Set
+# COWW_FEATURESERVER_URL to skip resolution and pin an exact FeatureServer/<n> URL.
+_DEFAULT_PORTAL_SHARING_URL = "https://www.arcgis.com/sharing/rest"
 
 
 @dataclass(frozen=True)
@@ -64,7 +61,13 @@ class FieldMap:
 
 @dataclass(frozen=True)
 class Config:
-    featureserver_url: str = _env("COWW_FEATURESERVER_URL", _DEFAULT_FEATURESERVER_URL)
+    # Empty means "auto-resolve from dataset_item_id"; set it to pin an exact URL.
+    featureserver_url: str = _env("COWW_FEATURESERVER_URL", "")
+    # Used only when featureserver_url is empty:
+    dataset_item_id: str = _env("COWW_DATASET_ITEM_ID", DATASET_ITEM_ID)
+    portal_sharing_url: str = _env("COWW_PORTAL_SHARING_URL", _DEFAULT_PORTAL_SHARING_URL)
+    layer_index: int = int(_env("COWW_LAYER_INDEX", "0"))
+
     fields: FieldMap = field(default_factory=FieldMap)
 
     # ArcGIS caps page size (often 1000/2000). We paginate with this.
@@ -83,10 +86,6 @@ class Config:
         for t in _env("COWW_NOTABLE_TRENDS", "increasing,rapidly increasing").split(",")
         if t.strip()
     )
-
-    @property
-    def query_url(self) -> str:
-        return f"{self.featureserver_url.rstrip('/')}/query"
 
 
 def load_config() -> Config:

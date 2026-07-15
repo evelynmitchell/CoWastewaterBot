@@ -12,6 +12,7 @@ See: https://developers.arcgis.com/rest/services-reference/enterprise/query-feat
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 import httpx
@@ -31,6 +32,7 @@ class WastewaterClient:
         self.config = config or load_config()
         self._client = client
         self._owns_client = client is None
+        self._resolved_url: str | None = None
 
     async def __aenter__(self) -> "WastewaterClient":
         if self._client is None:
@@ -48,12 +50,56 @@ class WastewaterClient:
             raise RuntimeError("Use WastewaterClient as an async context manager.")
         return self._client
 
+    # -- Endpoint resolution --------------------------------------------------
+
+    async def layer_url(self) -> str:
+        """The FeatureServer layer URL, resolving it from the item id if needed.
+
+        If ``config.featureserver_url`` is set we trust it; otherwise we ask the
+        ArcGIS sharing API for the item's service URL and append the layer index.
+        Resolved once per client and cached.
+        """
+        if self._resolved_url is not None:
+            return self._resolved_url
+        if self.config.featureserver_url:
+            self._resolved_url = self.config.featureserver_url.rstrip("/")
+        else:
+            self._resolved_url = await self._resolve_from_item()
+        return self._resolved_url
+
+    async def _resolve_from_item(self) -> str:
+        item_url = (
+            f"{self.config.portal_sharing_url.rstrip('/')}"
+            f"/content/items/{self.config.dataset_item_id}"
+        )
+        resp = await self.http.get(item_url, params={"f": "json"})
+        if resp.status_code != 200:
+            raise ArcGISError(
+                f"HTTP {resp.status_code} resolving item {self.config.dataset_item_id}; "
+                "set COWW_FEATURESERVER_URL to pin the URL directly."
+            )
+        data = resp.json()
+        if "error" in data:
+            raise ArcGISError(str(data["error"]))
+        service_url = (data.get("url") or "").rstrip("/")
+        if not service_url:
+            raise ArcGISError(
+                "Item has no service URL; set COWW_FEATURESERVER_URL to the "
+                "FeatureServer/<n> URL from the dataset's 'View API Resources'."
+            )
+        # item.url is usually the service root (…/FeatureServer); append the layer
+        # index unless it already points at a specific layer (…/FeatureServer/0).
+        if not re.search(r"/\d+$", service_url):
+            service_url = f"{service_url}/{self.config.layer_index}"
+        return service_url
+
     # -- Raw query ------------------------------------------------------------
 
     async def _query(self, params: dict[str, Any]) -> dict[str, Any]:
         base = {"f": "json", "outFields": "*", "returnGeometry": "false"}
         base.update(params)
-        resp = await self.http.get(self.config.query_url, params=base)
+        query_url = f"{await self.layer_url()}/query"
+        resp = await self.http.get(query_url, params=base)
         if resp.status_code != 200:
             raise ArcGISError(f"HTTP {resp.status_code} from {resp.url}")
         data = resp.json()
@@ -67,9 +113,7 @@ class WastewaterClient:
 
         Handy for confirming the real column names against ``config.FieldMap``.
         """
-        resp = await self.http.get(
-            self.config.featureserver_url.rstrip("/"), params={"f": "json"}
-        )
+        resp = await self.http.get(await self.layer_url(), params={"f": "json"})
         if resp.status_code != 200:
             raise ArcGISError(f"HTTP {resp.status_code} describing layer")
         data = resp.json()

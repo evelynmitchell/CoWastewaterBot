@@ -107,29 +107,32 @@ uv run cowastewater latest --pathogen "SARS-CoV-2"
 uv run cowastewater poll --dry-run            # detect notable changes, don't write state
 ```
 
-## Confirming the live schema (important)
+## The FeatureServer URL and column names
 
-The exact `FeatureServer` layer URL and column names belong to CDPHE's hosted
-layer, so this repo ships *sensible defaults*, not confirmed truth. Point it at
-the live service once (from a network that can reach `arcgis.com`) and check:
+**The URL resolves itself.** The service name isn't published on the portal, so
+instead of guessing it the client looks the FeatureServer URL up at runtime from
+the dataset's stable **item id** (`54a508b3c9c543559a367054fc956e6d`) via the
+ArcGIS sharing API. Nothing to configure. To pin an exact URL and skip
+resolution, set `COWW_FEATURESERVER_URL`.
+
+**Column names** still ship as defaults (`Utility`/`Pathogen`/`Date`/
+`Concentration`). Confirm them against the live layer:
 
 ```bash
-uv run cowastewater describe-schema
+uv run cowastewater describe-schema           # or: docker run --rm <image> cowastewater describe-schema
 ```
 
-If the field names differ, override them without touching code — every value in
+If any differ, override without touching code — every value in
 [`config.py`](src/cowastewater/config.py) reads from an environment variable:
 
 ```bash
-export COWW_FEATURESERVER_URL="https://services3.arcgis.com/kfmqp6kwSeDnDKNY/arcgis/rest/services/<RealServiceName>/FeatureServer/0"
 export COWW_FIELD_SITE="Utility"
 export COWW_FIELD_PATHOGEN="Pathogen"
 export COWW_FIELD_DATE="Date"
 export COWW_FIELD_VALUE="Concentration"
+# optional: pin the endpoint instead of auto-resolving
+export COWW_FEATURESERVER_URL="https://services3.arcgis.com/kfmqp6kwSeDnDKNY/arcgis/rest/services/<RealServiceName>/FeatureServer/0"
 ```
-
-To find the URL: on the [dataset page][explore], use **I want to use this →
-View API Resources → GeoJSON**, and copy the `FeatureServer/<n>` URL.
 
 ## What counts as a "notable change"
 
