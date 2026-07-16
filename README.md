@@ -96,7 +96,7 @@ Register it with an MCP client (e.g. Claude Desktop `claude_desktop_config.json`
 ```
 
 Tools exposed: `list_sites`, `list_pathogens`, `latest_reading`, `trend`,
-`query`, `notable_changes`, `describe_schema`.
+`query`, `notable_changes`, `data_health`, `describe_schema`.
 
 ### Operator CLI
 
@@ -202,6 +202,28 @@ locally as env vars, or as repo **Actions secrets** for CI. Optional
 `COWW_ATPROTO_PDS` (default `https://bsky.social`). Requires the `atproto` extra
 (`uv sync --extra atproto`; already in the container image).
 
+## Data health: "days since last data outage"
+
+The source updates roughly weekly, so a stretch of silence means the pipeline
+behind CDPHE has stalled. `poll` tracks this each run and persists it to
+`public/health.json`:
+
+- **outage** = the newest measurement is older than `COWW_FRESHNESS_DAYS`
+  (default `10`).
+- **days since last outage** = the reliability streak (0 while in an outage),
+  the headline number.
+
+Check it live (freshness now + the streak):
+
+```bash
+uv run cowastewater health
+# {"status": "ok", "current_days_since_update": 2, "days_since_last_outage": 37, ...}
+```
+
+Also available as the MCP `data_health` tool (for an LLM to monitor) and shown as
+a badge on the Pages landing page (reads `health.json`). The streak advances only
+when the scheduled `poll` runs, so keep the cron enabled for an accurate count.
+
 ## Scheduled polling
 
 The whole thing is driven by a GitHub Actions cron
@@ -218,6 +240,7 @@ FeatureServer (CDPHE ArcGIS)
   client.py ── models.py        data core: fetch + normalize
         │
         ├── analysis.py         notable-change detection
+        ├── health.py           freshness + days-since-last-outage
         ├── state.py            last-seen cursor (dedup)
         │
         ├── server.py           MCP server  (LLMs)          ✅
