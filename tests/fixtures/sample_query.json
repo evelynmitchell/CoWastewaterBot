@@ -1,0 +1,57 @@
+{
+  "objectIdFieldName": "ObjectId",
+  "globalIdFieldName": "",
+  "fields": [
+    { "name": "utility", "type": "esriFieldTypeString", "alias": "utility" },
+    { "name": "pcr_target", "type": "esriFieldTypeString", "alias": "pcr_target" },
+    { "name": "measure_date", "type": "esriFieldTypeDate", "alias": "measure_date" },
+    { "name": "viral_conc_raw_LP1", "type": "esriFieldTypeDouble", "alias": "viral_conc_raw_LP1" },
+    { "name": "viral_conc_raw_LP2", "type": "esriFieldTypeDouble", "alias": "viral_conc_raw_LP2" },
+    { "name": "viral_conc_raw_LP3", "type": "esriFieldTypeDouble", "alias": "viral_conc_raw_LP3" },
+    { "name": "lab_phase", "type": "esriFieldTypeString", "alias": "lab_phase" },
+    { "name": "publish_date", "type": "esriFieldTypeString", "alias": "publish_date" },
+    { "name": "ObjectId", "type": "esriFieldTypeOID", "alias": "ObjectId" }
+  ],
+  "exceededTransferLimit": false,
+  "features": [
+    {
+      "attributes": {
+        "utility": "Metro Denver",
+        "pcr_target": "SARS-CoV-2",
+        "measure_date": 1718150400000,
+        "viral_conc_raw_LP1": 100.0,
+        "viral_conc_raw_LP2": null,
+        "viral_conc_raw_LP3": null,
+        "lab_phase": "LP1",
+        "publish_date": "2024-06-13",
+        "ObjectId": 1
+      }
+    },
+    {
+      "attributes": {
+        "utility": "Metro Denver",
+        "pcr_target": "SARS-CoV-2",
+        "measure_date": 1718755200000,
+        "viral_conc_raw_LP1": 250.0,
+        "viral_conc_raw_LP2": null,
+        "viral_conc_raw_LP3": null,
+        "lab_phase": "LP1",
+        "publish_date": "2024-06-20",
+        "ObjectId": 2
+      }
+    },
+    {
+      "attributes": {
+        "utility": "Boulder",
+        "pcr_target": "Influenza A",
+        "measure_date": 1718755200000,
+        "viral_conc_raw_LP1": null,
+        "viral_conc_raw_LP2": 40.0,
+        "viral_conc_raw_LP3": null,
+        "lab_phase": "LP2",
+        "publish_date": "2024-06-20",
+        "ObjectId": 3
+      }
+    }
+  ]
+}

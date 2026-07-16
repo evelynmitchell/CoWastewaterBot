@@ -1,0 +1,17 @@
+.git
+.github
+.venv
+uv.lock
+**/__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+tests
+build
+dist
+*.egg-info
+.env
+state.json
+*.local.json
+data
+public

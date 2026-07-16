@@ -1,0 +1,60 @@
+name: Poll wastewater data
+
+# Scheduled poll of the CDPHE wastewater feature service. Detects notable
+# changes, regenerates the RSS/Atom feed under public/, optionally posts to
+# ATProto, and commits the feed + dedup state back to the repo so each run
+# resumes cleanly.
+#
+# Optional repo config (Settings -> Secrets and variables -> Actions):
+#   Variables: COWW_FEATURESERVER_URL / COWW_FIELD_* to override the schema.
+#   Secrets:   COWW_ATPROTO_HANDLE / COWW_ATPROTO_PASSWORD to enable posting.
+# With no ATProto secrets set, --post is a harmless dry run.
+
+on:
+  schedule:
+    # Daily at 15:00 UTC (~9am Mountain). CDPHE updates roughly weekly.
+    - cron: "0 15 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    env:
+      COWW_FEATURESERVER_URL: ${{ vars.COWW_FEATURESERVER_URL }}
+      COWW_FIELD_SITE: ${{ vars.COWW_FIELD_SITE }}
+      COWW_FIELD_PATHOGEN: ${{ vars.COWW_FIELD_PATHOGEN }}
+      COWW_FIELD_DATE: ${{ vars.COWW_FIELD_DATE }}
+      COWW_FIELD_VALUE: ${{ vars.COWW_FIELD_VALUE }}
+      COWW_STATE_PATH: data/state.json
+      COWW_ATPROTO_HANDLE: ${{ secrets.COWW_ATPROTO_HANDLE }}
+      COWW_ATPROTO_PASSWORD: ${{ secrets.COWW_ATPROTO_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync (with atproto extra)
+        run: uv sync --extra atproto
+
+      - name: Poll — detect, build feed, post
+        run: uv run cowastewater poll --limit 1000 --post
+
+      - name: Commit feed + state
+        run: |
+          if [[ -n "$(git status --porcelain data public)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data public
+            git commit -m "chore: update wastewater feed + poll state"
+            git push
+          else
+            echo "No changes."
+          fi
