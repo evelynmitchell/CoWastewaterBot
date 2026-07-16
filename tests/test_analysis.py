@@ -3,7 +3,7 @@ from cowastewater.config import Config, FieldMap
 from cowastewater.models import Reading
 
 
-def _reading(site, pathogen, date_ms, value, trend=None):
+def _reading(site, pathogen, date_ms, value, trend=None, lab_phase=None):
     # Use a FieldMap that also maps the (normally absent) trend/county columns so
     # these tests can exercise trend-based detection and the county in summaries.
     fields = FieldMap(trend="trend", county="county")
@@ -13,6 +13,7 @@ def _reading(site, pathogen, date_ms, value, trend=None):
             "pcr_target": pathogen,
             "measure_date": date_ms,
             "viral_conc_raw_LP1": value,
+            "lab_phase": lab_phase,
             "trend": trend,
             "county": "Denver",
         },
@@ -71,3 +72,37 @@ def test_summarize_is_human_readable():
     ]
     line = summarize(find_notable(readings, config)[0])
     assert "SARS-CoV-2" in line and "Metro Denver" in line and "Denver" in line
+
+
+def test_noise_floor_skips_low_baseline_spikes():
+    # 1 -> 100 is +9900%, but a baseline of 1 is below the floor, so it's ignored.
+    config = Config(spike_pct=50, spike_min_baseline=50)
+    readings = [
+        _reading("Aspen", "SARS-CoV-2", 1718150400000, 1.0),
+        _reading("Aspen", "SARS-CoV-2", 1718755200000, 100.0),
+    ]
+    assert find_notable(readings, config) == []
+
+
+def test_spike_not_flagged_across_lab_phase_change():
+    # A jump that coincides with a lab-method change is not comparable.
+    config = Config(spike_pct=50)
+    readings = [
+        _reading("Boulder", "SARS-CoV-2", 1718150400000, 100.0, lab_phase="LP1"),
+        _reading("Boulder", "SARS-CoV-2", 1718755200000, 900.0, lab_phase="LP2"),
+    ]
+    assert find_notable(readings, config) == []
+
+
+def test_notable_max_caps_and_ranks_by_severity():
+    # Two spikes in different series; cap to 1 keeps the more severe one.
+    config = Config(spike_pct=50, notable_max=1)
+    readings = [
+        _reading("Boulder", "SARS-CoV-2", 1718150400000, 100.0),
+        _reading("Boulder", "SARS-CoV-2", 1718755200000, 200.0),  # +100%
+        _reading("Aspen", "SARS-CoV-2", 1718150400000, 100.0),
+        _reading("Aspen", "SARS-CoV-2", 1718755200000, 500.0),  # +400%
+    ]
+    notable = find_notable(readings, config)
+    assert len(notable) == 1
+    assert notable[0].reading.site == "Aspen"

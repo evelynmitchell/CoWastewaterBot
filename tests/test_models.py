@@ -52,6 +52,21 @@ def test_value_coalesces_across_lab_phase_columns():
     assert r.value == 42.0
 
 
+def test_value_prefers_lab_phase_matched_column():
+    # If several LP columns are populated, lab_phase picks the right one rather
+    # than blindly taking the first non-null.
+    r = Reading.from_attributes(
+        {
+            "viral_conc_raw_LP1": 100.0,
+            "viral_conc_raw_LP2": 999.0,
+            "lab_phase": "LP2",
+        },
+        FieldMap(),
+    )
+    assert r.value == 999.0
+    assert r.lab_phase == "LP2"
+
+
 def test_absent_optional_columns_are_none():
     # trend/county/unit have empty default names on the live layer.
     r = Reading.from_attributes({"utility": "Metro Denver"}, FieldMap())

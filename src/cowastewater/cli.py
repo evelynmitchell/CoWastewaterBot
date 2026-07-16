@@ -52,6 +52,18 @@ async def _latest(site: str | None, pathogen: str | None) -> int:
     return 0
 
 
+async def _query(where: str, limit: int, raw: bool) -> int:
+    """Run a raw ArcGIS where-clause. With --raw, dump every column (handy for
+    inspecting the viral_conc_raw_LP* columns and lab_phase)."""
+    async with WastewaterClient() as client:
+        readings = await client.fetch(where=where, order_desc=True, limit=limit)
+    if raw:
+        print(json.dumps([r.raw for r in readings], indent=2, default=str))
+    else:
+        print(json.dumps([r.to_dict() for r in readings], indent=2))
+    return 0
+
+
 async def _poll(dry_run: bool, limit: int, feed: bool, post: bool) -> int:
     """Fetch recent readings, find new notable changes, and emit them.
 
@@ -116,6 +128,11 @@ def main(argv: list[str] | None = None) -> int:
     p_latest.add_argument("--site")
     p_latest.add_argument("--pathogen")
 
+    p_query = sub.add_parser("query", help="Run a raw where-clause (diagnostics)")
+    p_query.add_argument("--where", default="1=1", help="ArcGIS SQL where clause")
+    p_query.add_argument("--limit", type=int, default=50)
+    p_query.add_argument("--raw", action="store_true", help="Dump all columns, not just mapped ones")
+
     p_poll = sub.add_parser("poll", help="Detect new notable changes; emit feed/posts")
     p_poll.add_argument("--dry-run", action="store_true", help="Detect only; write/post nothing")
     p_poll.add_argument("--limit", type=int, default=500)
@@ -134,6 +151,8 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(_pathogens())
     if args.cmd == "latest":
         return asyncio.run(_latest(args.site, args.pathogen))
+    if args.cmd == "query":
+        return asyncio.run(_query(args.where, args.limit, args.raw))
     if args.cmd == "poll":
         return asyncio.run(_poll(args.dry_run, args.limit, feed=not args.no_feed, post=args.post))
     parser.error(f"unknown command {args.cmd!r}")

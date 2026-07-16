@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
@@ -23,6 +24,7 @@ class Reading:
     pathogen: str | None
     date: datetime | None
     value: float | None
+    lab_phase: str | None = None
     trend: str | None = None
     county: str | None = None
     unit: str | None = None
@@ -43,6 +45,7 @@ class Reading:
             "pathogen": self.pathogen,
             "date": self.date.isoformat() if self.date else None,
             "value": self.value,
+            "lab_phase": self.lab_phase,
             "trend": self.trend,
             "county": self.county,
             "unit": self.unit,
@@ -50,11 +53,13 @@ class Reading:
 
     @classmethod
     def from_attributes(cls, attrs: dict[str, Any], fields: FieldMap) -> "Reading":
+        lab_phase = _lookup_str(attrs, fields.lab_phase)
         return cls(
             site=_lookup_str(attrs, fields.site),
             pathogen=_lookup_str(attrs, fields.pathogen),
             date=_parse_date(attrs.get(fields.date)) if fields.date else None,
-            value=_first_float(attrs, fields.value_fields),
+            value=_select_value(attrs, fields.value_fields, lab_phase),
+            lab_phase=lab_phase,
             trend=_lookup_str(attrs, fields.trend),
             county=_lookup_str(attrs, fields.county),
             unit=_lookup_str(attrs, fields.unit),
@@ -65,6 +70,36 @@ class Reading:
 def _lookup_str(attrs: dict[str, Any], name: str) -> str | None:
     """Look up ``name`` in ``attrs`` as a string; empty name means 'column absent'."""
     return _as_str(attrs.get(name)) if name else None
+
+
+def _select_value(
+    attrs: dict[str, Any], names: tuple[str, ...], lab_phase: str | None
+) -> float | None:
+    """Pick the concentration value.
+
+    Prefer the column matching this row's lab phase (so we never read a different
+    phase's column); otherwise coalesce to the first non-null candidate.
+    """
+    phase_col = _phase_column(lab_phase, names)
+    if phase_col is not None:
+        v = _as_float(attrs.get(phase_col))
+        if v is not None:
+            return v
+    return _first_float(attrs, names)
+
+
+def _phase_column(lab_phase: str | None, names: tuple[str, ...]) -> str | None:
+    """The candidate column matching a lab-phase label, e.g. 'LP2'/'2' -> ...LP2."""
+    if not lab_phase:
+        return None
+    m = re.search(r"(\d+)", lab_phase)
+    if not m:
+        return None
+    digit = m.group(1)
+    for name in names:
+        if name.endswith(f"LP{digit}") or name.endswith(digit):
+            return name
+    return None
 
 
 def _first_float(attrs: dict[str, Any], names: tuple[str, ...]) -> float | None:

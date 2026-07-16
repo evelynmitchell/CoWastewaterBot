@@ -146,7 +146,30 @@ skip auto-resolution, set `COWW_FEATURESERVER_URL` to a `FeatureServer/<n>` URL.
 - its **concentration** rose at least `COWW_SPIKE_PCT` percent (default `50`)
   above the previous reading for the same site+pathogen.
 
-Series are isolated per `(site, pathogen)` so spikes compare like with like.
+Series are isolated per `(site, pathogen)` so spikes compare like with like, and
+noise controls keep the feed from crying wolf:
+
+| Knob | Default | Effect |
+| --- | --- | --- |
+| `COWW_SPIKE_PCT` | `50` | Minimum % jump to flag a spike |
+| `COWW_SPIKE_MIN_BASELINE` | `0` | Ignore spikes whose baseline is below this — a jump up from near-zero is mostly detection-floor noise. Set once you know the value scale (see below). |
+| `COWW_NOTABLE_MAX` | `25` | Cap items per run, ranked by severity (`0` = no cap) |
+
+**Lab-phase guard.** The concentration lives in `viral_conc_raw_LP1/2/3` by lab
+phase. Each reading's value is taken from the column matching its `lab_phase`,
+and a spike is **not** flagged across a phase change (two lab methods aren't
+directly comparable) — this prevents false spikes at method transitions.
+
+### Inspecting the raw data
+
+To see the actual `viral_conc_raw_LP*` columns and `lab_phase` for a site — e.g.
+to pick a sensible `COWW_SPIKE_MIN_BASELINE`:
+
+```bash
+docker run --rm ghcr.io/evelynmitchell/cowastewaterbot:latest \
+  cowastewater query --raw --limit 8 \
+  --where "utility='Steamboat Springs' AND pcr_target='sars-cov-2'"
+```
 
 ## Feeds: RSS/Atom and ATProto
 
@@ -163,6 +186,14 @@ uv run cowastewater poll --post              # also post new changes to ATProto
 new leaves the feed untouched. Serve it via the raw file URL or GitHub Pages
 ([`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes
 `public/` — enable **Settings → Pages → Source: GitHub Actions**).
+
+To write the feed onto the host from the container, bind-mount `public/`. On
+SELinux hosts (Fedora/RHEL) add `:Z` so the container may write to it:
+
+```bash
+docker run --rm -v "$PWD/public:/app/public:Z" \
+  ghcr.io/evelynmitchell/cowastewaterbot:latest cowastewater poll
+```
 
 **ATProto (Bluesky)** — `--post` publishes each new change as a skeet. It is a
 **safe dry run until you provide credentials**: set `COWW_ATPROTO_HANDLE` and

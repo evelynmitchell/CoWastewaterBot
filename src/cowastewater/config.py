@@ -58,6 +58,9 @@ class FieldMap:
     value: str = _env(
         "COWW_FIELD_VALUE", "viral_conc_raw_LP1,viral_conc_raw_LP2,viral_conc_raw_LP3"
     )
+    # Which lab-phase produced a row's measurement; used to (a) pick the matching
+    # viral_conc_raw_LP* column and (b) avoid comparing across incompatible phases.
+    lab_phase: str = _env("COWW_FIELD_LAB_PHASE", "lab_phase")
     # Not present in the CDPHE layer today; used if you point at a layer that has
     # them. Empty string = "column absent, skip it".
     trend: str = _env("COWW_FIELD_TREND", "")
@@ -91,6 +94,12 @@ class Config:
     # Notable-change thresholds (see cowastewater.analysis).
     # Percent increase in concentration vs. the prior reading that counts as a spike.
     spike_pct: float = float(_env("COWW_SPIKE_PCT", "50"))
+    # Noise floor: ignore spikes whose prior (baseline) reading is below this, so a
+    # jump up from near-zero doesn't dominate. Units match the layer's values; set
+    # once you know the scale (see `cowastewater query --raw`). 0 = no floor.
+    spike_min_baseline: float = float(_env("COWW_SPIKE_MIN_BASELINE", "0"))
+    # Cap how many changes a single run emits (ranked by severity). 0 = no cap.
+    notable_max: int = int(_env("COWW_NOTABLE_MAX", "25"))
     # Trend strings (case-insensitive) that count as "notable" on their own.
     notable_trends: tuple[str, ...] = tuple(
         t.strip().lower()
