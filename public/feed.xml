@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>urn:cowastewaterbot:notable-changes</id>
+  <title>Colorado Wastewater Surveillance — notable changes</title>
+  <updated>2026-07-08T06:00:00+00:00</updated>
+  <author>
+    <name>CoWastewaterBot</name>
+  </author>
+  <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
+  <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
+  <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>highlands ranch water and sanitation district|sars-cov-2|2026-07-07</id>
+    <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 95% vs. prior reading [2026-07-07]</title>
+    <updated>2026-07-07T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 95% vs. prior reading [2026-07-07]
+Concentration: 14100.0
+Why flagged: concentration up 95% vs. prior reading</content>
+    <published>2026-07-07T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>telluride|sars-cov-2|2026-07-06</id>
+    <title>sars-cov-2 at Telluride — concentration up 497% vs. prior reading [2026-07-06]</title>
+    <updated>2026-07-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Telluride — concentration up 497% vs. prior reading [2026-07-06]
+Concentration: 3580.0
+Why flagged: concentration up 497% vs. prior reading</content>
+    <published>2026-07-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - prc|sars-cov-2|2026-07-06</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - PRC — concentration up 587% vs. prior reading [2026-07-06]</title>
+    <updated>2026-07-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - PRC — concentration up 587% vs. prior reading [2026-07-06]
+Concentration: 4120.0
+Why flagged: concentration up 587% vs. prior reading</content>
+    <published>2026-07-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>co springs - las vegas|sars-cov-2|2026-07-06</id>
+    <title>sars-cov-2 at CO Springs - Las Vegas — concentration up 613% vs. prior reading [2026-07-06]</title>
+    <updated>2026-07-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at CO Springs - Las Vegas — concentration up 613% vs. prior reading [2026-07-06]
+Concentration: 4280.0
+Why flagged: concentration up 613% vs. prior reading</content>
+    <published>2026-07-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|sars-cov-2|2026-07-06</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 823% vs. prior reading [2026-07-06]</title>
+    <updated>2026-07-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 823% vs. prior reading [2026-07-06]
+Concentration: 5540.0
+Why flagged: concentration up 823% vs. prior reading</content>
+    <published>2026-07-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>glenwood springs|sars-cov-2|2026-06-11</id>
+    <title>sars-cov-2 at Glenwood Springs — concentration up 878% vs. prior reading [2026-06-11]</title>
+    <updated>2026-06-11T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Glenwood Springs — concentration up 878% vs. prior reading [2026-06-11]
+Concentration: 5870.0
+Why flagged: concentration up 878% vs. prior reading</content>
+    <published>2026-06-11T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>highlands ranch water and sanitation district|sars-cov-2|2026-06-11</id>
+    <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 1062% vs. prior reading [2026-06-11]</title>
+    <updated>2026-06-11T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 1062% vs. prior reading [2026-06-11]
+Concentration: 6970.0
+Why flagged: concentration up 1062% vs. prior reading</content>
+    <published>2026-06-11T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>aspen|sars-cov-2|2026-07-07</id>
+    <title>sars-cov-2 at Aspen — concentration up 1750% vs. prior reading [2026-07-07]</title>
+    <updated>2026-07-07T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 1750% vs. prior reading [2026-07-07]
+Concentration: 11100.0
+Why flagged: concentration up 1750% vs. prior reading</content>
+    <published>2026-07-07T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|sars-cov-2|2026-07-06</id>
+    <title>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 1983% vs. prior reading [2026-07-06]</title>
+    <updated>2026-07-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 1983% vs. prior reading [2026-07-06]
+Concentration: 12500.0
+Why flagged: concentration up 1983% vs. prior reading</content>
+    <published>2026-07-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>boulder|sars-cov-2|2026-07-06</id>
+    <title>sars-cov-2 at Boulder — concentration up 2583% vs. prior reading [2026-07-06]</title>
+    <updated>2026-07-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Boulder — concentration up 2583% vs. prior reading [2026-07-06]
+Concentration: 16100.0
+Why flagged: concentration up 2583% vs. prior reading</content>
+    <published>2026-07-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>grand junction - persigo|sars-cov-2|2026-07-08</id>
+    <title>sars-cov-2 at Grand Junction - Persigo — concentration up 2783% vs. prior reading [2026-07-08]</title>
+    <updated>2026-07-08T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Grand Junction - Persigo — concentration up 2783% vs. prior reading [2026-07-08]
+Concentration: 17300.0
+Why flagged: concentration up 2783% vs. prior reading</content>
+    <published>2026-07-08T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>highlands ranch water and sanitation district|sars-cov-2|2026-06-25</id>
+    <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 2883% vs. prior reading [2026-06-25]</title>
+    <updated>2026-06-25T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 2883% vs. prior reading [2026-06-25]
+Concentration: 17900.0
+Why flagged: concentration up 2883% vs. prior reading</content>
+    <published>2026-06-25T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>fort collins - drake|sars-cov-2|2026-06-29</id>
+    <title>sars-cov-2 at Fort Collins - Drake — concentration up 3633% vs. prior reading [2026-06-29]</title>
+    <updated>2026-06-29T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Fort Collins - Drake — concentration up 3633% vs. prior reading [2026-06-29]
+Concentration: 22400.0
+Why flagged: concentration up 3633% vs. prior reading</content>
+    <published>2026-06-29T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|rsv|2026-06-11</id>
+    <title>RSV at Upper Blue SD - Breckenridge — concentration up 4200% vs. prior reading [2026-06-11]</title>
+    <updated>2026-06-11T06:00:00+00:00</updated>
+    <content>RSV at Upper Blue SD - Breckenridge — concentration up 4200% vs. prior reading [2026-06-11]
+Concentration: 25800.0
+Why flagged: concentration up 4200% vs. prior reading</content>
+    <published>2026-06-11T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|sars-cov-2|2026-06-11</id>
+    <title>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 9367% vs. prior reading [2026-06-11]</title>
+    <updated>2026-06-11T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 9367% vs. prior reading [2026-06-11]
+Concentration: 56800.0
+Why flagged: concentration up 9367% vs. prior reading</content>
+    <published>2026-06-11T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>steamboat springs|sars-cov-2|2026-07-08</id>
+    <title>sars-cov-2 at Steamboat Springs — concentration up 26400% vs. prior reading [2026-07-08]</title>
+    <updated>2026-07-08T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Steamboat Springs — concentration up 26400% vs. prior reading [2026-07-08]
+Concentration: 159000.0
+Why flagged: concentration up 26400% vs. prior reading</content>
+    <published>2026-07-08T06:00:00+00:00</published>
+  </entry>
+</feed>

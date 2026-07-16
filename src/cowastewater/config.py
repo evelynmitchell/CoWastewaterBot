@@ -107,6 +107,14 @@ class Config:
         if t.strip()
     )
 
+    # -- Data health / outage tracking ----------------------------------------
+    # The dataset updates roughly weekly; if the newest measurement is older than
+    # this many days, we treat the source as being in a data outage.
+    freshness_days: int = int(_env("COWW_FRESHNESS_DAYS", "10"))
+    # Persisted health state (days-since-last-outage etc.); under public/ so it
+    # can be committed and shown on the feed site.
+    health_path: str = _env("COWW_HEALTH_PATH", "public/health.json")
+
     # -- RSS/Atom feed output --------------------------------------------------
     feed_path: str = _env("COWW_FEED_PATH", "public/feed.xml")
     # JSON store of already-emitted feed items, so the feed survives across runs.

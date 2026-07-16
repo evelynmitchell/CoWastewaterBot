@@ -15,12 +15,14 @@ import argparse
 import asyncio
 import json
 import sys
+from datetime import datetime, timezone
 
 from .analysis import find_notable, summarize
 from .atproto_bot import post_change
 from .client import WastewaterClient
 from .config import load_config
 from .feeds import FeedStore, item_from_change, render_atom
+from .health import HealthStore, days_since_update
 from .state import State
 
 
@@ -52,6 +54,22 @@ async def _latest(site: str | None, pathogen: str | None) -> int:
     return 0
 
 
+async def _health() -> int:
+    """Report data health: current freshness + the days-since-last-outage streak."""
+    config = load_config()
+    now = datetime.now(timezone.utc)
+    async with WastewaterClient(config) as client:
+        newest = await client.fetch(where="1=1", order_desc=True, limit=1)
+    latest = newest[0].date if newest else None
+
+    snap = HealthStore.load(config.health_path).snapshot(now)
+    # Live freshness (the store only advances when `poll` runs).
+    snap["current_data_date"] = latest.date().isoformat() if latest else None
+    snap["current_days_since_update"] = days_since_update(latest, now)
+    print(json.dumps(snap, indent=2))
+    return 0
+
+
 async def _query(where: str, limit: int, raw: bool) -> int:
     """Run a raw ArcGIS where-clause. With --raw, dump every column (handy for
     inspecting the viral_conc_raw_LP* columns and lab_phase)."""
@@ -72,9 +90,20 @@ async def _poll(dry_run: bool, limit: int, feed: bool, post: bool) -> int:
     nothing and posts nothing.
     """
     config = load_config()
+    now = datetime.now(timezone.utc)
     state = State.load(config.state_path)
     async with WastewaterClient(config) as client:
         readings = await client.fetch(where="1=1", order_desc=True, limit=limit)
+
+    # Data-health: advance the days-since-last-outage streak from the freshest row.
+    latest_data = max((r.date for r in readings if r.date), default=None)
+    health = HealthStore.load(config.health_path)
+    snap = health.record(latest_data, now, config.freshness_days)
+    print(
+        f"health: {snap['status']}, {snap['days_since_update']} day(s) since update, "
+        f"{snap['days_since_last_outage']} day(s) since last outage",
+        file=sys.stderr,
+    )
 
     changes = find_notable(readings, config)
     fresh = [c for c in changes if state.is_new(c.reading)]
@@ -89,6 +118,8 @@ async def _poll(dry_run: bool, limit: int, feed: bool, post: bool) -> int:
             for c in fresh:
                 print(f"[dry-run] would post: {post_change(c, config).text}", file=sys.stderr)
         return 0
+
+    health.save()
 
     # RSS/Atom feed.
     if feed:
@@ -123,6 +154,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("describe-schema", help="Print the feature layer field definitions")
     sub.add_parser("sites", help="List monitoring sites")
     sub.add_parser("pathogens", help="List pathogens/targets")
+    sub.add_parser("health", help="Report data freshness + days since last outage")
 
     p_latest = sub.add_parser("latest", help="Show the latest reading(s)")
     p_latest.add_argument("--site")
@@ -149,6 +181,8 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(_sites())
     if args.cmd == "pathogens":
         return asyncio.run(_pathogens())
+    if args.cmd == "health":
+        return asyncio.run(_health())
     if args.cmd == "latest":
         return asyncio.run(_latest(args.site, args.pathogen))
     if args.cmd == "query":

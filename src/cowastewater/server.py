@@ -11,6 +11,7 @@ what's notable right now.
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
@@ -18,6 +19,7 @@ from mcp.server.fastmcp import FastMCP
 from .analysis import find_notable, summarize
 from .client import WastewaterClient
 from .config import load_config
+from .health import HealthStore, days_since_update
 
 mcp = FastMCP(
     "cowastewater",
@@ -123,6 +125,27 @@ async def notable_changes(limit: int = 500) -> dict[str, Any]:
             {"summary": summarize(c), **c.to_dict()} for c in changes
         ],
     }
+
+
+@mcp.tool()
+async def data_health() -> dict[str, Any]:
+    """Report data-source health for monitoring.
+
+    Returns how stale the newest measurement is (`current_days_since_update`) and
+    the reliability streak (`days_since_last_outage`). `status` is "outage" when
+    the source has stopped updating (newest data older than the freshness
+    threshold). The streak advances only when the scheduled poller runs.
+    """
+    config = load_config()
+    now = datetime.now(timezone.utc)
+    async with WastewaterClient(config) as client:
+        newest = await client.fetch(where="1=1", order_desc=True, limit=1)
+    latest = newest[0].date if newest else None
+
+    snap = HealthStore.load(config.health_path).snapshot(now)
+    snap["current_data_date"] = latest.date().isoformat() if latest else None
+    snap["current_days_since_update"] = days_since_update(latest, now)
+    return snap
 
 
 @mcp.tool()
