@@ -22,8 +22,9 @@ WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src ./src
 
-# Install runtime deps + the package into /app/.venv. No dev extras in the image.
-RUN uv sync --no-dev
+# Install runtime deps + the package into /app/.venv. Include the atproto extra
+# so the container can post to Bluesky; no dev extras in the image.
+RUN uv sync --no-dev --extra atproto
 
 # Default: serve the MCP server over stdio. `uv run --no-sync` reuses the venv
 # built above instead of re-resolving at container start. Override the command

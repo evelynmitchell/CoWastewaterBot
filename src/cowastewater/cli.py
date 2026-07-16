@@ -17,8 +17,10 @@ import json
 import sys
 
 from .analysis import find_notable, summarize
+from .atproto_bot import post_change
 from .client import WastewaterClient
 from .config import load_config
+from .feeds import FeedStore, item_from_change, render_atom
 from .state import State
 
 
@@ -50,11 +52,12 @@ async def _latest(site: str | None, pathogen: str | None) -> int:
     return 0
 
 
-async def _poll(dry_run: bool, limit: int) -> int:
-    """Fetch recent readings, find notable *and new* changes, report them.
+async def _poll(dry_run: bool, limit: int, feed: bool, post: bool) -> int:
+    """Fetch recent readings, find new notable changes, and emit them.
 
-    Emitting to RSS/ATProto is layered on later; today this proves the pipeline
-    (fetch -> detect -> dedup against state) end to end.
+    Pipeline: fetch -> detect notable -> dedup against state -> (RSS feed,
+    ATProto post) -> persist state. ``--dry-run`` does the detection but writes
+    nothing and posts nothing.
     """
     config = load_config()
     state = State.load(config.state_path)
@@ -66,15 +69,38 @@ async def _poll(dry_run: bool, limit: int) -> int:
 
     for c in fresh:
         print(summarize(c))
-
     if not fresh:
         print("(no new notable changes)", file=sys.stderr)
 
-    if not dry_run:
+    if dry_run:
+        if post:
+            for c in fresh:
+                print(f"[dry-run] would post: {post_change(c, config).text}", file=sys.stderr)
+        return 0
+
+    # RSS/Atom feed.
+    if feed:
+        store = FeedStore.load(config.feed_data_path, max_items=config.feed_max_items)
+        added = sum(store.add(item_from_change(c)) for c in fresh)
+        store.save()
+        render_atom(store, config)
+        print(f"feed: +{added} item(s) -> {config.feed_path}", file=sys.stderr)
+
+    # ATProto post (dry-run internally unless credentials are configured).
+    if post:
         for c in fresh:
-            state.mark(c.reading)
-        state.save()
-        print(f"state saved to {config.state_path} ({len(state.seen_keys)} keys)", file=sys.stderr)
+            result = post_change(c, config)
+            if result.posted:
+                print(f"posted: {result.uri}", file=sys.stderr)
+            elif result.error:
+                print(f"post skipped/failed: {result.error}", file=sys.stderr)
+            else:
+                print(f"[dry-run, no creds] would post: {result.text}", file=sys.stderr)
+
+    for c in fresh:
+        state.mark(c.reading)
+    state.save()
+    print(f"state saved to {config.state_path} ({len(state.seen_keys)} keys)", file=sys.stderr)
     return 0
 
 
@@ -90,9 +116,13 @@ def main(argv: list[str] | None = None) -> int:
     p_latest.add_argument("--site")
     p_latest.add_argument("--pathogen")
 
-    p_poll = sub.add_parser("poll", help="Detect new notable changes")
-    p_poll.add_argument("--dry-run", action="store_true", help="Don't write state")
+    p_poll = sub.add_parser("poll", help="Detect new notable changes; emit feed/posts")
+    p_poll.add_argument("--dry-run", action="store_true", help="Detect only; write/post nothing")
     p_poll.add_argument("--limit", type=int, default=500)
+    p_poll.add_argument("--no-feed", action="store_true", help="Skip regenerating the RSS/Atom feed")
+    p_poll.add_argument(
+        "--post", action="store_true", help="Post new changes to ATProto (dry-run without creds)"
+    )
 
     args = parser.parse_args(argv)
 
@@ -105,7 +135,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "latest":
         return asyncio.run(_latest(args.site, args.pathogen))
     if args.cmd == "poll":
-        return asyncio.run(_poll(args.dry_run, args.limit))
+        return asyncio.run(_poll(args.dry_run, args.limit, feed=not args.no_feed, post=args.post))
     parser.error(f"unknown command {args.cmd!r}")
     return 2
 

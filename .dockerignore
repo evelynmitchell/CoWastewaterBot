@@ -13,3 +13,5 @@ dist
 .env
 state.json
 *.local.json
+data
+public

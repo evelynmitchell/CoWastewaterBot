@@ -98,6 +98,27 @@ class Config:
         if t.strip()
     )
 
+    # -- RSS/Atom feed output --------------------------------------------------
+    feed_path: str = _env("COWW_FEED_PATH", "public/feed.xml")
+    # JSON store of already-emitted feed items, so the feed survives across runs.
+    feed_data_path: str = _env("COWW_FEED_DATA_PATH", "public/feed.json")
+    feed_title: str = _env(
+        "COWW_FEED_TITLE", "Colorado Wastewater Surveillance — notable changes"
+    )
+    feed_link: str = _env("COWW_FEED_LINK", "https://cdphe.colorado.gov/dcphr/wastewater")
+    feed_id: str = _env("COWW_FEED_ID", "urn:cowastewaterbot:notable-changes")
+    feed_max_items: int = int(_env("COWW_FEED_MAX_ITEMS", "200"))
+
+    # -- ATProto (Bluesky) posting --------------------------------------------
+    # Empty handle/password => dry-run (compose but don't post).
+    atproto_handle: str = _env("COWW_ATPROTO_HANDLE", "")
+    atproto_password: str = _env("COWW_ATPROTO_PASSWORD", "")
+    atproto_pds: str = _env("COWW_ATPROTO_PDS", "https://bsky.social")
+
+    @property
+    def atproto_ready(self) -> bool:
+        return bool(self.atproto_handle and self.atproto_password)
+
 
 def load_config() -> Config:
     """Build a Config from the current environment."""

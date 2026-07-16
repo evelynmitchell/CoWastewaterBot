@@ -12,8 +12,8 @@ query API in a small typed core and puts three easier surfaces on top of it:
 | Surface | Status | For |
 | --- | --- | --- |
 | **MCP server** | ✅ implemented | LLMs (Claude Desktop, etc.) that want to query the data live |
-| **RSS/Atom feed** | 🟡 planned | Anyone who wants new/notable readings in a feed reader |
-| **ATProto bot** | 🟡 planned | A Bluesky/ATProto account that posts notable changes |
+| **RSS/Atom feed** | ✅ implemented | Anyone who wants new/notable readings in a feed reader |
+| **ATProto bot** | ✅ implemented | A Bluesky/ATProto account that posts notable changes |
 
 All three consume the same core (`cowastewater.client` + `cowastewater.analysis`),
 so "notable change" means the same thing everywhere.
@@ -148,12 +148,35 @@ skip auto-resolution, set `COWW_FEATURESERVER_URL` to a `FeatureServer/<n>` URL.
 
 Series are isolated per `(site, pathogen)` so spikes compare like with like.
 
+## Feeds: RSS/Atom and ATProto
+
+`cowastewater poll` is the pipeline that drives both channels:
+
+```bash
+uv run cowastewater poll --dry-run          # detect only, write/post nothing
+uv run cowastewater poll                     # detect + (re)generate the Atom feed
+uv run cowastewater poll --post              # also post new changes to ATProto
+```
+
+**RSS/Atom** — new notable changes are appended to a capped JSON store
+(`public/feed.json`) and rendered to `public/feed.xml`. A run that finds nothing
+new leaves the feed untouched. Serve it via the raw file URL or GitHub Pages
+([`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes
+`public/` — enable **Settings → Pages → Source: GitHub Actions**).
+
+**ATProto (Bluesky)** — `--post` publishes each new change as a skeet. It is a
+**safe dry run until you provide credentials**: set `COWW_ATPROTO_HANDLE` and
+`COWW_ATPROTO_PASSWORD` (a Bluesky *app password*, not your main password) —
+locally as env vars, or as repo **Actions secrets** for CI. Optional
+`COWW_ATPROTO_PDS` (default `https://bsky.social`). Requires the `atproto` extra
+(`uv sync --extra atproto`; already in the container image).
+
 ## Scheduled polling
 
-The feed channels are driven by a GitHub Actions cron
-([`.github/workflows/poll.yml`](.github/workflows/poll.yml)) that runs the
-poller, dedups against committed `state.json`, and (once the feed adapters land)
-regenerates the RSS file / posts to ATProto. No server to run.
+The whole thing is driven by a GitHub Actions cron
+([`.github/workflows/poll.yml`](.github/workflows/poll.yml)): it polls, dedups
+against committed `data/state.json`, regenerates the feed, posts to ATProto (if
+secrets are set), and commits `data/` + `public/` back. No server to run.
 
 ## Architecture
 
@@ -167,8 +190,8 @@ FeatureServer (CDPHE ArcGIS)
         ├── state.py            last-seen cursor (dedup)
         │
         ├── server.py           MCP server  (LLMs)          ✅
-        ├── feeds (planned)     RSS / Atom                   🟡
-        └── atproto (planned)   Bluesky poster               🟡
+        ├── feeds.py            RSS / Atom                   ✅
+        └── atproto_bot.py      Bluesky poster               ✅
 ```
 
 ## Data source & credit
