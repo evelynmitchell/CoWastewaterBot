@@ -1,0 +1,146 @@
+[
+  {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-07-07",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 95% vs. prior reading [2026-07-07]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-07T06:00:00+00:00",
+    "value": 14100.0,
+    "reason": "concentration up 95% vs. prior reading"
+  },
+  {
+    "id": "telluride|sars-cov-2|2026-07-06",
+    "title": "sars-cov-2 at Telluride \u2014 concentration up 497% vs. prior reading [2026-07-06]",
+    "site": "Telluride",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-06T06:00:00+00:00",
+    "value": 3580.0,
+    "reason": "concentration up 497% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - prc|sars-cov-2|2026-07-06",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - PRC \u2014 concentration up 587% vs. prior reading [2026-07-06]",
+    "site": "Metro Wastewater RWHTF - PRC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-06T06:00:00+00:00",
+    "value": 4120.0,
+    "reason": "concentration up 587% vs. prior reading"
+  },
+  {
+    "id": "co springs - las vegas|sars-cov-2|2026-07-06",
+    "title": "sars-cov-2 at CO Springs - Las Vegas \u2014 concentration up 613% vs. prior reading [2026-07-06]",
+    "site": "CO Springs - Las Vegas",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-06T06:00:00+00:00",
+    "value": 4280.0,
+    "reason": "concentration up 613% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-07-06",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 823% vs. prior reading [2026-07-06]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-06T06:00:00+00:00",
+    "value": 5540.0,
+    "reason": "concentration up 823% vs. prior reading"
+  },
+  {
+    "id": "glenwood springs|sars-cov-2|2026-06-11",
+    "title": "sars-cov-2 at Glenwood Springs \u2014 concentration up 878% vs. prior reading [2026-06-11]",
+    "site": "Glenwood Springs",
+    "pathogen": "sars-cov-2",
+    "date": "2026-06-11T06:00:00+00:00",
+    "value": 5870.0,
+    "reason": "concentration up 878% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-06-11",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 1062% vs. prior reading [2026-06-11]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-06-11T06:00:00+00:00",
+    "value": 6970.0,
+    "reason": "concentration up 1062% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-07-07",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 1750% vs. prior reading [2026-07-07]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-07T06:00:00+00:00",
+    "value": 11100.0,
+    "reason": "concentration up 1750% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-07-06",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 1983% vs. prior reading [2026-07-06]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-06T06:00:00+00:00",
+    "value": 12500.0,
+    "reason": "concentration up 1983% vs. prior reading"
+  },
+  {
+    "id": "boulder|sars-cov-2|2026-07-06",
+    "title": "sars-cov-2 at Boulder \u2014 concentration up 2583% vs. prior reading [2026-07-06]",
+    "site": "Boulder",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-06T06:00:00+00:00",
+    "value": 16100.0,
+    "reason": "concentration up 2583% vs. prior reading"
+  },
+  {
+    "id": "grand junction - persigo|sars-cov-2|2026-07-08",
+    "title": "sars-cov-2 at Grand Junction - Persigo \u2014 concentration up 2783% vs. prior reading [2026-07-08]",
+    "site": "Grand Junction - Persigo",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-08T06:00:00+00:00",
+    "value": 17300.0,
+    "reason": "concentration up 2783% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-06-25",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 2883% vs. prior reading [2026-06-25]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-06-25T06:00:00+00:00",
+    "value": 17900.0,
+    "reason": "concentration up 2883% vs. prior reading"
+  },
+  {
+    "id": "fort collins - drake|sars-cov-2|2026-06-29",
+    "title": "sars-cov-2 at Fort Collins - Drake \u2014 concentration up 3633% vs. prior reading [2026-06-29]",
+    "site": "Fort Collins - Drake",
+    "pathogen": "sars-cov-2",
+    "date": "2026-06-29T06:00:00+00:00",
+    "value": 22400.0,
+    "reason": "concentration up 3633% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|rsv|2026-06-11",
+    "title": "RSV at Upper Blue SD - Breckenridge \u2014 concentration up 4200% vs. prior reading [2026-06-11]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "RSV",
+    "date": "2026-06-11T06:00:00+00:00",
+    "value": 25800.0,
+    "reason": "concentration up 4200% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-06-11",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 9367% vs. prior reading [2026-06-11]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-06-11T06:00:00+00:00",
+    "value": 56800.0,
+    "reason": "concentration up 9367% vs. prior reading"
+  },
+  {
+    "id": "steamboat springs|sars-cov-2|2026-07-08",
+    "title": "sars-cov-2 at Steamboat Springs \u2014 concentration up 26400% vs. prior reading [2026-07-08]",
+    "site": "Steamboat Springs",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-08T06:00:00+00:00",
+    "value": 159000.0,
+    "reason": "concentration up 26400% vs. prior reading"
+  }
+]
