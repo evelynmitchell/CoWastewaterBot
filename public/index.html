@@ -8,9 +8,10 @@
       body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
       code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 4px; }
       a { color: #0b6; }
-      #health { display: inline-block; padding: 0.6rem 1rem; border-radius: 8px; background: #eef7f0; border: 1px solid #cde8d5; margin: 0.5rem 0 1rem; }
-      #health.outage { background: #fdecec; border-color: #f3c2c2; }
-      #health .big { font-size: 1.6rem; font-weight: 700; }
+      .subscribe { font-size: 1.15rem; margin: 1.5rem 0; }
+      footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.8rem; color: #888; }
+      footer a { color: #888; }
+      #health.outage { color: #b00; font-weight: 600; }
     </style>
   </head>
   <body>
@@ -20,39 +21,37 @@
       pathogen concentrations at wastewater treatment sites statewide.
     </p>
 
-    <div id="health" hidden>
-      <span class="big" id="health-count">—</span>
-      <div id="health-label"></div>
-    </div>
-    <script>
-      fetch("./health.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (h) {
-        if (!h) return;
-        var box = document.getElementById("health");
-        var count = document.getElementById("health-count");
-        var label = document.getElementById("health-label");
-        box.hidden = false;
-        if (h.status === "outage") {
-          box.classList.add("outage");
-          count.textContent = "⚠️ data outage";
-          label.textContent = "Source stale for " + h.days_since_update + " day(s).";
-        } else if (h.days_since_last_outage === null || h.days_since_last_outage === undefined) {
-          count.textContent = "🟢 no outages recorded";
-          label.textContent = "Newest data " + (h.days_since_update ?? "?") + " day(s) old.";
-        } else {
-          count.textContent = "🟢 " + h.days_since_last_outage + " days";
-          label.textContent = "since the last data outage · newest data " + (h.days_since_update ?? "?") + " day(s) old.";
-        }
-      }).catch(function () {});
-    </script>
-    <p>
+    <p class="subscribe">
       📡 <strong><a href="./feed.xml">Subscribe to the Atom feed</a></strong>
       (<code>feed.xml</code>) in any RSS reader.
     </p>
+
     <p>
       Data © Colorado Department of Public Health &amp; Environment (CDPHE),
       republished from their public Open Data portal. Unofficial, not affiliated
       with CDPHE. Source and MCP server:
       <a href="https://github.com/evelynmitchell/CoWastewaterBot">github.com/evelynmitchell/CoWastewaterBot</a>.
     </p>
+
+    <footer>
+      <span id="health">Data status: <a href="./health.json">health.json</a></span>
+    </footer>
+    <script>
+      fetch("./health.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (h) {
+        if (!h) return;
+        var el = document.getElementById("health");
+        var link = ' · <a href="./health.json">health.json</a>';
+        if (h.status === "outage") {
+          el.classList.add("outage");
+          el.innerHTML = "⚠️ data outage — source stale " + h.days_since_update + "d" + link;
+        } else {
+          var txt = "🟢 up to date (" + (h.days_since_update ?? "?") + "d old)";
+          if (h.days_since_last_outage !== null && h.days_since_last_outage !== undefined) {
+            txt += " · " + h.days_since_last_outage + "d since last outage";
+          }
+          el.innerHTML = "Data status: " + txt + link;
+        }
+      }).catch(function () {});
+    </script>
   </body>
 </html>

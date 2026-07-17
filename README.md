@@ -22,8 +22,12 @@ so "notable change" means the same thing everywhere.
 
 - **Site (GitHub Pages):** https://evelynmitchell.github.io/CoWastewaterBot/
 - **RSS/Atom feed:** https://evelynmitchell.github.io/CoWastewaterBot/feed.xml
-- **Data-health JSON:** https://evelynmitchell.github.io/CoWastewaterBot/health.json
 - **MCP server:** run locally (stdio) — see [Run the MCP server](#run-the-mcp-server).
+
+Monitoring endpoints (secondary — for uptime/health checks, not the main content):
+
+- **Health JSON:** https://evelynmitchell.github.io/CoWastewaterBot/health.json
+- **MCP tool:** `data_health`
 
 Updated daily by the [poll workflow](.github/workflows/poll.yml).
 
@@ -230,9 +234,20 @@ uv run cowastewater health
 # {"status": "ok", "current_days_since_update": 2, "days_since_last_outage": 37, ...}
 ```
 
-Also available as the MCP `data_health` tool (for an LLM to monitor) and shown as
-a badge on the Pages landing page (reads `health.json`). The streak advances only
-when the scheduled `poll` runs, so keep the cron enabled for an accurate count.
+### Monitoring endpoint
+
+The same data is published as a machine-readable **monitoring endpoint** for
+uptime/health checks — [`health.json`](https://evelynmitchell.github.io/CoWastewaterBot/health.json):
+
+```json
+{ "status": "ok", "days_since_update": 8, "days_since_last_outage": null, "outage_events": 0, ... }
+```
+
+Point an uptime monitor at it and alert on `status == "outage"` (or on
+`days_since_update` exceeding your own threshold). It's also exposed as the MCP
+`data_health` tool for an LLM to poll. On the landing page it's intentionally
+just a small footer line — monitoring, not the main content. The streak advances
+only when the scheduled `poll` runs, so keep the cron enabled for an accurate count.
 
 ## Scheduled polling
 
