@@ -165,6 +165,11 @@ class WastewaterClient:
                 break
         return out
 
+    async def readings_for_site(self, site: str, limit: int | None = None) -> list[Reading]:
+        """All readings (every pathogen/date) for one site, for risk history."""
+        where = f"{self.config.fields.site} = {_sql_str(site)}"
+        return await self.fetch(where, order_desc=True, limit=limit)
+
     async def distinct_sites(self) -> list[str]:
         """List distinct monitoring sites, using server-side DISTINCT."""
         return await self._distinct(self.config.fields.site)

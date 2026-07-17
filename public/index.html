@@ -3,40 +3,100 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CoWastewaterBot — Colorado wastewater surveillance feed</title>
+    <title>CoWastewaterBot — should I go out? (Colorado wastewater)</title>
     <style>
-      body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
-      code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 4px; }
-      a { color: #0b6; }
-      .subscribe { font-size: 1.15rem; margin: 1.5rem 0; }
+      body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2.5rem auto; padding: 0 1rem; line-height: 1.5; color: #1a1a1a; }
+      h1 { margin-bottom: 0.2rem; }
+      .lede { color: #444; margin-top: 0; }
+      input#filter { width: 100%; padding: 0.6rem 0.8rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; margin: 1rem 0 0.5rem; box-sizing: border-box; }
+      table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+      th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #eee; }
+      th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: #666; }
+      .pill { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+      .lvl0 .pill { background: #e6f5ea; color: #1a7f37; }
+      .lvl1 .pill { background: #fdf3e0; color: #9a6700; }
+      .lvl2 .pill { background: #fdecec; color: #b00; }
+      .detail { color: #555; font-size: 0.88rem; }
+      .legend { font-size: 0.85rem; color: #555; margin: 0.5rem 0 1.5rem; }
+      .secondary { margin: 1.5rem 0; }
       footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.8rem; color: #888; }
       footer a { color: #888; }
       #health.outage { color: #b00; font-weight: 600; }
+      a { color: #0b6; }
     </style>
   </head>
   <body>
-    <h1>CoWastewaterBot</h1>
-    <p>
-      Notable changes in Colorado (CDPHE) wastewater surveillance data —
-      pathogen concentrations at wastewater treatment sites statewide.
+    <h1>Should I go out?</h1>
+    <p class="lede">
+      Respiratory-illness caution level by Colorado (CDPHE) wastewater site —
+      based on where the latest reading sits in each site's history and whether
+      it's rising. Worst of SARS-CoV-2, Influenza, and RSV.
     </p>
 
-    <p class="subscribe">
-      📡 <strong><a href="./feed.xml">Subscribe to the Atom feed</a></strong>
-      (<code>feed.xml</code>) in any RSS reader.
-    </p>
+    <input id="filter" type="text" placeholder="Filter by city or site — e.g. Fort Collins" autocomplete="off" />
+    <div class="legend">
+      <strong>Quintile</strong> = which fifth of this site's history the level is in (1 lowest … 5 highest).
+      <span class="pill" style="background:#e6f5ea;color:#1a7f37">OK</span> quintile ≤2 ·
+      <span class="pill" style="background:#fdf3e0;color:#9a6700">Caution</span> elevated ·
+      <span class="pill" style="background:#fdecec;color:#b00">Avoid</span> elevated &amp; rising.
+    </div>
 
-    <p>
-      Data © Colorado Department of Public Health &amp; Environment (CDPHE),
-      republished from their public Open Data portal. Unofficial, not affiliated
-      with CDPHE. Source and MCP server:
+    <table>
+      <thead><tr><th>Site</th><th>Caution</th><th>Driver</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="3" class="detail">Loading…</td></tr></tbody>
+    </table>
+
+    <p class="secondary">
+      📡 Prefer a feed? <a href="./feed.xml">Subscribe to notable changes (Atom)</a>.
+    </p>
+    <p class="detail">
+      Data © CDPHE, republished from their public Open Data portal. Unofficial,
+      not affiliated with CDPHE. Not medical advice — a heuristic from public data.
+      Source &amp; MCP server:
       <a href="https://github.com/evelynmitchell/CoWastewaterBot">github.com/evelynmitchell/CoWastewaterBot</a>.
     </p>
 
     <footer>
       <span id="health">Data status: <a href="./health.json">health.json</a></span>
     </footer>
+
     <script>
+      var LABEL = { 0: "OK to go out", 1: "Caution", 2: "Avoid" };
+      var ALL = [];
+
+      function driverText(s) {
+        var p = (s.pathogens || []).filter(function (x) { return x.pathogen === s.driver; })[0];
+        if (!p) return "—";
+        var q = p.quintile != null ? "quintile " + p.quintile + "/5" : "no data";
+        return s.driver + " · " + q + " · " + p.trend;
+      }
+
+      function render(rows) {
+        var tbody = document.getElementById("rows");
+        if (!rows.length) { tbody.innerHTML = '<tr><td colspan="3" class="detail">No matching sites.</td></tr>'; return; }
+        tbody.innerHTML = rows.map(function (s) {
+          return '<tr class="lvl' + s.level + '"><td>' + s.site +
+            '</td><td><span class="pill">' + (LABEL[s.level] || "?") + '</span></td>' +
+            '<td class="detail">' + driverText(s) + '</td></tr>';
+        }).join("");
+      }
+
+      function applyFilter() {
+        var q = document.getElementById("filter").value.trim().toLowerCase();
+        render(q ? ALL.filter(function (s) { return s.site.toLowerCase().indexOf(q) !== -1; }) : ALL);
+      }
+
+      document.getElementById("filter").addEventListener("input", applyFilter);
+
+      fetch("./risk.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+        if (!d || !d.sites) {
+          document.getElementById("rows").innerHTML = '<tr><td colspan="3" class="detail">Risk data not generated yet — the poller populates risk.json on its next run.</td></tr>';
+          return;
+        }
+        ALL = d.sites;
+        applyFilter();
+      }).catch(function () {});
+
       fetch("./health.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (h) {
         if (!h) return;
         var el = document.getElementById("health");

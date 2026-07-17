@@ -20,6 +20,7 @@ from .analysis import find_notable, summarize
 from .client import WastewaterClient
 from .config import load_config
 from .health import HealthStore, days_since_update
+from .risk import assess_site
 
 mcp = FastMCP(
     "cowastewater",
@@ -125,6 +126,21 @@ async def notable_changes(limit: int = 500) -> dict[str, Any]:
             {"summary": summarize(c), **c.to_dict()} for c in changes
         ],
     }
+
+
+@mcp.tool()
+async def risk_assessment(site: str) -> dict[str, Any]:
+    """How cautious to be about going out at a monitoring site.
+
+    Assesses each respiratory pathogen (SARS-CoV-2, Influenza, RSV) from that
+    site's own history and returns the worst case: the historical `quintile`
+    (1=low, 5=high) of the latest reading, the recent `trend`, and a `verdict`
+    (level 0 OK / 1 caution / 2 avoid). Use list_sites for exact site names.
+    """
+    config = load_config()
+    async with WastewaterClient(config) as client:
+        readings = await client.readings_for_site(site)
+    return assess_site(site, readings, config).to_dict()
 
 
 @mcp.tool()

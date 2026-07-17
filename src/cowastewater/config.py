@@ -107,6 +107,25 @@ class Config:
         if t.strip()
     )
 
+    # -- Go-out risk assessment (see cowastewater.risk) ------------------------
+    # Pathogens (matched as case-insensitive substrings of pcr_target) whose
+    # worst case drives the caution verdict.
+    respiratory_pathogens: tuple[str, ...] = tuple(
+        p.strip().lower()
+        for p in _env("COWW_RESPIRATORY", "sars-cov-2,influenza,rsv").split(",")
+        if p.strip()
+    )
+    # How many recent readings define the "rising/falling" trend (~4 weeks).
+    trend_window: int = int(_env("COWW_TREND_WINDOW", "4"))
+    # Percent change across that window that counts as rising/falling (else flat).
+    trend_pct: float = float(_env("COWW_TREND_PCT", "10"))
+    # Quintile at/above which a site is "elevated" (your rule: 3).
+    caution_quintile: int = int(_env("COWW_CAUTION_QUINTILE", "3"))
+    # History window for the quintile distribution; 0 = all available history.
+    quintile_lookback_days: int = int(_env("COWW_QUINTILE_LOOKBACK_DAYS", "1095"))
+    # Persisted per-site risk snapshot for the landing page.
+    risk_path: str = _env("COWW_RISK_PATH", "public/risk.json")
+
     # -- Data health / outage tracking ----------------------------------------
     # The dataset updates roughly weekly; if the newest measurement is older than
     # this many days, we treat the source as being in a data outage.

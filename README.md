@@ -20,7 +20,8 @@ so "notable change" means the same thing everywhere.
 
 ## Live
 
-- **Site (GitHub Pages):** https://evelynmitchell.github.io/CoWastewaterBot/
+- **Site — "should I go out?" (GitHub Pages):** https://evelynmitchell.github.io/CoWastewaterBot/ — per-site respiratory caution level; filter to your city.
+- **Risk JSON:** https://evelynmitchell.github.io/CoWastewaterBot/risk.json
 - **RSS/Atom feed:** https://evelynmitchell.github.io/CoWastewaterBot/feed.xml
 - **MCP server:** run locally (stdio) — see [Run the MCP server](#run-the-mcp-server).
 
@@ -109,7 +110,7 @@ Register it with an MCP client (e.g. Claude Desktop `claude_desktop_config.json`
 ```
 
 Tools exposed: `list_sites`, `list_pathogens`, `latest_reading`, `trend`,
-`query`, `notable_changes`, `data_health`, `describe_schema`.
+`query`, `notable_changes`, `risk_assessment`, `data_health`, `describe_schema`.
 
 ### Operator CLI
 
@@ -149,6 +150,38 @@ Override any mapping without touching code — every value in
 (`COWW_FIELD_SITE`, `COWW_FIELD_PATHOGEN`, `COWW_FIELD_DATE`,
 `COWW_FIELD_VALUE` — comma-separated for coalescing). To pin the endpoint and
 skip auto-resolution, set `COWW_FEATURESERVER_URL` to a `FeatureServer/<n>` URL.
+
+## Go-out risk ("should I go out?")
+
+The landing page's main view answers, per site: **how cautious should I be about
+going out?** For each respiratory pathogen (SARS-CoV-2, Influenza, RSV) it takes
+that site's own history and reports:
+
+- **quintile** — which fifth of the historical distribution the latest reading
+  is in (1 = lowest 20%, 5 = highest 20%), and
+- **trend** — rising / falling / flat over the last `COWW_TREND_WINDOW` readings.
+
+The **verdict** (worst pathogen wins) follows a simple, configurable rule:
+
+| Condition | Verdict |
+| --- | --- |
+| quintile ≤ 2 | **OK to go out** |
+| quintile ≥ `COWW_CAUTION_QUINTILE` (3) and rising | **Avoid** (elevated & rising) |
+| quintile ≥ 3 and not rising | **Caution** (elevated) |
+
+```bash
+uv run cowastewater risk                                  # table of all sites
+uv run cowastewater risk --match "fort collins"           # just your city's sewersheds
+uv run cowastewater risk --site "Fort Collins - Drake"    # full detail (JSON)
+```
+
+Exposed as the MCP `risk_assessment` tool and published for the site as
+`public/risk.json`. Knobs: `COWW_RESPIRATORY` (pathogens), `COWW_TREND_WINDOW`,
+`COWW_TREND_PCT`, `COWW_CAUTION_QUINTILE`, `COWW_QUINTILE_LOOKBACK_DAYS`.
+
+> Not medical advice — a transparent heuristic over public data. The site filter
+> is by city/site name today; zip-code proximity is a planned follow-up (the
+> CDPHE layer carries no coordinates, so it needs a site→location mapping).
 
 ## What counts as a "notable change"
 
