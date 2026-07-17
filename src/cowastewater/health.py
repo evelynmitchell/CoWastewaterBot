@@ -94,11 +94,24 @@ class HealthStore:
         }
 
     def save(self) -> None:
+        """Write a self-describing health.json.
+
+        Includes the *derived* view (``status``, ``days_since_update``,
+        ``days_since_last_outage``, …) that consumers read — the landing-page
+        badge, the MCP/CLI reporters, any external monitor — plus the internal
+        state needed to reload the streak on the next run. The derived view is
+        computed as of ``last_checked`` (when this observation was recorded).
+        """
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        derived: dict = {}
+        if self.last_checked:
+            derived = self.snapshot(datetime.fromisoformat(self.last_checked))
         payload = {
+            **derived,
+            # Internal state for reload (load() reads only these).
+            "in_outage": self.in_outage,
             "last_checked": self.last_checked,
             "last_data_date": self.last_data_date,
-            "in_outage": self.in_outage,
             "last_outage_date": self.last_outage_date,
             "outage_events": self.outage_events,
         }
