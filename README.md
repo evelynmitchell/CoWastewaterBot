@@ -18,6 +18,15 @@ query API in a small typed core and puts three easier surfaces on top of it:
 All three consume the same core (`cowastewater.client` + `cowastewater.analysis`),
 so "notable change" means the same thing everywhere.
 
+## Live
+
+- **Site (GitHub Pages):** https://evelynmitchell.github.io/CoWastewaterBot/
+- **RSS/Atom feed:** https://evelynmitchell.github.io/CoWastewaterBot/feed.xml
+- **Data-health JSON:** https://evelynmitchell.github.io/CoWastewaterBot/health.json
+- **MCP server:** run locally (stdio) — see [Run the MCP server](#run-the-mcp-server).
+
+Updated daily by the [poll workflow](.github/workflows/poll.yml).
+
 [dashboard]: https://cdphe.colorado.gov/dcphr/wastewater
 [explore]: https://data-cdphe.opendata.arcgis.com/datasets/54a508b3c9c543559a367054fc956e6d_0/explore
 
@@ -183,9 +192,10 @@ uv run cowastewater poll --post              # also post new changes to ATProto
 
 **RSS/Atom** — new notable changes are appended to a capped JSON store
 (`public/feed.json`) and rendered to `public/feed.xml`. A run that finds nothing
-new leaves the feed untouched. Serve it via the raw file URL or GitHub Pages
+new leaves the feed untouched. It's published to GitHub Pages at
+**https://evelynmitchell.github.io/CoWastewaterBot/feed.xml**
 ([`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes
-`public/` — enable **Settings → Pages → Source: GitHub Actions**).
+`public/`; enable **Settings → Pages → Source: GitHub Actions**).
 
 To write the feed onto the host from the container, bind-mount `public/`. On
 SELinux hosts (Fedora/RHEL) add `:Z` so the container may write to it:
