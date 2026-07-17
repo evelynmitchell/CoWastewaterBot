@@ -1,3 +1,4 @@
+import json
 from datetime import datetime, timezone
 
 from cowastewater.health import HealthStore, days_since_update
@@ -51,6 +52,22 @@ def test_outage_then_recovery_streak_counts_up(tmp_path):
     snap = store.record(_dt(2026, 6, 1), _dt(2026, 7, 20), freshness_days=10)
     assert snap["status"] == "outage"
     assert store.outage_events == 2
+
+
+def test_saved_json_is_self_describing_and_reloads(tmp_path):
+    path = tmp_path / "health.json"
+    store = HealthStore(path=path)
+    store.record(_dt(2026, 7, 9), _dt(2026, 7, 17), freshness_days=10)
+    store.save()
+
+    data = json.loads(path.read_text())
+    # Derived fields consumers read (landing badge, monitors) must be present.
+    assert data["status"] == "ok"
+    assert data["days_since_update"] == 8
+    assert data["days_since_last_outage"] is None
+    # Internal state for reload must also be present, and reload must work.
+    assert data["in_outage"] is False
+    assert HealthStore.load(path).last_data_date == "2026-07-09"
 
 
 def test_snapshot_is_read_only(tmp_path):
