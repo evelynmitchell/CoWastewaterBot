@@ -2,13 +2,58 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-07-08T06:00:00+00:00</updated>
+  <updated>2026-07-13T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>aspen|sars-cov-2|2026-07-09</id>
+    <title>sars-cov-2 at Aspen — concentration up 100% vs. prior reading [2026-07-09]</title>
+    <updated>2026-07-09T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 100% vs. prior reading [2026-07-09]
+Concentration: 22200.0
+Why flagged: concentration up 100% vs. prior reading</content>
+    <published>2026-07-09T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - prc|sars-cov-2|2026-07-13</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - PRC — concentration up 597% vs. prior reading [2026-07-13]</title>
+    <updated>2026-07-13T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - PRC — concentration up 597% vs. prior reading [2026-07-13]
+Concentration: 4180.0
+Why flagged: concentration up 597% vs. prior reading</content>
+    <published>2026-07-13T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>alamosa|sars-cov-2|2026-07-09</id>
+    <title>sars-cov-2 at Alamosa — concentration up 833% vs. prior reading [2026-07-09]</title>
+    <updated>2026-07-09T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Alamosa — concentration up 833% vs. prior reading [2026-07-09]
+Concentration: 5600.0
+Why flagged: concentration up 833% vs. prior reading</content>
+    <published>2026-07-09T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>alamosa|flubv|2026-07-09</id>
+    <title>FLUBV at Alamosa — concentration up 837% vs. prior reading [2026-07-09]</title>
+    <updated>2026-07-09T06:00:00+00:00</updated>
+    <content>FLUBV at Alamosa — concentration up 837% vs. prior reading [2026-07-09]
+Concentration: 5620.0
+Why flagged: concentration up 837% vs. prior reading</content>
+    <published>2026-07-09T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>durango|sars-cov-2|2026-07-13</id>
+    <title>sars-cov-2 at Durango — concentration up 17733% vs. prior reading [2026-07-13]</title>
+    <updated>2026-07-13T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Durango — concentration up 17733% vs. prior reading [2026-07-13]
+Concentration: 107000.0
+Why flagged: concentration up 17733% vs. prior reading</content>
+    <published>2026-07-13T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>highlands ranch water and sanitation district|sars-cov-2|2026-07-07</id>
     <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 95% vs. prior reading [2026-07-07]</title>

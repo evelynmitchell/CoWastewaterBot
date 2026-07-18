@@ -1,5 +1,50 @@
 [
   {
+    "id": "aspen|sars-cov-2|2026-07-09",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 100% vs. prior reading [2026-07-09]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-09T06:00:00+00:00",
+    "value": 22200.0,
+    "reason": "concentration up 100% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - prc|sars-cov-2|2026-07-13",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - PRC \u2014 concentration up 597% vs. prior reading [2026-07-13]",
+    "site": "Metro Wastewater RWHTF - PRC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-13T06:00:00+00:00",
+    "value": 4180.0,
+    "reason": "concentration up 597% vs. prior reading"
+  },
+  {
+    "id": "alamosa|sars-cov-2|2026-07-09",
+    "title": "sars-cov-2 at Alamosa \u2014 concentration up 833% vs. prior reading [2026-07-09]",
+    "site": "Alamosa",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-09T06:00:00+00:00",
+    "value": 5600.0,
+    "reason": "concentration up 833% vs. prior reading"
+  },
+  {
+    "id": "alamosa|flubv|2026-07-09",
+    "title": "FLUBV at Alamosa \u2014 concentration up 837% vs. prior reading [2026-07-09]",
+    "site": "Alamosa",
+    "pathogen": "FLUBV",
+    "date": "2026-07-09T06:00:00+00:00",
+    "value": 5620.0,
+    "reason": "concentration up 837% vs. prior reading"
+  },
+  {
+    "id": "durango|sars-cov-2|2026-07-13",
+    "title": "sars-cov-2 at Durango \u2014 concentration up 17733% vs. prior reading [2026-07-13]",
+    "site": "Durango",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-13T06:00:00+00:00",
+    "value": 107000.0,
+    "reason": "concentration up 17733% vs. prior reading"
+  },
+  {
     "id": "highlands ranch water and sanitation district|sars-cov-2|2026-07-07",
     "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 95% vs. prior reading [2026-07-07]",
     "site": "Highlands Ranch Water and Sanitation District",
