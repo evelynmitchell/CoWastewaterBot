@@ -27,6 +27,7 @@ jobs:
   poll:
     runs-on: ubuntu-latest
     env:
+      UV_MALWARE_CHECK: "1"
       COWW_FEATURESERVER_URL: ${{ vars.COWW_FEATURESERVER_URL }}
       COWW_FIELD_SITE: ${{ vars.COWW_FIELD_SITE }}
       COWW_FIELD_PATHOGEN: ${{ vars.COWW_FIELD_PATHOGEN }}
