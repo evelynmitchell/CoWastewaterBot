@@ -179,8 +179,10 @@ Exposed as the MCP `risk_assessment` tool and published for the site as
 `public/risk.json`. Knobs: `COWW_RESPIRATORY` (pathogens), `COWW_TREND_WINDOW`,
 `COWW_TREND_PCT`, `COWW_CAUTION_QUINTILE`, `COWW_QUINTILE_LOOKBACK_DAYS`.
 
-Filter the table by **city/site name** or by **DHSEM region** (North, Northwest,
-Northeast, East, Central, West, Southwest, San Luis Valley, South, Southeast).
+Filter the table by **city/site name**, by **DHSEM region** (North, Northwest,
+Northeast, East, Central, West, Southwest, San Luis Valley, South, Southeast), or
+type a **zip** to auto-select your region (an approximate ZIP3 + overrides map in
+the page).
 The region isn't in the CDPHE data (no region/geometry column), so it's a curated
 `utility → county → region` map in [`regions.py`](src/cowastewater/regions.py)
 built from the [Colorado DHSEM regional service areas map](https://dhsem.colorado.gov/fieldoperations);
