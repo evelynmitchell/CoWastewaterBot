@@ -16,6 +16,7 @@ import asyncio
 import json
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 from .analysis import find_notable, summarize
 from .atproto_bot import post_change
@@ -23,6 +24,8 @@ from .client import WastewaterClient
 from .config import load_config
 from .feeds import FeedStore, item_from_change, render_atom
 from .health import HealthStore, days_since_update
+from .regions import region_for
+from .risk import assess_site
 from .state import State
 
 
@@ -70,6 +73,47 @@ async def _health() -> int:
     return 0
 
 
+async def _build_risk(client, config, now) -> dict:
+    """Assess every site (worst respiratory pathogen) into a risk payload."""
+    sites = await client.distinct_sites()
+    site_risks = []
+    for site in sites:
+        readings = await client.readings_for_site(site)
+        d = assess_site(site, readings, config, now=now).to_dict()
+        d["region"] = region_for(site)
+        site_risks.append(d)
+    site_risks.sort(key=lambda s: (-s["level"], s["site"]))
+    return {"generated": now.isoformat(), "sites": site_risks}
+
+
+async def _risk(site: str | None, match: str | None, region: str | None, as_json: bool) -> int:
+    config = load_config()
+    now = datetime.now(timezone.utc)
+    async with WastewaterClient(config) as client:
+        if site:
+            readings = await client.readings_for_site(site)
+            result = assess_site(site, readings, config, now=now).to_dict()
+            result["region"] = region_for(site)
+            print(json.dumps(result, indent=2))
+            return 0
+        payload = await _build_risk(client, config, now)
+
+    rows = payload["sites"]
+    if match:
+        rows = [r for r in rows if match.lower() in r["site"].lower()]
+    if region:
+        rows = [r for r in rows if (r.get("region") or "").lower() == region.lower()]
+    if as_json:
+        print(json.dumps(rows, indent=2))
+        return 0
+    label = {0: "OK    ", 1: "CAUTION", 2: "AVOID  "}
+    for r in rows:
+        driver = f" ({r['driver']})" if r["driver"] else ""
+        region_tag = f" [{r['region']}]" if r.get("region") else ""
+        print(f"{label.get(r['level'], '?'):8} {r['site']}{driver}{region_tag}")
+    return 0
+
+
 async def _query(where: str, limit: int, raw: bool) -> int:
     """Run a raw ArcGIS where-clause. With --raw, dump every column (handy for
     inspecting the viral_conc_raw_LP* columns and lab_phase)."""
@@ -94,6 +138,9 @@ async def _poll(dry_run: bool, limit: int, feed: bool, post: bool) -> int:
     state = State.load(config.state_path)
     async with WastewaterClient(config) as client:
         readings = await client.fetch(where="1=1", order_desc=True, limit=limit)
+        # Per-site go-out risk needs full per-site history; build it while the
+        # client is open (skipped on a dry run).
+        risk_payload = None if dry_run else await _build_risk(client, config, now)
 
     # Data-health: advance the days-since-last-outage streak from the freshest row.
     latest_data = max((r.date for r in readings if r.date), default=None)
@@ -104,6 +151,14 @@ async def _poll(dry_run: bool, limit: int, feed: bool, post: bool) -> int:
         f"{snap['days_since_last_outage']} day(s) since last outage",
         file=sys.stderr,
     )
+
+    # Persist the per-site go-out risk snapshot for the landing page.
+    if risk_payload is not None:
+        risk_path = Path(config.risk_path)
+        risk_path.parent.mkdir(parents=True, exist_ok=True)
+        risk_path.write_text(json.dumps(risk_payload, indent=2) + "\n")
+        print(f"risk: assessed {len(risk_payload['sites'])} sites -> {config.risk_path}",
+              file=sys.stderr)
 
     changes = find_notable(readings, config)
     fresh = [c for c in changes if state.is_new(c.reading)]
@@ -160,6 +215,12 @@ def main(argv: list[str] | None = None) -> int:
     p_latest.add_argument("--site")
     p_latest.add_argument("--pathogen")
 
+    p_risk = sub.add_parser("risk", help="Go-out caution level per site (quintile + trend)")
+    p_risk.add_argument("--site", help="Assess one site in detail (exact name)")
+    p_risk.add_argument("--match", help="Filter the table to sites whose name contains this")
+    p_risk.add_argument("--region", help="Filter to a DHSEM region, e.g. North")
+    p_risk.add_argument("--json", action="store_true", dest="as_json", help="Emit JSON")
+
     p_query = sub.add_parser("query", help="Run a raw where-clause (diagnostics)")
     p_query.add_argument("--where", default="1=1", help="ArcGIS SQL where clause")
     p_query.add_argument("--limit", type=int, default=50)
@@ -185,6 +246,8 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(_health())
     if args.cmd == "latest":
         return asyncio.run(_latest(args.site, args.pathogen))
+    if args.cmd == "risk":
+        return asyncio.run(_risk(args.site, args.match, args.region, args.as_json))
     if args.cmd == "query":
         return asyncio.run(_query(args.where, args.limit, args.raw))
     if args.cmd == "poll":
