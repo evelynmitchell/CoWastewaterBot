@@ -24,6 +24,7 @@ from .client import WastewaterClient
 from .config import load_config
 from .feeds import FeedStore, item_from_change, render_atom
 from .health import HealthStore, days_since_update
+from .regions import region_for
 from .risk import assess_site
 from .state import State
 
@@ -78,18 +79,21 @@ async def _build_risk(client, config, now) -> dict:
     site_risks = []
     for site in sites:
         readings = await client.readings_for_site(site)
-        site_risks.append(assess_site(site, readings, config, now=now).to_dict())
+        d = assess_site(site, readings, config, now=now).to_dict()
+        d["region"] = region_for(site)
+        site_risks.append(d)
     site_risks.sort(key=lambda s: (-s["level"], s["site"]))
     return {"generated": now.isoformat(), "sites": site_risks}
 
 
-async def _risk(site: str | None, match: str | None, as_json: bool) -> int:
+async def _risk(site: str | None, match: str | None, region: str | None, as_json: bool) -> int:
     config = load_config()
     now = datetime.now(timezone.utc)
     async with WastewaterClient(config) as client:
         if site:
             readings = await client.readings_for_site(site)
             result = assess_site(site, readings, config, now=now).to_dict()
+            result["region"] = region_for(site)
             print(json.dumps(result, indent=2))
             return 0
         payload = await _build_risk(client, config, now)
@@ -97,13 +101,16 @@ async def _risk(site: str | None, match: str | None, as_json: bool) -> int:
     rows = payload["sites"]
     if match:
         rows = [r for r in rows if match.lower() in r["site"].lower()]
+    if region:
+        rows = [r for r in rows if (r.get("region") or "").lower() == region.lower()]
     if as_json:
         print(json.dumps(rows, indent=2))
         return 0
     label = {0: "OK    ", 1: "CAUTION", 2: "AVOID  "}
     for r in rows:
         driver = f" ({r['driver']})" if r["driver"] else ""
-        print(f"{label.get(r['level'], '?'):8} {r['site']}{driver}")
+        region_tag = f" [{r['region']}]" if r.get("region") else ""
+        print(f"{label.get(r['level'], '?'):8} {r['site']}{driver}{region_tag}")
     return 0
 
 
@@ -211,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
     p_risk = sub.add_parser("risk", help="Go-out caution level per site (quintile + trend)")
     p_risk.add_argument("--site", help="Assess one site in detail (exact name)")
     p_risk.add_argument("--match", help="Filter the table to sites whose name contains this")
+    p_risk.add_argument("--region", help="Filter to a DHSEM region, e.g. North")
     p_risk.add_argument("--json", action="store_true", dest="as_json", help="Emit JSON")
 
     p_query = sub.add_parser("query", help="Run a raw where-clause (diagnostics)")
@@ -239,7 +247,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "latest":
         return asyncio.run(_latest(args.site, args.pathogen))
     if args.cmd == "risk":
-        return asyncio.run(_risk(args.site, args.match, args.as_json))
+        return asyncio.run(_risk(args.site, args.match, args.region, args.as_json))
     if args.cmd == "query":
         return asyncio.run(_query(args.where, args.limit, args.raw))
     if args.cmd == "poll":

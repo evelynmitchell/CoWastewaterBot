@@ -20,6 +20,7 @@ from .analysis import find_notable, summarize
 from .client import WastewaterClient
 from .config import load_config
 from .health import HealthStore, days_since_update
+from .regions import region_for
 from .risk import assess_site
 
 mcp = FastMCP(
@@ -140,7 +141,9 @@ async def risk_assessment(site: str) -> dict[str, Any]:
     config = load_config()
     async with WastewaterClient(config) as client:
         readings = await client.readings_for_site(site)
-    return assess_site(site, readings, config).to_dict()
+    result = assess_site(site, readings, config).to_dict()
+    result["region"] = region_for(site)
+    return result
 
 
 @mcp.tool()
