@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-21T15:36:35.869639+00:00",
+  "generated": "2026-07-22T15:35:03.108454+00:00",
   "sites": [
     {
       "site": "Brighton",
@@ -752,9 +752,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 600.0,
           "latest_date": "2026-07-12",
-          "n_history": 286,
+          "n_history": 285,
           "quintile": 2,
-          "percentile": 0.297,
+          "percentile": 0.298,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 0,
@@ -1172,7 +1172,7 @@
           "pathogen": "sars-cov-2",
           "latest_value": 600.0,
           "latest_date": "2026-07-13",
-          "n_history": 292,
+          "n_history": 291,
           "quintile": 1,
           "percentile": 0.158,
           "trend": "flat",
