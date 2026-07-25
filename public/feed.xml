@@ -10,6 +10,33 @@
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
   <entry>
+    <id>metro wastewater rwhtf - ntp|sars-cov-2|2026-07-16</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - NTP — concentration up 507% vs. prior reading [2026-07-16]</title>
+    <updated>2026-07-16T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - NTP — concentration up 507% vs. prior reading [2026-07-16]
+Concentration: 3640.0
+Why flagged: concentration up 507% vs. prior reading</content>
+    <published>2026-07-16T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|sars-cov-2|2026-07-16</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 1397% vs. prior reading [2026-07-16]</title>
+    <updated>2026-07-16T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 1397% vs. prior reading [2026-07-16]
+Concentration: 8980.0
+Why flagged: concentration up 1397% vs. prior reading</content>
+    <published>2026-07-16T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>co springs - jd phillips|sars-cov-2|2026-07-16</id>
+    <title>sars-cov-2 at CO Springs - JD Phillips — concentration up 3183% vs. prior reading [2026-07-16]</title>
+    <updated>2026-07-16T06:00:00+00:00</updated>
+    <content>sars-cov-2 at CO Springs - JD Phillips — concentration up 3183% vs. prior reading [2026-07-16]
+Concentration: 19700.0
+Why flagged: concentration up 3183% vs. prior reading</content>
+    <published>2026-07-16T06:00:00+00:00</published>
+  </entry>
+  <entry>
     <id>metro wastewater rwhtf - cc|rsv|2026-07-16</id>
     <title>RSV at Metro Wastewater RWHTF - CC — concentration up 498% vs. prior reading [2026-07-16]</title>
     <updated>2026-07-16T06:00:00+00:00</updated>

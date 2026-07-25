@@ -1,5 +1,32 @@
 [
   {
+    "id": "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-16",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - NTP \u2014 concentration up 507% vs. prior reading [2026-07-16]",
+    "site": "Metro Wastewater RWHTF - NTP",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-16T06:00:00+00:00",
+    "value": 3640.0,
+    "reason": "concentration up 507% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-07-16",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 1397% vs. prior reading [2026-07-16]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-16T06:00:00+00:00",
+    "value": 8980.0,
+    "reason": "concentration up 1397% vs. prior reading"
+  },
+  {
+    "id": "co springs - jd phillips|sars-cov-2|2026-07-16",
+    "title": "sars-cov-2 at CO Springs - JD Phillips \u2014 concentration up 3183% vs. prior reading [2026-07-16]",
+    "site": "CO Springs - JD Phillips",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-16T06:00:00+00:00",
+    "value": 19700.0,
+    "reason": "concentration up 3183% vs. prior reading"
+  },
+  {
     "id": "metro wastewater rwhtf - cc|rsv|2026-07-16",
     "title": "RSV at Metro Wastewater RWHTF - CC \u2014 concentration up 498% vs. prior reading [2026-07-16]",
     "site": "Metro Wastewater RWHTF - CC",
