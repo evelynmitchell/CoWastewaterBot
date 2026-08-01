@@ -1,5 +1,5 @@
 {
-  "latest_date": "2026-07-22T06:00:00+00:00",
+  "latest_date": "2026-07-23T06:00:00+00:00",
   "seen_keys": [
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
@@ -9,6 +9,7 @@
     "aspen|sars-cov-2|2026-07-21",
     "boulder|sars-cov-2|2026-07-06",
     "boulder|sars-cov-2|2026-07-16",
+    "boulder|sars-cov-2|2026-07-23",
     "co springs - jd phillips|sars-cov-2|2026-07-16",
     "co springs - las vegas|sars-cov-2|2026-07-06",
     "durango|sars-cov-2|2026-07-13",
@@ -16,6 +17,7 @@
     "fort collins - drake|sars-cov-2|2026-07-16",
     "glenwood springs|rsv|2026-07-16",
     "glenwood springs|sars-cov-2|2026-06-11",
+    "glenwood springs|sars-cov-2|2026-07-23",
     "grand junction - persigo|sars-cov-2|2026-07-08",
     "highlands ranch water and sanitation district|sars-cov-2|2026-06-11",
     "highlands ranch water and sanitation district|sars-cov-2|2026-06-25",
@@ -27,6 +29,7 @@
     "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-16",
     "metro wastewater rwhtf - prc|sars-cov-2|2026-07-06",
     "metro wastewater rwhtf - prc|sars-cov-2|2026-07-13",
+    "south platte|sars-cov-2|2026-07-22",
     "steamboat springs|ev-d68|2026-07-22",
     "steamboat springs|sars-cov-2|2026-07-08",
     "telluride|sars-cov-2|2026-07-06",

@@ -1,5 +1,32 @@
 [
   {
+    "id": "boulder|sars-cov-2|2026-07-23",
+    "title": "sars-cov-2 at Boulder \u2014 concentration up 615% vs. prior reading [2026-07-23]",
+    "site": "Boulder",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-23T06:00:00+00:00",
+    "value": 4290.0,
+    "reason": "concentration up 615% vs. prior reading"
+  },
+  {
+    "id": "glenwood springs|sars-cov-2|2026-07-23",
+    "title": "sars-cov-2 at Glenwood Springs \u2014 concentration up 1080% vs. prior reading [2026-07-23]",
+    "site": "Glenwood Springs",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-23T06:00:00+00:00",
+    "value": 7080.0,
+    "reason": "concentration up 1080% vs. prior reading"
+  },
+  {
+    "id": "south platte|sars-cov-2|2026-07-22",
+    "title": "sars-cov-2 at South Platte \u2014 concentration up 2683% vs. prior reading [2026-07-22]",
+    "site": "South Platte",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-22T06:00:00+00:00",
+    "value": 16700.0,
+    "reason": "concentration up 2683% vs. prior reading"
+  },
+  {
     "id": "aspen|sars-cov-2|2026-07-21",
     "title": "sars-cov-2 at Aspen \u2014 concentration up 1093% vs. prior reading [2026-07-21]",
     "site": "Aspen",
