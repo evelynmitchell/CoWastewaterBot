@@ -7,25 +7,27 @@ authoritative **county -> region** grouping from the Colorado DHSEM "Regional
 Service Areas" map (10 regions: North, Northwest, Northeast, East, Central,
 West, Southwest, San Luis Valley, South, Southeast).
 
-* ``_COUNTY_REGION`` — county -> region, read from the DHSEM map.
+* ``_COUNTY_REGION`` — county -> region, from the DHSEM field-service-area county
+  lists (authoritative; see https://dhsem.colorado.gov/fieldoperations). Every
+  region below matches DHSEM's published county roster.
 * ``_SITE_COUNTY`` — each monitoring utility -> the county its plant sits in.
 
-Region is derived from the two. Entries marked ``# verify`` sit on a region
-border (or a metro county whose region grouping is easy to misread); correct the
-county here if the dashboard disagrees.
+Region is derived from the two. County assignments are authoritative; entries
+marked ``# verify`` are towns that straddle a county line (the plant could sit in
+the neighboring county) — check against the dashboard if in doubt.
 """
 
 from __future__ import annotations
 
 _COUNTY_REGION: dict[str, str] = {
-    # North (northern Front Range + north-central mountains).
+    # North.
     **dict.fromkeys(
-        ["larimer", "boulder", "broomfield", "gilpin", "clear creek", "jackson", "grand"],
+        ["larimer", "boulder", "broomfield", "clear creek", "gilpin", "jefferson", "douglas"],
         "North",
     ),
     # Northwest.
     **dict.fromkeys(
-        ["moffat", "routt", "rio blanco", "garfield", "eagle", "pitkin", "summit"],
+        ["moffat", "routt", "rio blanco", "jackson", "grand", "eagle", "summit"],
         "Northwest",
     ),
     # Northeast.
@@ -33,21 +35,20 @@ _COUNTY_REGION: dict[str, str] = {
         ["weld", "morgan", "logan", "sedgwick", "phillips", "washington", "yuma"],
         "Northeast",
     ),
-    # East (Denver metro + eastern plains).
+    # East (Denver core + eastern plains).
     **dict.fromkeys(
-        ["denver", "adams", "arapahoe", "jefferson", "douglas", "elbert", "lincoln",
-         "kit carson", "cheyenne"],
+        ["denver", "adams", "arapahoe", "elbert", "lincoln", "kit carson", "cheyenne"],
         "East",
     ),
     # Central.
     **dict.fromkeys(["el paso", "teller", "park", "lake", "chaffee"], "Central"),
-    # West (western slope, incl. Mesa/Grand Junction).
+    # West (western slope, incl. Mesa/Grand Junction and Garfield/Pitkin).
     **dict.fromkeys(
-        ["mesa", "delta", "montrose", "gunnison", "ouray", "hinsdale", "san miguel"], "West"
+        ["mesa", "delta", "montrose", "gunnison", "ouray", "garfield", "pitkin"], "West"
     ),
     # Southwest.
     **dict.fromkeys(
-        ["montezuma", "dolores", "san juan", "la plata", "archuleta"], "Southwest"
+        ["montezuma", "dolores", "san juan", "la plata", "archuleta", "san miguel"], "Southwest"
     ),
     # San Luis Valley.
     **dict.fromkeys(
@@ -63,16 +64,16 @@ _COUNTY_REGION: dict[str, str] = {
 # Utility (as it appears in the data) -> county. Matched case-insensitively.
 _SITE_COUNTY: dict[str, str] = {
     "alamosa": "alamosa",
-    "arapahoe county": "arapahoe",  # verify: Denver-metro -> East
+    "arapahoe county": "arapahoe",  # East
     "aspen": "pitkin",
-    "aurora": "arapahoe",  # verify: Denver-metro -> East
-    "basalt": "eagle",
+    "aurora": "arapahoe",  # East
+    "basalt": "eagle",  # verify: straddles Eagle (NW) / Pitkin (West)
     "berthoud": "larimer",  # verify: straddles Larimer/Weld
     "boulder": "boulder",
-    "brighton": "adams",  # verify: Denver-metro -> East
+    "brighton": "adams",  # East
     "broomfield": "broomfield",
     "brush": "morgan",
-    "castle rock": "douglas",  # verify: Denver-metro -> East
+    "castle rock": "douglas",  # North (Douglas per DHSEM)
     "cherokee metro district": "el paso",
     "co springs - jd phillips": "el paso",
     "co springs - las vegas": "el paso",
@@ -84,7 +85,7 @@ _SITE_COUNTY: dict[str, str] = {
     "eagle river sd - avon": "eagle",
     "eagle river sd - edwards": "eagle",
     "eagle river sd - vail": "eagle",
-    "elizabeth": "elbert",  # verify: Denver-metro -> East
+    "elizabeth": "elbert",  # East (Elbert)
     "erie": "boulder",  # verify: straddles Boulder/Weld
     "estes park + upper thompson": "larimer",
     "fort collins - boxelder": "larimer",
@@ -95,16 +96,16 @@ _SITE_COUNTY: dict[str, str] = {
     "grand junction - persigo": "mesa",
     "greeley": "weld",
     "gunnison": "gunnison",
-    "highlands ranch water and sanitation district": "douglas",  # verify: metro -> East
+    "highlands ranch water and sanitation district": "douglas",  # North (Douglas)
     "keystone": "summit",
     "la junta": "otero",
     "lafayette": "boulder",
     "longmont": "boulder",  # verify: straddles Boulder/Weld
     "louisville": "boulder",
     "loveland": "larimer",
-    "metro wastewater rwhtf - cc": "adams",  # verify: Denver-metro -> East
-    "metro wastewater rwhtf - ntp": "adams",  # verify: Denver-metro -> East
-    "metro wastewater rwhtf - prc": "denver",  # verify: Denver-metro -> East
+    "metro wastewater rwhtf - cc": "adams",  # East
+    "metro wastewater rwhtf - ntp": "adams",  # East
+    "metro wastewater rwhtf - prc": "denver",  # East
     "montrose": "montrose",
     "nederland": "boulder",
     "ouray": "ouray",
@@ -116,19 +117,19 @@ _SITE_COUNTY: dict[str, str] = {
     "silverthorne/dillon": "summit",
     "silverton": "san juan",
     "snowmass village": "pitkin",
-    "south adams county": "adams",  # verify: Denver-metro -> East
+    "south adams county": "adams",  # East
     "south fort collins": "larimer",
     "south platte": "denver",  # verify: ambiguous "South Platte" plant
     "steamboat springs": "routt",
-    "telluride": "san miguel",  # verify: San Miguel West vs Southwest
-    "the pinery": "douglas",  # verify: Denver-metro -> East
+    "telluride": "san miguel",  # Southwest (San Miguel per DHSEM)
+    "the pinery": "douglas",  # North (Douglas)
     "tri-lakes - monument": "el paso",
     "tri-lakes - palmer lake": "el paso",
     "tri-lakes - woodmoor north": "el paso",
     "tri-lakes - woodmoor south": "el paso",
-    "trinidad": "las animas",  # verify: South vs Southeast
+    "trinidad": "las animas",  # South (Las Animas per DHSEM)
     "upper blue sd - breckenridge": "summit",
-    "walden": "jackson",  # verify: North vs Northwest
+    "walden": "jackson",  # Northwest (Jackson per DHSEM)
     "wellington": "larimer",
     "windsor": "weld",  # verify: straddles Weld/Larimer
     "woodland park": "teller",
