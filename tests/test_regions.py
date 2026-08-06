@@ -8,16 +8,22 @@ def test_fort_collins_is_north():
 
 
 def test_regions_across_the_state():
+    # Assignments match the DHSEM field-service-area county rosters.
     cases = {
         "Grand Junction - Persigo": "West",     # Mesa
         "CO Springs - JD Phillips": "Central",  # El Paso
-        "Aspen": "Northwest",                    # Pitkin
+        "Aspen": "West",                         # Pitkin -> West
+        "Glenwood Springs": "West",              # Garfield -> West
         "Greeley": "Northeast",                  # Weld
         "Durango": "Southwest",                  # La Plata
+        "Telluride": "Southwest",                # San Miguel -> Southwest
         "Alamosa": "San Luis Valley",
         "Pueblo": "South",
         "La Junta": "Southeast",                 # Otero
-        "Aurora": "East",                        # Denver metro
+        "Aurora": "East",                        # Adams/Arapahoe metro core
+        "Castle Rock": "North",                  # Douglas -> North
+        "Highlands Ranch Water and Sanitation District": "North",  # Douglas
+        "Walden": "Northwest",                   # Jackson -> Northwest
     }
     for site, region in cases.items():
         assert region_for(site) == region, site

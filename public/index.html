@@ -113,13 +113,25 @@
         "800": "East", "801": "East", "802": "East", "803": "North", "804": "East",
         "805": "North", "806": "Northeast", "807": "Northeast", "808": "Central",
         "809": "Central", "810": "South", "811": "San Luis Valley", "812": "Central",
-        "813": "Southwest", "814": "West", "815": "West", "816": "Northwest"
+        "813": "Southwest", "814": "West", "815": "West", "816": "West"
       };
       var ZIP_OVERRIDE = {
+        // Summit / Steamboat resort zips (in 804) -> Northwest.
         "80424": "Northwest", "80435": "Northwest", "80443": "Northwest", "80497": "Northwest",
-        "80498": "Northwest", "80487": "Northwest", "80461": "Central", "80550": "Northeast",
+        "80498": "Northwest", "80487": "Northwest", "80461": "Central",
+        // Douglas County (in 801) -> North per DHSEM.
+        "80104": "North", "80108": "North", "80109": "North", "80124": "North",
+        "80126": "North", "80129": "North", "80130": "North", "80134": "North", "80138": "North",
+        // Windsor (Weld) -> Northeast.
+        "80550": "Northeast",
+        // Eagle/Moffat/Rio Blanco (in 816) -> Northwest, not West.
+        "81620": "Northwest", "81621": "Northwest", "81631": "Northwest", "81632": "Northwest",
+        "81637": "Northwest", "81641": "Northwest", "81657": "Northwest", "81625": "Northwest",
+        // West-slope Gunnison basin (in 812) -> West.
         "81230": "West", "81224": "West", "81225": "West",
+        // Southeast plains (in 810).
         "81050": "Southeast", "81052": "Southeast", "81054": "Southeast", "81073": "Southeast",
+        // Trinidad / Walsenburg (in 811) -> South.
         "81082": "South", "81089": "South"
       };
       function zipToRegion(zip) {

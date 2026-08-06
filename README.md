@@ -184,9 +184,11 @@ Northeast, East, Central, West, Southwest, San Luis Valley, South, Southeast), o
 type a **zip** to auto-select your region (an approximate ZIP3 + overrides map in
 the page).
 The region isn't in the CDPHE data (no region/geometry column), so it's a curated
-`utility → county → region` map in [`regions.py`](src/cowastewater/regions.py)
-built from the [Colorado DHSEM regional service areas map](https://dhsem.colorado.gov/fieldoperations);
-border-straddling sites are marked `# verify`. `cowastewater risk --region North`.
+`utility → county → region` map in [`regions.py`](src/cowastewater/regions.py).
+County→region matches the authoritative
+[DHSEM field-service-area rosters](https://dhsem.colorado.gov/fieldoperations)
+(every region's county list matches DHSEM); only towns that straddle a county
+line remain flagged `# verify`. `cowastewater risk --region North`.
 
 > Not medical advice — a transparent heuristic over public data.
 
