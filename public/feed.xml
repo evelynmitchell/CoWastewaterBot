@@ -2,13 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-07-23T06:00:00+00:00</updated>
+  <updated>2026-08-03T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>metro wastewater rwhtf - cc|sars-cov-2|2026-08-03</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 793% vs. prior reading [2026-08-03]</title>
+    <updated>2026-08-03T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 793% vs. prior reading [2026-08-03]
+Concentration: 5360.0
+Why flagged: concentration up 793% vs. prior reading</content>
+    <published>2026-08-03T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>fort collins - drake|ev-d68|2026-08-03</id>
+    <title>EV-D68 at Fort Collins - Drake — concentration up 845% vs. prior reading [2026-08-03]</title>
+    <updated>2026-08-03T06:00:00+00:00</updated>
+    <content>EV-D68 at Fort Collins - Drake — concentration up 845% vs. prior reading [2026-08-03]
+Concentration: 5670.0
+Why flagged: concentration up 845% vs. prior reading</content>
+    <published>2026-08-03T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>aspen|rsv|2026-07-30</id>
+    <title>RSV at Aspen — concentration up 1225% vs. prior reading [2026-07-30]</title>
+    <updated>2026-07-30T06:00:00+00:00</updated>
+    <content>RSV at Aspen — concentration up 1225% vs. prior reading [2026-07-30]
+Concentration: 7950.0
+Why flagged: concentration up 1225% vs. prior reading</content>
+    <published>2026-07-30T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - ntp|sars-cov-2|2026-07-30</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - NTP — concentration up 1617% vs. prior reading [2026-07-30]</title>
+    <updated>2026-07-30T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - NTP — concentration up 1617% vs. prior reading [2026-07-30]
+Concentration: 10300.0
+Why flagged: concentration up 1617% vs. prior reading</content>
+    <published>2026-07-30T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>boulder|sars-cov-2|2026-07-23</id>
     <title>sars-cov-2 at Boulder — concentration up 615% vs. prior reading [2026-07-23]</title>

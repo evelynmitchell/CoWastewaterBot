@@ -1,5 +1,41 @@
 [
   {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-08-03",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 793% vs. prior reading [2026-08-03]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-03T06:00:00+00:00",
+    "value": 5360.0,
+    "reason": "concentration up 793% vs. prior reading"
+  },
+  {
+    "id": "fort collins - drake|ev-d68|2026-08-03",
+    "title": "EV-D68 at Fort Collins - Drake \u2014 concentration up 845% vs. prior reading [2026-08-03]",
+    "site": "Fort Collins - Drake",
+    "pathogen": "EV-D68",
+    "date": "2026-08-03T06:00:00+00:00",
+    "value": 5670.0,
+    "reason": "concentration up 845% vs. prior reading"
+  },
+  {
+    "id": "aspen|rsv|2026-07-30",
+    "title": "RSV at Aspen \u2014 concentration up 1225% vs. prior reading [2026-07-30]",
+    "site": "Aspen",
+    "pathogen": "RSV",
+    "date": "2026-07-30T06:00:00+00:00",
+    "value": 7950.0,
+    "reason": "concentration up 1225% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-30",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - NTP \u2014 concentration up 1617% vs. prior reading [2026-07-30]",
+    "site": "Metro Wastewater RWHTF - NTP",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-30T06:00:00+00:00",
+    "value": 10300.0,
+    "reason": "concentration up 1617% vs. prior reading"
+  },
+  {
     "id": "boulder|sars-cov-2|2026-07-23",
     "title": "sars-cov-2 at Boulder \u2014 concentration up 615% vs. prior reading [2026-07-23]",
     "site": "Boulder",
