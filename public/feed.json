@@ -1,5 +1,77 @@
 [
   {
+    "id": "boulder|sars-cov-2|2026-07-27",
+    "title": "sars-cov-2 at Boulder \u2014 concentration up 68% vs. prior reading [2026-07-27]",
+    "site": "Boulder",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-27T06:00:00+00:00",
+    "value": 7190.0,
+    "reason": "concentration up 68% vs. prior reading"
+  },
+  {
+    "id": "telluride|sars-cov-2|2026-07-29",
+    "title": "sars-cov-2 at Telluride \u2014 concentration up 82% vs. prior reading [2026-07-29]",
+    "site": "Telluride",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-29T06:00:00+00:00",
+    "value": 7250.0,
+    "reason": "concentration up 82% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-07-22",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 96% vs. prior reading [2026-07-22]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-22T06:00:00+00:00",
+    "value": 34500.0,
+    "reason": "concentration up 96% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-07-20",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 122% vs. prior reading [2026-07-20]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-20T06:00:00+00:00",
+    "value": 17700.0,
+    "reason": "concentration up 122% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-07-30",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 192% vs. prior reading [2026-07-30]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-30T06:00:00+00:00",
+    "value": 15100.0,
+    "reason": "concentration up 192% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-07-23",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 249% vs. prior reading [2026-07-23]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-23T06:00:00+00:00",
+    "value": 25000.0,
+    "reason": "concentration up 249% vs. prior reading"
+  },
+  {
+    "id": "alamosa|sars-cov-2|2026-07-16",
+    "title": "sars-cov-2 at Alamosa \u2014 concentration up 362% vs. prior reading [2026-07-16]",
+    "site": "Alamosa",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-16T06:00:00+00:00",
+    "value": 25900.0,
+    "reason": "concentration up 362% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-07-30",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 465% vs. prior reading [2026-07-30]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-07-30T06:00:00+00:00",
+    "value": 30000.0,
+    "reason": "concentration up 465% vs. prior reading"
+  },
+  {
     "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-08-03",
     "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 793% vs. prior reading [2026-08-03]",
     "site": "Metro Wastewater RWHTF - CC",

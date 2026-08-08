@@ -10,6 +10,78 @@
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
   <entry>
+    <id>boulder|sars-cov-2|2026-07-27</id>
+    <title>sars-cov-2 at Boulder — concentration up 68% vs. prior reading [2026-07-27]</title>
+    <updated>2026-07-27T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Boulder — concentration up 68% vs. prior reading [2026-07-27]
+Concentration: 7190.0
+Why flagged: concentration up 68% vs. prior reading</content>
+    <published>2026-07-27T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>telluride|sars-cov-2|2026-07-29</id>
+    <title>sars-cov-2 at Telluride — concentration up 82% vs. prior reading [2026-07-29]</title>
+    <updated>2026-07-29T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Telluride — concentration up 82% vs. prior reading [2026-07-29]
+Concentration: 7250.0
+Why flagged: concentration up 82% vs. prior reading</content>
+    <published>2026-07-29T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>highlands ranch water and sanitation district|sars-cov-2|2026-07-22</id>
+    <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 96% vs. prior reading [2026-07-22]</title>
+    <updated>2026-07-22T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 96% vs. prior reading [2026-07-22]
+Concentration: 34500.0
+Why flagged: concentration up 96% vs. prior reading</content>
+    <published>2026-07-22T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|sars-cov-2|2026-07-20</id>
+    <title>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 122% vs. prior reading [2026-07-20]</title>
+    <updated>2026-07-20T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 122% vs. prior reading [2026-07-20]
+Concentration: 17700.0
+Why flagged: concentration up 122% vs. prior reading</content>
+    <published>2026-07-20T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>highlands ranch water and sanitation district|sars-cov-2|2026-07-30</id>
+    <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 192% vs. prior reading [2026-07-30]</title>
+    <updated>2026-07-30T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 192% vs. prior reading [2026-07-30]
+Concentration: 15100.0
+Why flagged: concentration up 192% vs. prior reading</content>
+    <published>2026-07-30T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>aspen|sars-cov-2|2026-07-23</id>
+    <title>sars-cov-2 at Aspen — concentration up 249% vs. prior reading [2026-07-23]</title>
+    <updated>2026-07-23T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 249% vs. prior reading [2026-07-23]
+Concentration: 25000.0
+Why flagged: concentration up 249% vs. prior reading</content>
+    <published>2026-07-23T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>alamosa|sars-cov-2|2026-07-16</id>
+    <title>sars-cov-2 at Alamosa — concentration up 362% vs. prior reading [2026-07-16]</title>
+    <updated>2026-07-16T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Alamosa — concentration up 362% vs. prior reading [2026-07-16]
+Concentration: 25900.0
+Why flagged: concentration up 362% vs. prior reading</content>
+    <published>2026-07-16T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>aspen|sars-cov-2|2026-07-30</id>
+    <title>sars-cov-2 at Aspen — concentration up 465% vs. prior reading [2026-07-30]</title>
+    <updated>2026-07-30T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 465% vs. prior reading [2026-07-30]
+Concentration: 30000.0
+Why flagged: concentration up 465% vs. prior reading</content>
+    <published>2026-07-30T06:00:00+00:00</published>
+  </entry>
+  <entry>
     <id>metro wastewater rwhtf - cc|sars-cov-2|2026-08-03</id>
     <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 793% vs. prior reading [2026-08-03]</title>
     <updated>2026-08-03T06:00:00+00:00</updated>
