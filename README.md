@@ -207,7 +207,7 @@ noise controls keep the feed from crying wolf:
 | Knob | Default | Effect |
 | --- | --- | --- |
 | `COWW_SPIKE_PCT` | `50` | Minimum % jump to flag a spike |
-| `COWW_SPIKE_MIN_BASELINE` | `0` | Ignore spikes whose baseline is below this — a jump up from near-zero is mostly detection-floor noise. Set once you know the value scale (see below). |
+| `COWW_SPIKE_MIN_BASELINE` | `1000` | Ignore spikes whose baseline is below this. CDPHE reports ~600 for below-detection readings and real concentrations run tens of thousands, so the default sits in the dead zone and drops jumps off the detection floor. |
 | `COWW_NOTABLE_MAX` | `25` | Cap items per run, ranked by severity (`0` = no cap) |
 
 **Lab-phase guard.** The concentration lives in `viral_conc_raw_LP1/2/3` by lab

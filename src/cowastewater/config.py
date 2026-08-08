@@ -94,10 +94,12 @@ class Config:
     # Notable-change thresholds (see cowastewater.analysis).
     # Percent increase in concentration vs. the prior reading that counts as a spike.
     spike_pct: float = float(_env("COWW_SPIKE_PCT", "50"))
-    # Noise floor: ignore spikes whose prior (baseline) reading is below this, so a
-    # jump up from near-zero doesn't dominate. Units match the layer's values; set
-    # once you know the scale (see `cowastewater query --raw`). 0 = no floor.
-    spike_min_baseline: float = float(_env("COWW_SPIKE_MIN_BASELINE", "0"))
+    # Noise floor: ignore spikes whose prior (baseline) reading is below this.
+    # CDPHE substitutes ~600 for below-detection readings, and real SARS-CoV-2
+    # concentrations run tens of thousands (median ~45k), so almost every "spike"
+    # is really a jump off that 600 floor. Default 1000 sits in the dead zone
+    # between the floor and real values. 0 = no floor. (See `cowastewater query --raw`.)
+    spike_min_baseline: float = float(_env("COWW_SPIKE_MIN_BASELINE", "1000"))
     # Cap how many changes a single run emits (ranked by severity). 0 = no cap.
     notable_max: int = int(_env("COWW_NOTABLE_MAX", "25"))
     # Trend strings (case-insensitive) that count as "notable" on their own.

@@ -22,7 +22,7 @@ def _reading(site, pathogen, date_ms, value, trend=None, lab_phase=None):
 
 
 def test_spike_detected_across_consecutive_readings():
-    config = Config(spike_pct=50)
+    config = Config(spike_pct=50, spike_min_baseline=0)
     readings = [
         _reading("Metro Denver", "SARS-CoV-2", 1718150400000, 100.0),
         _reading("Metro Denver", "SARS-CoV-2", 1718755200000, 250.0),  # +150%
@@ -34,7 +34,7 @@ def test_spike_detected_across_consecutive_readings():
 
 
 def test_small_rise_below_threshold_ignored():
-    config = Config(spike_pct=50)
+    config = Config(spike_pct=50, spike_min_baseline=0)
     readings = [
         _reading("Metro Denver", "SARS-CoV-2", 1718150400000, 100.0),
         _reading("Metro Denver", "SARS-CoV-2", 1718755200000, 120.0),  # +20%
@@ -51,7 +51,7 @@ def test_increasing_trend_flagged_without_prior():
 
 
 def test_series_are_isolated_by_site_and_pathogen():
-    config = Config(spike_pct=50)
+    config = Config(spike_pct=50, spike_min_baseline=0)
     # A jump only appears if the two Denver readings are compared to each other,
     # not to Boulder's unrelated series.
     readings = [
@@ -65,7 +65,7 @@ def test_series_are_isolated_by_site_and_pathogen():
 
 
 def test_summarize_is_human_readable():
-    config = Config(spike_pct=50)
+    config = Config(spike_pct=50, spike_min_baseline=0)
     readings = [
         _reading("Metro Denver", "SARS-CoV-2", 1718150400000, 100.0),
         _reading("Metro Denver", "SARS-CoV-2", 1718755200000, 250.0),
@@ -86,7 +86,7 @@ def test_noise_floor_skips_low_baseline_spikes():
 
 def test_spike_not_flagged_across_lab_phase_change():
     # A jump that coincides with a lab-method change is not comparable.
-    config = Config(spike_pct=50)
+    config = Config(spike_pct=50, spike_min_baseline=0)
     readings = [
         _reading("Boulder", "SARS-CoV-2", 1718150400000, 100.0, lab_phase="LP1"),
         _reading("Boulder", "SARS-CoV-2", 1718755200000, 900.0, lab_phase="LP2"),
@@ -94,9 +94,26 @@ def test_spike_not_flagged_across_lab_phase_change():
     assert find_notable(readings, config) == []
 
 
+def test_default_floor_suppresses_detection_floor_spikes():
+    # CDPHE substitutes ~600 for below-detection; the default floor (1000) ignores
+    # jumps off that floor but keeps spikes off a real baseline.
+    config = Config()  # default spike_min_baseline == 1000
+    off_floor = [
+        _reading("Aspen", "SARS-CoV-2", 1718150400000, 600.0),
+        _reading("Aspen", "SARS-CoV-2", 1718755200000, 45000.0),  # huge %, but off the 600 floor
+    ]
+    assert find_notable(off_floor, config) == []
+
+    real = [
+        _reading("Boulder", "SARS-CoV-2", 1718150400000, 7000.0),
+        _reading("Boulder", "SARS-CoV-2", 1718755200000, 14000.0),  # +100% off a real baseline
+    ]
+    assert len(find_notable(real, config)) == 1
+
+
 def test_notable_max_caps_and_ranks_by_severity():
     # Two spikes in different series; cap to 1 keeps the more severe one.
-    config = Config(spike_pct=50, notable_max=1)
+    config = Config(spike_pct=50, notable_max=1, spike_min_baseline=0)
     readings = [
         _reading("Boulder", "SARS-CoV-2", 1718150400000, 100.0),
         _reading("Boulder", "SARS-CoV-2", 1718755200000, 200.0),  # +100%
