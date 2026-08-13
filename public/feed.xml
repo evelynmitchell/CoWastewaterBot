@@ -2,13 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-08-03T06:00:00+00:00</updated>
+  <updated>2026-08-06T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>aspen|sars-cov-2|2026-08-06</id>
+    <title>sars-cov-2 at Aspen — concentration up 52% vs. prior reading [2026-08-06]</title>
+    <updated>2026-08-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 52% vs. prior reading [2026-08-06]
+Concentration: 9910.0
+Why flagged: concentration up 52% vs. prior reading</content>
+    <published>2026-08-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|sars-cov-2|2026-08-06</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 88% vs. prior reading [2026-08-06]</title>
+    <updated>2026-08-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 88% vs. prior reading [2026-08-06]
+Concentration: 10100.0
+Why flagged: concentration up 88% vs. prior reading</content>
+    <published>2026-08-06T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>boulder|sars-cov-2|2026-07-27</id>
     <title>sars-cov-2 at Boulder — concentration up 68% vs. prior reading [2026-07-27]</title>

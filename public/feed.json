@@ -1,5 +1,23 @@
 [
   {
+    "id": "aspen|sars-cov-2|2026-08-06",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 52% vs. prior reading [2026-08-06]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-06T06:00:00+00:00",
+    "value": 9910.0,
+    "reason": "concentration up 52% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-08-06",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 88% vs. prior reading [2026-08-06]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-06T06:00:00+00:00",
+    "value": 10100.0,
+    "reason": "concentration up 88% vs. prior reading"
+  },
+  {
     "id": "boulder|sars-cov-2|2026-07-27",
     "title": "sars-cov-2 at Boulder \u2014 concentration up 68% vs. prior reading [2026-07-27]",
     "site": "Boulder",
