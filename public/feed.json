@@ -1,5 +1,14 @@
 [
   {
+    "id": "aspen|sars-cov-2|2026-08-11",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 59% vs. prior reading [2026-08-11]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-11T06:00:00+00:00",
+    "value": 15800.0,
+    "reason": "concentration up 59% vs. prior reading"
+  },
+  {
     "id": "aspen|sars-cov-2|2026-08-06",
     "title": "sars-cov-2 at Aspen \u2014 concentration up 52% vs. prior reading [2026-08-06]",
     "site": "Aspen",
