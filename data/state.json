@@ -1,5 +1,5 @@
 {
-  "latest_date": "2026-08-11T06:00:00+00:00",
+  "latest_date": "2026-08-13T06:00:00+00:00",
   "seen_keys": [
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
@@ -33,6 +33,7 @@
     "highlands ranch water and sanitation district|sars-cov-2|2026-07-15",
     "highlands ranch water and sanitation district|sars-cov-2|2026-07-22",
     "highlands ranch water and sanitation district|sars-cov-2|2026-07-30",
+    "highlands ranch water and sanitation district|sars-cov-2|2026-08-13",
     "metro wastewater rwhtf - cc|rsv|2026-07-16",
     "metro wastewater rwhtf - cc|sars-cov-2|2026-07-06",
     "metro wastewater rwhtf - cc|sars-cov-2|2026-07-16",
@@ -52,6 +53,7 @@
     "upper blue sd - breckenridge|sars-cov-2|2026-06-11",
     "upper blue sd - breckenridge|sars-cov-2|2026-07-06",
     "upper blue sd - breckenridge|sars-cov-2|2026-07-16",
-    "upper blue sd - breckenridge|sars-cov-2|2026-07-20"
+    "upper blue sd - breckenridge|sars-cov-2|2026-07-20",
+    "upper blue sd - breckenridge|sars-cov-2|2026-08-13"
   ]
 }

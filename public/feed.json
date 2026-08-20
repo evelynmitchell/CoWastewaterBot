@@ -1,5 +1,23 @@
 [
   {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-08-13",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 64% vs. prior reading [2026-08-13]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-13T06:00:00+00:00",
+    "value": 29400.0,
+    "reason": "concentration up 64% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-08-13",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 211% vs. prior reading [2026-08-13]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-13T06:00:00+00:00",
+    "value": 13300.0,
+    "reason": "concentration up 211% vs. prior reading"
+  },
+  {
     "id": "aspen|sars-cov-2|2026-08-11",
     "title": "sars-cov-2 at Aspen \u2014 concentration up 59% vs. prior reading [2026-08-11]",
     "site": "Aspen",
