@@ -1,5 +1,23 @@
 [
   {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-08-24",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 224% vs. prior reading [2026-08-24]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-24T06:00:00+00:00",
+    "value": 17470.0,
+    "reason": "concentration up 224% vs. prior reading"
+  },
+  {
+    "id": "alamosa|sars-cov-2|2026-08-24",
+    "title": "sars-cov-2 at Alamosa \u2014 concentration up 349% vs. prior reading [2026-08-24]",
+    "site": "Alamosa",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-24T06:00:00+00:00",
+    "value": 26850.0,
+    "reason": "concentration up 349% vs. prior reading"
+  },
+  {
     "id": "highlands ranch water and sanitation district|sars-cov-2|2026-08-13",
     "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 64% vs. prior reading [2026-08-13]",
     "site": "Highlands Ranch Water and Sanitation District",

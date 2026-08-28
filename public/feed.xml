@@ -2,13 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-08-13T06:00:00+00:00</updated>
+  <updated>2026-08-24T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>upper blue sd - breckenridge|sars-cov-2|2026-08-24</id>
+    <title>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 224% vs. prior reading [2026-08-24]</title>
+    <updated>2026-08-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 224% vs. prior reading [2026-08-24]
+Concentration: 17470.0
+Why flagged: concentration up 224% vs. prior reading</content>
+    <published>2026-08-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>alamosa|sars-cov-2|2026-08-24</id>
+    <title>sars-cov-2 at Alamosa — concentration up 349% vs. prior reading [2026-08-24]</title>
+    <updated>2026-08-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Alamosa — concentration up 349% vs. prior reading [2026-08-24]
+Concentration: 26850.0
+Why flagged: concentration up 349% vs. prior reading</content>
+    <published>2026-08-24T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>highlands ranch water and sanitation district|sars-cov-2|2026-08-13</id>
     <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 64% vs. prior reading [2026-08-13]</title>

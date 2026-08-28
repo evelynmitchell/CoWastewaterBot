@@ -1,9 +1,10 @@
 {
-  "latest_date": "2026-08-13T06:00:00+00:00",
+  "latest_date": "2026-08-24T06:00:00+00:00",
   "seen_keys": [
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
     "alamosa|sars-cov-2|2026-07-16",
+    "alamosa|sars-cov-2|2026-08-24",
     "aspen|rsv|2026-07-16",
     "aspen|rsv|2026-07-30",
     "aspen|sars-cov-2|2026-07-07",
@@ -54,6 +55,7 @@
     "upper blue sd - breckenridge|sars-cov-2|2026-07-06",
     "upper blue sd - breckenridge|sars-cov-2|2026-07-16",
     "upper blue sd - breckenridge|sars-cov-2|2026-07-20",
-    "upper blue sd - breckenridge|sars-cov-2|2026-08-13"
+    "upper blue sd - breckenridge|sars-cov-2|2026-08-13",
+    "upper blue sd - breckenridge|sars-cov-2|2026-08-24"
   ]
 }
