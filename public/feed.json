@@ -1,5 +1,23 @@
 [
   {
+    "id": "boulder|sars-cov-2|2026-08-27",
+    "title": "sars-cov-2 at Boulder \u2014 concentration up 162% vs. prior reading [2026-08-27]",
+    "site": "Boulder",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-27T06:00:00+00:00",
+    "value": 20200.0,
+    "reason": "concentration up 162% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-08-27",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 212% vs. prior reading [2026-08-27]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-08-27T06:00:00+00:00",
+    "value": 19100.0,
+    "reason": "concentration up 212% vs. prior reading"
+  },
+  {
     "id": "upper blue sd - breckenridge|sars-cov-2|2026-08-24",
     "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 224% vs. prior reading [2026-08-24]",
     "site": "Upper Blue SD - Breckenridge",
