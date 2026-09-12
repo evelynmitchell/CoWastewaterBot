@@ -1,5 +1,14 @@
 [
   {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-09-03",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 178% vs. prior reading [2026-09-03]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-03T06:00:00+00:00",
+    "value": 10700.0,
+    "reason": "concentration up 178% vs. prior reading"
+  },
+  {
     "id": "boulder|sars-cov-2|2026-08-27",
     "title": "sars-cov-2 at Boulder \u2014 concentration up 162% vs. prior reading [2026-08-27]",
     "site": "Boulder",

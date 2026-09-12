@@ -1,5 +1,5 @@
 {
-  "latest_date": "2026-08-27T06:00:00+00:00",
+  "latest_date": "2026-09-03T06:00:00+00:00",
   "seen_keys": [
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
@@ -42,6 +42,7 @@
     "metro wastewater rwhtf - cc|sars-cov-2|2026-07-16",
     "metro wastewater rwhtf - cc|sars-cov-2|2026-08-03",
     "metro wastewater rwhtf - cc|sars-cov-2|2026-08-06",
+    "metro wastewater rwhtf - cc|sars-cov-2|2026-09-03",
     "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-16",
     "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-30",
     "metro wastewater rwhtf - prc|sars-cov-2|2026-07-06",
