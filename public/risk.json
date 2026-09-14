@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-13T15:11:25.331307+00:00",
+  "generated": "2026-09-14T15:14:53.255855+00:00",
   "sites": [
     {
       "site": "Brush",
@@ -602,9 +602,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 49800.0,
           "latest_date": "2024-07-30",
-          "n_history": 88,
+          "n_history": 87,
           "quintile": 4,
-          "percentile": 0.795,
+          "percentile": 0.793,
           "trend": "falling",
           "trend_pct": -50.1,
           "level": 1,
@@ -1313,7 +1313,7 @@
           "pathogen": "sars-cov-2",
           "latest_value": 507000.0,
           "latest_date": "2024-07-30",
-          "n_history": 87,
+          "n_history": 86,
           "quintile": 5,
           "percentile": 1.0,
           "trend": "flat",
