@@ -1,5 +1,68 @@
 [
   {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-09-10",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 87% vs. prior reading [2026-09-10]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 33700.0,
+    "reason": "concentration up 87% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|ev-d68|2026-09-10",
+    "title": "EV-D68 at Highlands Ranch Water and Sanitation District \u2014 concentration up 134% vs. prior reading [2026-09-10]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "EV-D68",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 21000.0,
+    "reason": "concentration up 134% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-09-10",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 162% vs. prior reading [2026-09-10]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 26500.0,
+    "reason": "concentration up 162% vs. prior reading"
+  },
+  {
+    "id": "fort collins - drake|ev-d68|2026-09-10",
+    "title": "EV-D68 at Fort Collins - Drake \u2014 concentration up 180% vs. prior reading [2026-09-10]",
+    "site": "Fort Collins - Drake",
+    "pathogen": "EV-D68",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 12000.0,
+    "reason": "concentration up 180% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-09-08",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 221% vs. prior reading [2026-09-08]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-08T06:00:00+00:00",
+    "value": 16200.0,
+    "reason": "concentration up 221% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - ntp|sars-cov-2|2026-09-10",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - NTP \u2014 concentration up 261% vs. prior reading [2026-09-10]",
+    "site": "Metro Wastewater RWHTF - NTP",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 15900.0,
+    "reason": "concentration up 261% vs. prior reading"
+  },
+  {
+    "id": "glenwood springs|sars-cov-2|2026-09-10",
+    "title": "sars-cov-2 at Glenwood Springs \u2014 concentration up 406% vs. prior reading [2026-09-10]",
+    "site": "Glenwood Springs",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 21400.0,
+    "reason": "concentration up 406% vs. prior reading"
+  },
+  {
     "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-09-03",
     "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 178% vs. prior reading [2026-09-03]",
     "site": "Metro Wastewater RWHTF - CC",
