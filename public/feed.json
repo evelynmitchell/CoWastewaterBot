@@ -1,5 +1,41 @@
 [
   {
+    "id": "metro wastewater rwhtf - cc|ev-d68|2026-09-14",
+    "title": "EV-D68 at Metro Wastewater RWHTF - CC \u2014 concentration up 93% vs. prior reading [2026-09-14]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "EV-D68",
+    "date": "2026-09-14T06:00:00+00:00",
+    "value": 13200.0,
+    "reason": "concentration up 93% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-09-14",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 112% vs. prior reading [2026-09-14]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-14T06:00:00+00:00",
+    "value": 16200.0,
+    "reason": "concentration up 112% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-09-10",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 373% vs. prior reading [2026-09-10]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 76600.0,
+    "reason": "concentration up 373% vs. prior reading"
+  },
+  {
+    "id": "durango|sars-cov-2|2026-09-14",
+    "title": "sars-cov-2 at Durango \u2014 concentration up 1176% vs. prior reading [2026-09-14]",
+    "site": "Durango",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-14T06:00:00+00:00",
+    "value": 78700.0,
+    "reason": "concentration up 1176% vs. prior reading"
+  },
+  {
     "id": "highlands ranch water and sanitation district|sars-cov-2|2026-09-10",
     "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 87% vs. prior reading [2026-09-10]",
     "site": "Highlands Ranch Water and Sanitation District",

@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "days_since_update": 8,
-  "days_since_last_outage": 2,
+  "days_since_update": 5,
+  "days_since_last_outage": 3,
   "outage_events": 1,
-  "last_data_date": "2026-09-10",
+  "last_data_date": "2026-09-14",
   "last_outage_date": "2026-09-16",
-  "last_checked": "2026-09-18T15:13:18.462655+00:00",
+  "last_checked": "2026-09-19T15:11:27.855529+00:00",
   "in_outage": false
 }

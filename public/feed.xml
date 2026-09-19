@@ -2,13 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-09-10T06:00:00+00:00</updated>
+  <updated>2026-09-14T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>metro wastewater rwhtf - cc|ev-d68|2026-09-14</id>
+    <title>EV-D68 at Metro Wastewater RWHTF - CC — concentration up 93% vs. prior reading [2026-09-14]</title>
+    <updated>2026-09-14T06:00:00+00:00</updated>
+    <content>EV-D68 at Metro Wastewater RWHTF - CC — concentration up 93% vs. prior reading [2026-09-14]
+Concentration: 13200.0
+Why flagged: concentration up 93% vs. prior reading</content>
+    <published>2026-09-14T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|sars-cov-2|2026-09-14</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 112% vs. prior reading [2026-09-14]</title>
+    <updated>2026-09-14T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 112% vs. prior reading [2026-09-14]
+Concentration: 16200.0
+Why flagged: concentration up 112% vs. prior reading</content>
+    <published>2026-09-14T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|sars-cov-2|2026-09-10</id>
+    <title>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 373% vs. prior reading [2026-09-10]</title>
+    <updated>2026-09-10T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 373% vs. prior reading [2026-09-10]
+Concentration: 76600.0
+Why flagged: concentration up 373% vs. prior reading</content>
+    <published>2026-09-10T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>durango|sars-cov-2|2026-09-14</id>
+    <title>sars-cov-2 at Durango — concentration up 1176% vs. prior reading [2026-09-14]</title>
+    <updated>2026-09-14T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Durango — concentration up 1176% vs. prior reading [2026-09-14]
+Concentration: 78700.0
+Why flagged: concentration up 1176% vs. prior reading</content>
+    <published>2026-09-14T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>highlands ranch water and sanitation district|sars-cov-2|2026-09-10</id>
     <title>sars-cov-2 at Highlands Ranch Water and Sanitation District — concentration up 87% vs. prior reading [2026-09-10]</title>
