@@ -1,6 +1,39 @@
 {
-  "generated": "2026-09-23T15:13:44.224966+00:00",
+  "generated": "2026-09-24T15:14:09.782550+00:00",
   "sites": [
+    {
+      "site": "Alamosa",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 178,
+          "quintile": 4,
+          "percentile": 0.798,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 99700.0,
+          "latest_date": "2026-09-17",
+          "n_history": 269,
+          "quintile": 4,
+          "percentile": 0.758,
+          "trend": "rising",
+          "trend_pct": 271.3,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "San Luis Valley"
+    },
     {
       "site": "Aspen",
       "level": 2,
@@ -10,10 +43,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-10",
-          "n_history": 186,
+          "latest_date": "2026-09-17",
+          "n_history": 188,
           "quintile": 4,
-          "percentile": 0.796,
+          "percentile": 0.798,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -21,18 +54,51 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 26500.0,
-          "latest_date": "2026-09-10",
-          "n_history": 285,
-          "quintile": 3,
-          "percentile": 0.544,
+          "latest_value": 110000.0,
+          "latest_date": "2026-09-17",
+          "n_history": 286,
+          "quintile": 5,
+          "percentile": 0.808,
           "trend": "rising",
-          "trend_pct": 38.7,
+          "trend_pct": 989.1,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
       ],
       "region": "West"
+    },
+    {
+      "site": "Boulder",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 191,
+          "quintile": 4,
+          "percentile": 0.707,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 45200.0,
+          "latest_date": "2026-09-17",
+          "n_history": 290,
+          "quintile": 4,
+          "percentile": 0.617,
+          "trend": "rising",
+          "trend_pct": 642.2,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "North"
     },
     {
       "site": "Brush",
@@ -56,6 +122,39 @@
       "region": "Northeast"
     },
     {
+      "site": "CO Springs - JD Phillips",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 190,
+          "quintile": 4,
+          "percentile": 0.774,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 9100.0,
+          "latest_date": "2026-09-17",
+          "n_history": 285,
+          "quintile": 3,
+          "percentile": 0.428,
+          "trend": "rising",
+          "trend_pct": 1416.7,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "Central"
+    },
+    {
       "site": "CO Springs - Las Vegas",
       "level": 2,
       "verdict": "Avoid \u2014 elevated & rising",
@@ -64,10 +163,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 187,
+          "latest_date": "2026-09-17",
+          "n_history": 188,
           "quintile": 5,
-          "percentile": 0.877,
+          "percentile": 0.878,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -75,13 +174,13 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 6220.0,
-          "latest_date": "2026-09-14",
+          "latest_value": 8130.0,
+          "latest_date": "2026-09-17",
           "n_history": 284,
           "quintile": 3,
-          "percentile": 0.472,
+          "percentile": 0.518,
           "trend": "rising",
-          "trend_pct": 936.7,
+          "trend_pct": 1255.0,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
@@ -131,7 +230,7 @@
           "pathogen": "sars-cov-2",
           "latest_value": 78700.0,
           "latest_date": "2026-09-14",
-          "n_history": 279,
+          "n_history": 278,
           "quintile": 5,
           "percentile": 0.817,
           "trend": "rising",
@@ -152,9 +251,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 104000.0,
           "latest_date": "2024-07-29",
-          "n_history": 83,
+          "n_history": 82,
           "quintile": 5,
-          "percentile": 0.807,
+          "percentile": 0.805,
           "trend": "rising",
           "trend_pct": 5100.0,
           "level": 2,
@@ -162,6 +261,138 @@
         }
       ],
       "region": "East"
+    },
+    {
+      "site": "Fort Collins - Drake",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 111,
+          "quintile": 5,
+          "percentile": 0.919,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 17600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 187,
+          "quintile": 3,
+          "percentile": 0.583,
+          "trend": "rising",
+          "trend_pct": 189.0,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "North"
+    },
+    {
+      "site": "Glenwood Springs",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 182,
+          "quintile": 4,
+          "percentile": 0.78,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 66800.0,
+          "latest_date": "2026-09-17",
+          "n_history": 274,
+          "quintile": 5,
+          "percentile": 0.898,
+          "trend": "rising",
+          "trend_pct": 1479.2,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "West"
+    },
+    {
+      "site": "Grand Junction - Persigo",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-16",
+          "n_history": 170,
+          "quintile": 4,
+          "percentile": 0.794,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 10100.0,
+          "latest_date": "2026-09-16",
+          "n_history": 268,
+          "quintile": 3,
+          "percentile": 0.437,
+          "trend": "rising",
+          "trend_pct": 54.0,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "West"
+    },
+    {
+      "site": "Greeley",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-16",
+          "n_history": 194,
+          "quintile": 5,
+          "percentile": 0.861,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 7040.0,
+          "latest_date": "2026-09-16",
+          "n_history": 287,
+          "quintile": 3,
+          "percentile": 0.554,
+          "trend": "rising",
+          "trend_pct": 1073.3,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "Northeast"
     },
     {
       "site": "Highlands Ranch Water and Sanitation District",
@@ -172,10 +403,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-10",
-          "n_history": 187,
+          "latest_date": "2026-09-17",
+          "n_history": 189,
           "quintile": 4,
-          "percentile": 0.69,
+          "percentile": 0.693,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -183,18 +414,51 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 33700.0,
-          "latest_date": "2026-09-10",
-          "n_history": 280,
+          "latest_value": 56600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 282,
           "quintile": 3,
-          "percentile": 0.439,
+          "percentile": 0.557,
           "trend": "rising",
-          "trend_pct": 253.2,
+          "trend_pct": 214.4,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
       ],
       "region": "North"
+    },
+    {
+      "site": "La Junta",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 182,
+          "quintile": 5,
+          "percentile": 0.885,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 59400.0,
+          "latest_date": "2026-09-17",
+          "n_history": 279,
+          "quintile": 5,
+          "percentile": 0.882,
+          "trend": "rising",
+          "trend_pct": 283.2,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "Southeast"
     },
     {
       "site": "Lafayette",
@@ -206,9 +470,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 151000.0,
           "latest_date": "2024-07-29",
-          "n_history": 71,
+          "n_history": 70,
           "quintile": 5,
-          "percentile": 0.887,
+          "percentile": 0.886,
           "trend": "rising",
           "trend_pct": 1026.9,
           "level": 2,
@@ -227,9 +491,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 190000.0,
           "latest_date": "2024-07-29",
-          "n_history": 80,
+          "n_history": 79,
           "quintile": 5,
-          "percentile": 0.9,
+          "percentile": 0.899,
           "trend": "rising",
           "trend_pct": 9400.0,
           "level": 2,
@@ -247,10 +511,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 190,
+          "latest_date": "2026-09-17",
+          "n_history": 191,
           "quintile": 5,
-          "percentile": 0.805,
+          "percentile": 0.806,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -258,13 +522,13 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 16200.0,
-          "latest_date": "2026-09-14",
+          "latest_value": 76300.0,
+          "latest_date": "2026-09-17",
           "n_history": 285,
-          "quintile": 3,
-          "percentile": 0.544,
+          "quintile": 5,
+          "percentile": 0.874,
           "trend": "rising",
-          "trend_pct": 51.4,
+          "trend_pct": 12616.7,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
@@ -280,10 +544,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 181,
+          "latest_date": "2026-09-17",
+          "n_history": 182,
           "quintile": 5,
-          "percentile": 0.867,
+          "percentile": 0.868,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -291,13 +555,46 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 15900.0,
-          "latest_date": "2026-09-10",
-          "n_history": 227,
-          "quintile": 4,
-          "percentile": 0.665,
+          "latest_value": 7540.0,
+          "latest_date": "2026-09-17",
+          "n_history": 229,
+          "quintile": 3,
+          "percentile": 0.493,
           "trend": "rising",
-          "trend_pct": 28.2,
+          "trend_pct": 71.0,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "East"
+    },
+    {
+      "site": "Metro Wastewater RWHTF - PRC",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-17",
+          "n_history": 191,
+          "quintile": 5,
+          "percentile": 0.822,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 32900.0,
+          "latest_date": "2026-09-17",
+          "n_history": 287,
+          "quintile": 4,
+          "percentile": 0.742,
+          "trend": "rising",
+          "trend_pct": 683.3,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
@@ -314,9 +611,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 40400.0,
           "latest_date": "2024-07-29",
-          "n_history": 79,
+          "n_history": 78,
           "quintile": 5,
-          "percentile": 0.835,
+          "percentile": 0.833,
           "trend": "rising",
           "trend_pct": 1920.0,
           "level": 2,
@@ -326,7 +623,7 @@
       "region": "East"
     },
     {
-      "site": "Steamboat Springs",
+      "site": "South Platte",
       "level": 2,
       "verdict": "Avoid \u2014 elevated & rising",
       "driver": "sars-cov-2",
@@ -334,10 +631,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-09",
-          "n_history": 173,
+          "latest_date": "2026-09-16",
+          "n_history": 195,
           "quintile": 4,
-          "percentile": 0.763,
+          "percentile": 0.779,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -345,18 +642,51 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 16200.0,
-          "latest_date": "2026-09-09",
-          "n_history": 271,
-          "quintile": 3,
-          "percentile": 0.506,
+          "latest_value": 28700.0,
+          "latest_date": "2026-09-16",
+          "n_history": 293,
+          "quintile": 4,
+          "percentile": 0.618,
           "trend": "rising",
-          "trend_pct": 2600.0,
+          "trend_pct": 572.1,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
       ],
-      "region": "Northwest"
+      "region": "East"
+    },
+    {
+      "site": "Telluride",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-16",
+          "n_history": 174,
+          "quintile": 4,
+          "percentile": 0.776,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 36700.0,
+          "latest_date": "2026-09-16",
+          "n_history": 273,
+          "quintile": 4,
+          "percentile": 0.619,
+          "trend": "rising",
+          "trend_pct": 747.6,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "Southwest"
     },
     {
       "site": "Tri-Lakes - Monument",
@@ -422,39 +752,6 @@
       "region": "Northwest"
     },
     {
-      "site": "Alamosa",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 177,
-          "quintile": 4,
-          "percentile": 0.797,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 8240.0,
-          "latest_date": "2026-09-14",
-          "n_history": 269,
-          "quintile": 2,
-          "percentile": 0.286,
-          "trend": "rising",
-          "trend_pct": 37.8,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "San Luis Valley"
-    },
-    {
       "site": "Arapahoe County",
       "level": 1,
       "verdict": "Caution \u2014 elevated",
@@ -464,9 +761,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 61400.0,
           "latest_date": "2024-07-29",
-          "n_history": 73,
+          "n_history": 72,
           "quintile": 4,
-          "percentile": 0.74,
+          "percentile": 0.736,
           "trend": "falling",
           "trend_pct": -43.1,
           "level": 1,
@@ -484,10 +781,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 191,
+          "latest_date": "2026-09-17",
+          "n_history": 192,
           "quintile": 4,
-          "percentile": 0.775,
+          "percentile": 0.776,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -497,9 +794,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 600.0,
           "latest_date": "2026-09-14",
-          "n_history": 281,
+          "n_history": 280,
           "quintile": 2,
-          "percentile": 0.256,
+          "percentile": 0.257,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 0,
@@ -530,39 +827,6 @@
       "region": "North"
     },
     {
-      "site": "Boulder",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-08",
-          "n_history": 189,
-          "quintile": 4,
-          "percentile": 0.704,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-08",
-          "n_history": 289,
-          "quintile": 1,
-          "percentile": 0.142,
-          "trend": "falling",
-          "trend_pct": -97.0,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "North"
-    },
-    {
       "site": "Broomfield",
       "level": 1,
       "verdict": "Caution \u2014 elevated",
@@ -572,9 +836,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 65200.0,
           "latest_date": "2024-07-29",
-          "n_history": 83,
+          "n_history": 82,
           "quintile": 4,
-          "percentile": 0.663,
+          "percentile": 0.659,
           "trend": "falling",
           "trend_pct": -24.8,
           "level": 1,
@@ -582,39 +846,6 @@
         }
       ],
       "region": "North"
-    },
-    {
-      "site": "CO Springs - JD Phillips",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 189,
-          "quintile": 4,
-          "percentile": 0.772,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 4430.0,
-          "latest_date": "2026-09-14",
-          "n_history": 285,
-          "quintile": 2,
-          "percentile": 0.309,
-          "trend": "rising",
-          "trend_pct": 638.3,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "Central"
     },
     {
       "site": "Castle Rock",
@@ -626,9 +857,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 115000.0,
           "latest_date": "2024-07-29",
-          "n_history": 85,
+          "n_history": 84,
           "quintile": 4,
-          "percentile": 0.765,
+          "percentile": 0.762,
           "trend": "falling",
           "trend_pct": -55.1,
           "level": 1,
@@ -647,9 +878,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 221000.0,
           "latest_date": "2024-07-29",
-          "n_history": 76,
+          "n_history": 75,
           "quintile": 5,
-          "percentile": 0.855,
+          "percentile": 0.853,
           "trend": "falling",
           "trend_pct": -23.3,
           "level": 1,
@@ -701,39 +932,6 @@
       "region": "North"
     },
     {
-      "site": "Fort Collins - Drake",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 110,
-          "quintile": 5,
-          "percentile": 0.918,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 7090.0,
-          "latest_date": "2026-09-14",
-          "n_history": 187,
-          "quintile": 2,
-          "percentile": 0.374,
-          "trend": "rising",
-          "trend_pct": 1081.7,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "North"
-    },
-    {
       "site": "Fort Collins - Mulberry",
       "level": 1,
       "verdict": "Caution \u2014 elevated",
@@ -743,9 +941,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 67100.0,
           "latest_date": "2024-07-29",
-          "n_history": 81,
+          "n_history": 80,
           "quintile": 4,
-          "percentile": 0.691,
+          "percentile": 0.688,
           "trend": "falling",
           "trend_pct": -51.4,
           "level": 1,
@@ -764,9 +962,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 132000.0,
           "latest_date": "2024-07-29",
-          "n_history": 84,
+          "n_history": 83,
           "quintile": 5,
-          "percentile": 0.821,
+          "percentile": 0.831,
           "trend": "falling",
           "trend_pct": -34.0,
           "level": 1,
@@ -774,138 +972,6 @@
         }
       ],
       "region": "Northwest"
-    },
-    {
-      "site": "Glenwood Springs",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 181,
-          "quintile": 4,
-          "percentile": 0.779,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 4770.0,
-          "latest_date": "2026-09-14",
-          "n_history": 274,
-          "quintile": 3,
-          "percentile": 0.409,
-          "trend": "flat",
-          "trend_pct": -4.2,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        }
-      ],
-      "region": "West"
-    },
-    {
-      "site": "Grand Junction - Persigo",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 169,
-          "quintile": 4,
-          "percentile": 0.793,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 268,
-          "quintile": 2,
-          "percentile": 0.224,
-          "trend": "falling",
-          "trend_pct": -92.7,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "West"
-    },
-    {
-      "site": "Greeley",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-13",
-          "n_history": 193,
-          "quintile": 5,
-          "percentile": 0.86,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-13",
-          "n_history": 286,
-          "quintile": 2,
-          "percentile": 0.357,
-          "trend": "falling",
-          "trend_pct": -90.1,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "Northeast"
-    },
-    {
-      "site": "La Junta",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 181,
-          "quintile": 5,
-          "percentile": 0.884,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 279,
-          "quintile": 2,
-          "percentile": 0.355,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "Southeast"
     },
     {
       "site": "Longmont",
@@ -938,9 +1004,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 84400.0,
           "latest_date": "2024-07-29",
-          "n_history": 81,
+          "n_history": 80,
           "quintile": 4,
-          "percentile": 0.765,
+          "percentile": 0.762,
           "trend": "falling",
           "trend_pct": -43.4,
           "level": 1,
@@ -948,39 +1014,6 @@
         }
       ],
       "region": "North"
-    },
-    {
-      "site": "Metro Wastewater RWHTF - PRC",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 190,
-          "quintile": 5,
-          "percentile": 0.821,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 5950.0,
-          "latest_date": "2026-09-14",
-          "n_history": 287,
-          "quintile": 2,
-          "percentile": 0.387,
-          "trend": "rising",
-          "trend_pct": 891.7,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "East"
     },
     {
       "site": "Montrose",
@@ -992,9 +1025,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 2000.0,
           "latest_date": "2024-07-29",
-          "n_history": 78,
+          "n_history": 77,
           "quintile": 3,
-          "percentile": 0.41,
+          "percentile": 0.403,
           "trend": "falling",
           "trend_pct": -86.6,
           "level": 1,
@@ -1034,9 +1067,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 38300.0,
           "latest_date": "2024-07-29",
-          "n_history": 80,
+          "n_history": 79,
           "quintile": 3,
-          "percentile": 0.5,
+          "percentile": 0.494,
           "trend": "falling",
           "trend_pct": -84.7,
           "level": 1,
@@ -1054,10 +1087,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 188,
+          "latest_date": "2026-09-17",
+          "n_history": 189,
           "quintile": 5,
-          "percentile": 0.872,
+          "percentile": 0.873,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -1130,9 +1163,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 161000.0,
           "latest_date": "2024-07-29",
-          "n_history": 82,
+          "n_history": 81,
           "quintile": 5,
-          "percentile": 0.878,
+          "percentile": 0.877,
           "trend": "flat",
           "trend_pct": -1.2,
           "level": 1,
@@ -1151,9 +1184,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 153000.0,
           "latest_date": "2024-07-29",
-          "n_history": 85,
+          "n_history": 84,
           "quintile": 4,
-          "percentile": 0.753,
+          "percentile": 0.75,
           "trend": "falling",
           "trend_pct": -41.2,
           "level": 1,
@@ -1172,9 +1205,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 104000.0,
           "latest_date": "2024-07-29",
-          "n_history": 84,
+          "n_history": 83,
           "quintile": 4,
-          "percentile": 0.786,
+          "percentile": 0.783,
           "trend": "flat",
           "trend_pct": -6.3,
           "level": 1,
@@ -1184,7 +1217,7 @@
       "region": "North"
     },
     {
-      "site": "South Platte",
+      "site": "Steamboat Springs",
       "level": 1,
       "verdict": "Caution \u2014 elevated",
       "driver": "RSV",
@@ -1192,43 +1225,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 194,
+          "latest_date": "2026-09-16",
+          "n_history": 175,
           "quintile": 4,
-          "percentile": 0.778,
-          "trend": "falling",
-          "trend_pct": -90.8,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 5400.0,
-          "latest_date": "2026-09-10",
-          "n_history": 291,
-          "quintile": 2,
-          "percentile": 0.278,
-          "trend": "rising",
-          "trend_pct": 800.0,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "East"
-    },
-    {
-      "site": "Telluride",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-07",
-          "n_history": 171,
-          "quintile": 4,
-          "percentile": 0.772,
+          "percentile": 0.766,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -1236,18 +1236,18 @@
         },
         {
           "pathogen": "sars-cov-2",
-          "latest_value": 4330.0,
-          "latest_date": "2026-09-07",
-          "n_history": 271,
+          "latest_value": 7210.0,
+          "latest_date": "2026-09-16",
+          "n_history": 272,
           "quintile": 2,
-          "percentile": 0.273,
+          "percentile": 0.379,
           "trend": "rising",
-          "trend_pct": 621.7,
+          "trend_pct": 1101.7,
           "level": 0,
           "verdict": "OK to go out"
         }
       ],
-      "region": "Southwest"
+      "region": "Northwest"
     },
     {
       "site": "Tri-Lakes - Woodmoor North",
@@ -1300,10 +1300,10 @@
         {
           "pathogen": "RSV",
           "latest_value": 600.0,
-          "latest_date": "2026-09-14",
-          "n_history": 190,
+          "latest_date": "2026-09-17",
+          "n_history": 191,
           "quintile": 4,
-          "percentile": 0.753,
+          "percentile": 0.754,
           "trend": "flat",
           "trend_pct": 0.0,
           "level": 1,
@@ -1313,9 +1313,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 11500.0,
           "latest_date": "2026-09-14",
-          "n_history": 287,
+          "n_history": 286,
           "quintile": 2,
-          "percentile": 0.341,
+          "percentile": 0.343,
           "trend": "rising",
           "trend_pct": 128.2,
           "level": 0,
@@ -1355,9 +1355,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 86500.0,
           "latest_date": "2024-07-29",
-          "n_history": 83,
+          "n_history": 82,
           "quintile": 4,
-          "percentile": 0.735,
+          "percentile": 0.732,
           "trend": "flat",
           "trend_pct": -6.0,
           "level": 1,
@@ -1445,9 +1445,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 21100.0,
           "latest_date": "2024-07-11",
-          "n_history": 71,
+          "n_history": 70,
           "quintile": 2,
-          "percentile": 0.338,
+          "percentile": 0.343,
           "trend": "falling",
           "trend_pct": -81.3,
           "level": 0,
@@ -1466,9 +1466,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 73000.0,
           "latest_date": "2024-07-22",
-          "n_history": 79,
+          "n_history": 78,
           "quintile": 2,
-          "percentile": 0.38,
+          "percentile": 0.385,
           "trend": "falling",
           "trend_pct": -38.7,
           "level": 0,
