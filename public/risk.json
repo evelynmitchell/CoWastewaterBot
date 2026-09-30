@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T15:15:04.748182+00:00",
+  "generated": "2026-09-30T15:16:19.223384+00:00",
   "sites": [
     {
       "site": "Aspen",
@@ -253,6 +253,39 @@
           "percentile": 0.831,
           "trend": "rising",
           "trend_pct": 1920.0,
+          "level": 2,
+          "verdict": "Avoid \u2014 elevated & rising"
+        }
+      ],
+      "region": "East"
+    },
+    {
+      "site": "South Platte",
+      "level": 2,
+      "verdict": "Avoid \u2014 elevated & rising",
+      "driver": "sars-cov-2",
+      "pathogens": [
+        {
+          "pathogen": "RSV",
+          "latest_value": 600.0,
+          "latest_date": "2026-09-20",
+          "n_history": 196,
+          "quintile": 4,
+          "percentile": 0.781,
+          "trend": "flat",
+          "trend_pct": 0.0,
+          "level": 1,
+          "verdict": "Caution \u2014 elevated"
+        },
+        {
+          "pathogen": "sars-cov-2",
+          "latest_value": 10400.0,
+          "latest_date": "2026-09-20",
+          "n_history": 292,
+          "quintile": 3,
+          "percentile": 0.401,
+          "trend": "rising",
+          "trend_pct": 92.6,
           "level": 2,
           "verdict": "Avoid \u2014 elevated & rising"
         }
@@ -1182,39 +1215,6 @@
         }
       ],
       "region": "North"
-    },
-    {
-      "site": "South Platte",
-      "level": 1,
-      "verdict": "Caution \u2014 elevated",
-      "driver": "RSV",
-      "pathogens": [
-        {
-          "pathogen": "RSV",
-          "latest_value": 600.0,
-          "latest_date": "2026-09-20",
-          "n_history": 196,
-          "quintile": 4,
-          "percentile": 0.781,
-          "trend": "flat",
-          "trend_pct": 0.0,
-          "level": 1,
-          "verdict": "Caution \u2014 elevated"
-        },
-        {
-          "pathogen": "sars-cov-2",
-          "latest_value": 10400.0,
-          "latest_date": "2026-09-20",
-          "n_history": 293,
-          "quintile": 2,
-          "percentile": 0.399,
-          "trend": "rising",
-          "trend_pct": 92.6,
-          "level": 0,
-          "verdict": "OK to go out"
-        }
-      ],
-      "region": "East"
     },
     {
       "site": "Steamboat Springs",
