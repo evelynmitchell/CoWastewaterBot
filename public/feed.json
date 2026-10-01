@@ -1,5 +1,68 @@
 [
   {
+    "id": "alamosa|sars-cov-2|2026-09-24",
+    "title": "sars-cov-2 at Alamosa \u2014 concentration up 143% vs. prior reading [2026-09-24]",
+    "site": "Alamosa",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 22800.0,
+    "reason": "concentration up 143% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|ev-d68|2026-09-24",
+    "title": "EV-D68 at Metro Wastewater RWHTF - CC \u2014 concentration up 237% vs. prior reading [2026-09-24]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "EV-D68",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 20900.0,
+    "reason": "concentration up 237% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-09-24",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 414% vs. prior reading [2026-09-24]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 18500.0,
+    "reason": "concentration up 414% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-09-24",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 437% vs. prior reading [2026-09-24]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 267000.0,
+    "reason": "concentration up 437% vs. prior reading"
+  },
+  {
+    "id": "fort collins - drake|sars-cov-2|2026-09-24",
+    "title": "sars-cov-2 at Fort Collins - Drake \u2014 concentration up 511% vs. prior reading [2026-09-24]",
+    "site": "Fort Collins - Drake",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 45800.0,
+    "reason": "concentration up 511% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - ntp|ev-d68|2026-09-24",
+    "title": "EV-D68 at Metro Wastewater RWHTF - NTP \u2014 concentration up 558% vs. prior reading [2026-09-24]",
+    "site": "Metro Wastewater RWHTF - NTP",
+    "pathogen": "EV-D68",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 24100.0,
+    "reason": "concentration up 558% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - prc|sars-cov-2|2026-09-24",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - PRC \u2014 concentration up 643% vs. prior reading [2026-09-24]",
+    "site": "Metro Wastewater RWHTF - PRC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 94400.0,
+    "reason": "concentration up 643% vs. prior reading"
+  },
+  {
     "id": "greeley|ev-d68|2026-09-16",
     "title": "EV-D68 at Greeley \u2014 concentration up 96% vs. prior reading [2026-09-16]",
     "site": "Greeley",

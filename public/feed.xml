@@ -2,13 +2,76 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-09-17T06:00:00+00:00</updated>
+  <updated>2026-09-24T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>alamosa|sars-cov-2|2026-09-24</id>
+    <title>sars-cov-2 at Alamosa — concentration up 143% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Alamosa — concentration up 143% vs. prior reading [2026-09-24]
+Concentration: 22800.0
+Why flagged: concentration up 143% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|ev-d68|2026-09-24</id>
+    <title>EV-D68 at Metro Wastewater RWHTF - CC — concentration up 237% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>EV-D68 at Metro Wastewater RWHTF - CC — concentration up 237% vs. prior reading [2026-09-24]
+Concentration: 20900.0
+Why flagged: concentration up 237% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|sars-cov-2|2026-09-24</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 414% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - CC — concentration up 414% vs. prior reading [2026-09-24]
+Concentration: 18500.0
+Why flagged: concentration up 414% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>aspen|sars-cov-2|2026-09-24</id>
+    <title>sars-cov-2 at Aspen — concentration up 437% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 437% vs. prior reading [2026-09-24]
+Concentration: 267000.0
+Why flagged: concentration up 437% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>fort collins - drake|sars-cov-2|2026-09-24</id>
+    <title>sars-cov-2 at Fort Collins - Drake — concentration up 511% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Fort Collins - Drake — concentration up 511% vs. prior reading [2026-09-24]
+Concentration: 45800.0
+Why flagged: concentration up 511% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - ntp|ev-d68|2026-09-24</id>
+    <title>EV-D68 at Metro Wastewater RWHTF - NTP — concentration up 558% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>EV-D68 at Metro Wastewater RWHTF - NTP — concentration up 558% vs. prior reading [2026-09-24]
+Concentration: 24100.0
+Why flagged: concentration up 558% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - prc|sars-cov-2|2026-09-24</id>
+    <title>sars-cov-2 at Metro Wastewater RWHTF - PRC — concentration up 643% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Metro Wastewater RWHTF - PRC — concentration up 643% vs. prior reading [2026-09-24]
+Concentration: 94400.0
+Why flagged: concentration up 643% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>greeley|ev-d68|2026-09-16</id>
     <title>EV-D68 at Greeley — concentration up 96% vs. prior reading [2026-09-16]</title>
