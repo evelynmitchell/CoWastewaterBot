@@ -1,5 +1,23 @@
 [
   {
+    "id": "montrose|sars-cov-2|2026-09-28",
+    "title": "sars-cov-2 at Montrose \u2014 concentration up 233% vs. prior reading [2026-09-28]",
+    "site": "Montrose",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-28T06:00:00+00:00",
+    "value": 13600.0,
+    "reason": "concentration up 233% vs. prior reading"
+  },
+  {
+    "id": "co springs - combined|sars-cov-2|2026-09-10",
+    "title": "sars-cov-2 at CO Springs - Combined \u2014 concentration up 651% vs. prior reading [2026-09-10]",
+    "site": "CO Springs - Combined",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-10T06:00:00+00:00",
+    "value": 28400.0,
+    "reason": "concentration up 651% vs. prior reading"
+  },
+  {
     "id": "alamosa|sars-cov-2|2026-09-24",
     "title": "sars-cov-2 at Alamosa \u2014 concentration up 143% vs. prior reading [2026-09-24]",
     "site": "Alamosa",
