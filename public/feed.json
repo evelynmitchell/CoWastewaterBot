@@ -1,5 +1,77 @@
 [
   {
+    "id": "montrose|ev-d68|2026-10-06",
+    "title": "EV-D68 at Montrose \u2014 concentration up 161% vs. prior reading [2026-10-06]",
+    "site": "Montrose",
+    "pathogen": "EV-D68",
+    "date": "2026-10-06T06:00:00+00:00",
+    "value": 48300.0,
+    "reason": "concentration up 161% vs. prior reading"
+  },
+  {
+    "id": "telluride|sars-cov-2|2026-09-30",
+    "title": "sars-cov-2 at Telluride \u2014 concentration up 189% vs. prior reading [2026-09-30]",
+    "site": "Telluride",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-30T06:00:00+00:00",
+    "value": 43300.0,
+    "reason": "concentration up 189% vs. prior reading"
+  },
+  {
+    "id": "pueblo|sars-cov-2|2026-10-01",
+    "title": "sars-cov-2 at Pueblo \u2014 concentration up 230% vs. prior reading [2026-10-01]",
+    "site": "Pueblo",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-01T06:00:00+00:00",
+    "value": 15400.0,
+    "reason": "concentration up 230% vs. prior reading"
+  },
+  {
+    "id": "aspen|sars-cov-2|2026-10-06",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 236% vs. prior reading [2026-10-06]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-06T06:00:00+00:00",
+    "value": 25000.0,
+    "reason": "concentration up 236% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|ev-d68|2026-10-01",
+    "title": "EV-D68 at Metro Wastewater RWHTF - CC \u2014 concentration up 243% vs. prior reading [2026-10-01]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "EV-D68",
+    "date": "2026-10-01T06:00:00+00:00",
+    "value": 14700.0,
+    "reason": "concentration up 243% vs. prior reading"
+  },
+  {
+    "id": "durango|sars-cov-2|2026-10-01",
+    "title": "sars-cov-2 at Durango \u2014 concentration up 262% vs. prior reading [2026-10-01]",
+    "site": "Durango",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-01T06:00:00+00:00",
+    "value": 19500.0,
+    "reason": "concentration up 262% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|ev-d68|2026-10-06",
+    "title": "EV-D68 at Upper Blue SD - Breckenridge \u2014 concentration up 291% vs. prior reading [2026-10-06]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "EV-D68",
+    "date": "2026-10-06T06:00:00+00:00",
+    "value": 24500.0,
+    "reason": "concentration up 291% vs. prior reading"
+  },
+  {
+    "id": "upper blue sd - breckenridge|sars-cov-2|2026-10-06",
+    "title": "sars-cov-2 at Upper Blue SD - Breckenridge \u2014 concentration up 458% vs. prior reading [2026-10-06]",
+    "site": "Upper Blue SD - Breckenridge",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-06T06:00:00+00:00",
+    "value": 52600.0,
+    "reason": "concentration up 458% vs. prior reading"
+  },
+  {
     "id": "montrose|sars-cov-2|2026-09-28",
     "title": "sars-cov-2 at Montrose \u2014 concentration up 233% vs. prior reading [2026-09-28]",
     "site": "Montrose",

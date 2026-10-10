@@ -2,13 +2,85 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-09-28T06:00:00+00:00</updated>
+  <updated>2026-10-06T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>montrose|ev-d68|2026-10-06</id>
+    <title>EV-D68 at Montrose — concentration up 161% vs. prior reading [2026-10-06]</title>
+    <updated>2026-10-06T06:00:00+00:00</updated>
+    <content>EV-D68 at Montrose — concentration up 161% vs. prior reading [2026-10-06]
+Concentration: 48300.0
+Why flagged: concentration up 161% vs. prior reading</content>
+    <published>2026-10-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>telluride|sars-cov-2|2026-09-30</id>
+    <title>sars-cov-2 at Telluride — concentration up 189% vs. prior reading [2026-09-30]</title>
+    <updated>2026-09-30T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Telluride — concentration up 189% vs. prior reading [2026-09-30]
+Concentration: 43300.0
+Why flagged: concentration up 189% vs. prior reading</content>
+    <published>2026-09-30T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>pueblo|sars-cov-2|2026-10-01</id>
+    <title>sars-cov-2 at Pueblo — concentration up 230% vs. prior reading [2026-10-01]</title>
+    <updated>2026-10-01T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Pueblo — concentration up 230% vs. prior reading [2026-10-01]
+Concentration: 15400.0
+Why flagged: concentration up 230% vs. prior reading</content>
+    <published>2026-10-01T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>aspen|sars-cov-2|2026-10-06</id>
+    <title>sars-cov-2 at Aspen — concentration up 236% vs. prior reading [2026-10-06]</title>
+    <updated>2026-10-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 236% vs. prior reading [2026-10-06]
+Concentration: 25000.0
+Why flagged: concentration up 236% vs. prior reading</content>
+    <published>2026-10-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>metro wastewater rwhtf - cc|ev-d68|2026-10-01</id>
+    <title>EV-D68 at Metro Wastewater RWHTF - CC — concentration up 243% vs. prior reading [2026-10-01]</title>
+    <updated>2026-10-01T06:00:00+00:00</updated>
+    <content>EV-D68 at Metro Wastewater RWHTF - CC — concentration up 243% vs. prior reading [2026-10-01]
+Concentration: 14700.0
+Why flagged: concentration up 243% vs. prior reading</content>
+    <published>2026-10-01T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>durango|sars-cov-2|2026-10-01</id>
+    <title>sars-cov-2 at Durango — concentration up 262% vs. prior reading [2026-10-01]</title>
+    <updated>2026-10-01T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Durango — concentration up 262% vs. prior reading [2026-10-01]
+Concentration: 19500.0
+Why flagged: concentration up 262% vs. prior reading</content>
+    <published>2026-10-01T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|ev-d68|2026-10-06</id>
+    <title>EV-D68 at Upper Blue SD - Breckenridge — concentration up 291% vs. prior reading [2026-10-06]</title>
+    <updated>2026-10-06T06:00:00+00:00</updated>
+    <content>EV-D68 at Upper Blue SD - Breckenridge — concentration up 291% vs. prior reading [2026-10-06]
+Concentration: 24500.0
+Why flagged: concentration up 291% vs. prior reading</content>
+    <published>2026-10-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>upper blue sd - breckenridge|sars-cov-2|2026-10-06</id>
+    <title>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 458% vs. prior reading [2026-10-06]</title>
+    <updated>2026-10-06T06:00:00+00:00</updated>
+    <content>sars-cov-2 at Upper Blue SD - Breckenridge — concentration up 458% vs. prior reading [2026-10-06]
+Concentration: 52600.0
+Why flagged: concentration up 458% vs. prior reading</content>
+    <published>2026-10-06T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>montrose|sars-cov-2|2026-09-28</id>
     <title>sars-cov-2 at Montrose — concentration up 233% vs. prior reading [2026-09-28]</title>
