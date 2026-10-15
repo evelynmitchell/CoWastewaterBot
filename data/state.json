@@ -1,5 +1,5 @@
 {
-  "latest_date": "2026-10-06T06:00:00+00:00",
+  "latest_date": "2026-10-08T06:00:00+00:00",
   "seen_keys": [
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
@@ -7,6 +7,7 @@
     "alamosa|sars-cov-2|2026-08-24",
     "alamosa|sars-cov-2|2026-09-17",
     "alamosa|sars-cov-2|2026-09-24",
+    "aspen|ev-d68|2026-10-08",
     "aspen|rsv|2026-07-16",
     "aspen|rsv|2026-07-30",
     "aspen|sars-cov-2|2026-07-07",
@@ -46,6 +47,7 @@
     "glenwood springs|sars-cov-2|2026-07-23",
     "glenwood springs|sars-cov-2|2026-09-10",
     "glenwood springs|sars-cov-2|2026-09-17",
+    "grand junction - persigo|ev-d68|2026-10-07",
     "grand junction - persigo|sars-cov-2|2026-07-08",
     "greeley|ev-d68|2026-09-16",
     "highlands ranch water and sanitation district|ev-d68|2026-09-10",
@@ -74,6 +76,7 @@
     "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-16",
     "metro wastewater rwhtf - ntp|sars-cov-2|2026-07-30",
     "metro wastewater rwhtf - ntp|sars-cov-2|2026-09-10",
+    "metro wastewater rwhtf - prc|ev-d68|2026-10-08",
     "metro wastewater rwhtf - prc|sars-cov-2|2026-07-06",
     "metro wastewater rwhtf - prc|sars-cov-2|2026-07-13",
     "metro wastewater rwhtf - prc|sars-cov-2|2026-09-17",
@@ -81,6 +84,7 @@
     "montrose|ev-d68|2026-10-06",
     "montrose|sars-cov-2|2026-09-28",
     "pueblo|sars-cov-2|2026-10-01",
+    "silverthorne/dillon|sars-cov-2|2026-09-23",
     "south platte|sars-cov-2|2026-07-22",
     "south platte|sars-cov-2|2026-09-16",
     "steamboat springs|ev-d68|2026-07-22",
