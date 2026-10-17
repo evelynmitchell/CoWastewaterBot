@@ -2,13 +2,58 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-10-08T06:00:00+00:00</updated>
+  <updated>2026-10-12T06:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>highlands ranch water and sanitation district|ev-d68|2026-09-24</id>
+    <title>EV-D68 at Highlands Ranch Water and Sanitation District — concentration up 122% vs. prior reading [2026-09-24]</title>
+    <updated>2026-09-24T06:00:00+00:00</updated>
+    <content>EV-D68 at Highlands Ranch Water and Sanitation District — concentration up 122% vs. prior reading [2026-09-24]
+Concentration: 19700.0
+Why flagged: concentration up 122% vs. prior reading</content>
+    <published>2026-09-24T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>boulder|ev-d68|2026-10-06</id>
+    <title>EV-D68 at Boulder — concentration up 123% vs. prior reading [2026-10-06]</title>
+    <updated>2026-10-06T06:00:00+00:00</updated>
+    <content>EV-D68 at Boulder — concentration up 123% vs. prior reading [2026-10-06]
+Concentration: 26800.0
+Why flagged: concentration up 123% vs. prior reading</content>
+    <published>2026-10-06T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>alamosa|ev-d68|2026-10-08</id>
+    <title>EV-D68 at Alamosa — concentration up 131% vs. prior reading [2026-10-08]</title>
+    <updated>2026-10-08T06:00:00+00:00</updated>
+    <content>EV-D68 at Alamosa — concentration up 131% vs. prior reading [2026-10-08]
+Concentration: 16400.0
+Why flagged: concentration up 131% vs. prior reading</content>
+    <published>2026-10-08T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>highlands ranch water and sanitation district|ev-d68|2026-10-08</id>
+    <title>EV-D68 at Highlands Ranch Water and Sanitation District — concentration up 199% vs. prior reading [2026-10-08]</title>
+    <updated>2026-10-08T06:00:00+00:00</updated>
+    <content>EV-D68 at Highlands Ranch Water and Sanitation District — concentration up 199% vs. prior reading [2026-10-08]
+Concentration: 123000.0
+Why flagged: concentration up 199% vs. prior reading</content>
+    <published>2026-10-08T06:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>fort collins - drake|ev-d68|2026-10-12</id>
+    <title>EV-D68 at Fort Collins - Drake — concentration up 258% vs. prior reading [2026-10-12]</title>
+    <updated>2026-10-12T06:00:00+00:00</updated>
+    <content>EV-D68 at Fort Collins - Drake — concentration up 258% vs. prior reading [2026-10-12]
+Concentration: 108000.0
+Why flagged: concentration up 258% vs. prior reading</content>
+    <published>2026-10-12T06:00:00+00:00</published>
+  </entry>
   <entry>
     <id>silverthorne/dillon|sars-cov-2|2026-09-23</id>
     <title>sars-cov-2 at Silverthorne/Dillon — concentration up 149% vs. prior reading [2026-09-23]</title>

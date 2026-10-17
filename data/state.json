@@ -1,6 +1,7 @@
 {
-  "latest_date": "2026-10-08T06:00:00+00:00",
+  "latest_date": "2026-10-12T06:00:00+00:00",
   "seen_keys": [
+    "alamosa|ev-d68|2026-10-08",
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
     "alamosa|sars-cov-2|2026-07-16",
@@ -22,6 +23,7 @@
     "aspen|sars-cov-2|2026-09-17",
     "aspen|sars-cov-2|2026-09-24",
     "aspen|sars-cov-2|2026-10-06",
+    "boulder|ev-d68|2026-10-06",
     "boulder|sars-cov-2|2026-07-06",
     "boulder|sars-cov-2|2026-07-16",
     "boulder|sars-cov-2|2026-07-23",
@@ -38,6 +40,7 @@
     "fort collins - drake|ev-d68|2026-08-03",
     "fort collins - drake|ev-d68|2026-09-10",
     "fort collins - drake|ev-d68|2026-09-17",
+    "fort collins - drake|ev-d68|2026-10-12",
     "fort collins - drake|sars-cov-2|2026-06-29",
     "fort collins - drake|sars-cov-2|2026-07-16",
     "fort collins - drake|sars-cov-2|2026-09-17",
@@ -52,6 +55,8 @@
     "greeley|ev-d68|2026-09-16",
     "highlands ranch water and sanitation district|ev-d68|2026-09-10",
     "highlands ranch water and sanitation district|ev-d68|2026-09-17",
+    "highlands ranch water and sanitation district|ev-d68|2026-09-24",
+    "highlands ranch water and sanitation district|ev-d68|2026-10-08",
     "highlands ranch water and sanitation district|sars-cov-2|2026-06-11",
     "highlands ranch water and sanitation district|sars-cov-2|2026-06-25",
     "highlands ranch water and sanitation district|sars-cov-2|2026-07-07",

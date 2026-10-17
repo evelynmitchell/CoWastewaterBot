@@ -1,5 +1,50 @@
 [
   {
+    "id": "highlands ranch water and sanitation district|ev-d68|2026-09-24",
+    "title": "EV-D68 at Highlands Ranch Water and Sanitation District \u2014 concentration up 122% vs. prior reading [2026-09-24]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "EV-D68",
+    "date": "2026-09-24T06:00:00+00:00",
+    "value": 19700.0,
+    "reason": "concentration up 122% vs. prior reading"
+  },
+  {
+    "id": "boulder|ev-d68|2026-10-06",
+    "title": "EV-D68 at Boulder \u2014 concentration up 123% vs. prior reading [2026-10-06]",
+    "site": "Boulder",
+    "pathogen": "EV-D68",
+    "date": "2026-10-06T06:00:00+00:00",
+    "value": 26800.0,
+    "reason": "concentration up 123% vs. prior reading"
+  },
+  {
+    "id": "alamosa|ev-d68|2026-10-08",
+    "title": "EV-D68 at Alamosa \u2014 concentration up 131% vs. prior reading [2026-10-08]",
+    "site": "Alamosa",
+    "pathogen": "EV-D68",
+    "date": "2026-10-08T06:00:00+00:00",
+    "value": 16400.0,
+    "reason": "concentration up 131% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|ev-d68|2026-10-08",
+    "title": "EV-D68 at Highlands Ranch Water and Sanitation District \u2014 concentration up 199% vs. prior reading [2026-10-08]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "EV-D68",
+    "date": "2026-10-08T06:00:00+00:00",
+    "value": 123000.0,
+    "reason": "concentration up 199% vs. prior reading"
+  },
+  {
+    "id": "fort collins - drake|ev-d68|2026-10-12",
+    "title": "EV-D68 at Fort Collins - Drake \u2014 concentration up 258% vs. prior reading [2026-10-12]",
+    "site": "Fort Collins - Drake",
+    "pathogen": "EV-D68",
+    "date": "2026-10-12T06:00:00+00:00",
+    "value": 108000.0,
+    "reason": "concentration up 258% vs. prior reading"
+  },
+  {
     "id": "silverthorne/dillon|sars-cov-2|2026-09-23",
     "title": "sars-cov-2 at Silverthorne/Dillon \u2014 concentration up 149% vs. prior reading [2026-09-23]",
     "site": "Silverthorne/Dillon",
