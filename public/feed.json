@@ -1,5 +1,77 @@
 [
   {
+    "id": "glenwood springs|ev-d68|2026-10-15",
+    "title": "EV-D68 at Glenwood Springs \u2014 concentration up 213% vs. prior reading [2026-10-15]",
+    "site": "Glenwood Springs",
+    "pathogen": "EV-D68",
+    "date": "2026-10-15T06:00:00+00:00",
+    "value": 18600.0,
+    "reason": "concentration up 213% vs. prior reading"
+  },
+  {
+    "id": "grand junction - persigo|sars-cov-2|2026-10-14",
+    "title": "sars-cov-2 at Grand Junction - Persigo \u2014 concentration up 316% vs. prior reading [2026-10-14]",
+    "site": "Grand Junction - Persigo",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-14T06:00:00+00:00",
+    "value": 17400.0,
+    "reason": "concentration up 316% vs. prior reading"
+  },
+  {
+    "id": "silverthorne/dillon|sars-cov-2|2026-10-14",
+    "title": "sars-cov-2 at Silverthorne/Dillon \u2014 concentration up 364% vs. prior reading [2026-10-14]",
+    "site": "Silverthorne/Dillon",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-14T06:00:00+00:00",
+    "value": 27700.0,
+    "reason": "concentration up 364% vs. prior reading"
+  },
+  {
+    "id": "silverthorne/dillon|sars-cov-2|2026-09-30",
+    "title": "sars-cov-2 at Silverthorne/Dillon \u2014 concentration up 468% vs. prior reading [2026-09-30]",
+    "site": "Silverthorne/Dillon",
+    "pathogen": "sars-cov-2",
+    "date": "2026-09-30T06:00:00+00:00",
+    "value": 55500.0,
+    "reason": "concentration up 468% vs. prior reading"
+  },
+  {
+    "id": "greeley|ev-d68|2026-10-14",
+    "title": "EV-D68 at Greeley \u2014 concentration up 489% vs. prior reading [2026-10-14]",
+    "site": "Greeley",
+    "pathogen": "EV-D68",
+    "date": "2026-10-14T06:00:00+00:00",
+    "value": 46800.0,
+    "reason": "concentration up 489% vs. prior reading"
+  },
+  {
+    "id": "silverthorne/dillon|ev-d68|2026-10-14",
+    "title": "EV-D68 at Silverthorne/Dillon \u2014 concentration up 672% vs. prior reading [2026-10-14]",
+    "site": "Silverthorne/Dillon",
+    "pathogen": "EV-D68",
+    "date": "2026-10-14T06:00:00+00:00",
+    "value": 68900.0,
+    "reason": "concentration up 672% vs. prior reading"
+  },
+  {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-10-14",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 736% vs. prior reading [2026-10-14]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-14T06:00:00+00:00",
+    "value": 275000.0,
+    "reason": "concentration up 736% vs. prior reading"
+  },
+  {
+    "id": "montrose|ev-d68|2026-10-14",
+    "title": "EV-D68 at Montrose \u2014 concentration up 1950% vs. prior reading [2026-10-14]",
+    "site": "Montrose",
+    "pathogen": "EV-D68",
+    "date": "2026-10-14T06:00:00+00:00",
+    "value": 139000.0,
+    "reason": "concentration up 1950% vs. prior reading"
+  },
+  {
     "id": "highlands ranch water and sanitation district|ev-d68|2026-09-24",
     "title": "EV-D68 at Highlands Ranch Water and Sanitation District \u2014 concentration up 122% vs. prior reading [2026-09-24]",
     "site": "Highlands Ranch Water and Sanitation District",
