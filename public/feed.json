@@ -1,5 +1,41 @@
 [
   {
+    "id": "south platte|ev-d68|2026-10-19",
+    "title": "EV-D68 at South Platte \u2014 concentration up 215% vs. prior reading [2026-10-19]",
+    "site": "South Platte",
+    "pathogen": "EV-D68",
+    "date": "2026-10-19T06:00:00+00:00",
+    "value": 21900.0,
+    "reason": "concentration up 215% vs. prior reading"
+  },
+  {
+    "id": "co springs - combined|sars-cov-2|2026-10-15",
+    "title": "sars-cov-2 at CO Springs - Combined \u2014 concentration up 343% vs. prior reading [2026-10-15]",
+    "site": "CO Springs - Combined",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-15T06:00:00+00:00",
+    "value": 18800.0,
+    "reason": "concentration up 343% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|sars-cov-2|2026-10-19",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - CC \u2014 concentration up 892% vs. prior reading [2026-10-19]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-19T06:00:00+00:00",
+    "value": 47300.0,
+    "reason": "concentration up 892% vs. prior reading"
+  },
+  {
+    "id": "durango|ev-d68|2026-10-19",
+    "title": "EV-D68 at Durango \u2014 concentration up 1641% vs. prior reading [2026-10-19]",
+    "site": "Durango",
+    "pathogen": "EV-D68",
+    "date": "2026-10-19T06:00:00+00:00",
+    "value": 83900.0,
+    "reason": "concentration up 1641% vs. prior reading"
+  },
+  {
     "id": "glenwood springs|ev-d68|2026-10-15",
     "title": "EV-D68 at Glenwood Springs \u2014 concentration up 213% vs. prior reading [2026-10-15]",
     "site": "Glenwood Springs",
