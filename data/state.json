@@ -1,7 +1,8 @@
 {
-  "latest_date": "2026-10-19T06:00:00+00:00",
+  "latest_date": "2026-10-22T06:00:00+00:00",
   "seen_keys": [
     "alamosa|ev-d68|2026-10-08",
+    "alamosa|ev-d68|2026-10-22",
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
     "alamosa|sars-cov-2|2026-07-16",
@@ -23,6 +24,7 @@
     "aspen|sars-cov-2|2026-09-17",
     "aspen|sars-cov-2|2026-09-24",
     "aspen|sars-cov-2|2026-10-06",
+    "aurora|ev-d68|2026-10-22",
     "boulder|ev-d68|2026-10-06",
     "boulder|sars-cov-2|2026-07-06",
     "boulder|sars-cov-2|2026-07-16",
@@ -71,6 +73,8 @@
     "highlands ranch water and sanitation district|sars-cov-2|2026-08-13",
     "highlands ranch water and sanitation district|sars-cov-2|2026-09-10",
     "highlands ranch water and sanitation district|sars-cov-2|2026-10-14",
+    "highlands ranch water and sanitation district|sars-cov-2|2026-10-21",
+    "la junta|ev-d68|2026-10-22",
     "metro wastewater rwhtf - cc|ev-d68|2026-09-14",
     "metro wastewater rwhtf - cc|ev-d68|2026-09-24",
     "metro wastewater rwhtf - cc|ev-d68|2026-10-01",

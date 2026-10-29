@@ -1,5 +1,41 @@
 [
   {
+    "id": "highlands ranch water and sanitation district|sars-cov-2|2026-10-21",
+    "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 233% vs. prior reading [2026-10-21]",
+    "site": "Highlands Ranch Water and Sanitation District",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-21T06:00:00+00:00",
+    "value": 50900.0,
+    "reason": "concentration up 233% vs. prior reading"
+  },
+  {
+    "id": "aurora|ev-d68|2026-10-22",
+    "title": "EV-D68 at Aurora \u2014 concentration up 336% vs. prior reading [2026-10-22]",
+    "site": "Aurora",
+    "pathogen": "EV-D68",
+    "date": "2026-10-22T06:00:00+00:00",
+    "value": 130000.0,
+    "reason": "concentration up 336% vs. prior reading"
+  },
+  {
+    "id": "alamosa|ev-d68|2026-10-22",
+    "title": "EV-D68 at Alamosa \u2014 concentration up 382% vs. prior reading [2026-10-22]",
+    "site": "Alamosa",
+    "pathogen": "EV-D68",
+    "date": "2026-10-22T06:00:00+00:00",
+    "value": 28700.0,
+    "reason": "concentration up 382% vs. prior reading"
+  },
+  {
+    "id": "la junta|ev-d68|2026-10-22",
+    "title": "EV-D68 at La Junta \u2014 concentration up 829% vs. prior reading [2026-10-22]",
+    "site": "La Junta",
+    "pathogen": "EV-D68",
+    "date": "2026-10-22T06:00:00+00:00",
+    "value": 118000.0,
+    "reason": "concentration up 829% vs. prior reading"
+  },
+  {
     "id": "south platte|ev-d68|2026-10-19",
     "title": "EV-D68 at South Platte \u2014 concentration up 215% vs. prior reading [2026-10-19]",
     "site": "South Platte",
