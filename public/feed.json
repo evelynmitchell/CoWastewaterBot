@@ -1,5 +1,23 @@
 [
   {
+    "id": "aspen|sars-cov-2|2026-10-27",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 282% vs. prior reading [2026-10-27]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-27T06:00:00+00:00",
+    "value": 29900.0,
+    "reason": "concentration up 282% vs. prior reading"
+  },
+  {
+    "id": "telluride|ev-d68|2026-10-26",
+    "title": "EV-D68 at Telluride \u2014 concentration up 2931% vs. prior reading [2026-10-26]",
+    "site": "Telluride",
+    "pathogen": "EV-D68",
+    "date": "2026-10-26T06:00:00+00:00",
+    "value": 264000.0,
+    "reason": "concentration up 2931% vs. prior reading"
+  },
+  {
     "id": "highlands ranch water and sanitation district|sars-cov-2|2026-10-21",
     "title": "sars-cov-2 at Highlands Ranch Water and Sanitation District \u2014 concentration up 233% vs. prior reading [2026-10-21]",
     "site": "Highlands Ranch Water and Sanitation District",
