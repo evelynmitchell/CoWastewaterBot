@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-01T15:07:15.534232+00:00",
+  "generated": "2026-11-02T15:09:48.540781+00:00",
   "sites": [
     {
       "site": "Alamosa",
@@ -854,9 +854,9 @@
           "pathogen": "sars-cov-2",
           "latest_value": 49800.0,
           "latest_date": "2024-07-30",
-          "n_history": 74,
+          "n_history": 73,
           "quintile": 4,
-          "percentile": 0.784,
+          "percentile": 0.781,
           "trend": "falling",
           "trend_pct": -50.1,
           "level": 1,
@@ -1433,7 +1433,7 @@
           "pathogen": "sars-cov-2",
           "latest_value": 507000.0,
           "latest_date": "2024-07-30",
-          "n_history": 73,
+          "n_history": 72,
           "quintile": 5,
           "percentile": 1.0,
           "trend": "flat",
