@@ -1,5 +1,41 @@
 [
   {
+    "id": "pueblo|ev-d68|2026-10-29",
+    "title": "EV-D68 at Pueblo \u2014 concentration up 200% vs. prior reading [2026-10-29]",
+    "site": "Pueblo",
+    "pathogen": "EV-D68",
+    "date": "2026-10-29T06:00:00+00:00",
+    "value": 66700.0,
+    "reason": "concentration up 200% vs. prior reading"
+  },
+  {
+    "id": "grand junction - persigo|ev-d68|2026-10-28",
+    "title": "EV-D68 at Grand Junction - Persigo \u2014 concentration up 202% vs. prior reading [2026-10-28]",
+    "site": "Grand Junction - Persigo",
+    "pathogen": "EV-D68",
+    "date": "2026-10-28T06:00:00+00:00",
+    "value": 18100.0,
+    "reason": "concentration up 202% vs. prior reading"
+  },
+  {
+    "id": "durango|ev-d68|2026-10-29",
+    "title": "EV-D68 at Durango \u2014 concentration up 242% vs. prior reading [2026-10-29]",
+    "site": "Durango",
+    "pathogen": "EV-D68",
+    "date": "2026-10-29T06:00:00+00:00",
+    "value": 19000.0,
+    "reason": "concentration up 242% vs. prior reading"
+  },
+  {
+    "id": "silverthorne/dillon|sars-cov-2|2026-10-28",
+    "title": "sars-cov-2 at Silverthorne/Dillon \u2014 concentration up 486% vs. prior reading [2026-10-28]",
+    "site": "Silverthorne/Dillon",
+    "pathogen": "sars-cov-2",
+    "date": "2026-10-28T06:00:00+00:00",
+    "value": 69700.0,
+    "reason": "concentration up 486% vs. prior reading"
+  },
+  {
     "id": "aspen|sars-cov-2|2026-10-27",
     "title": "sars-cov-2 at Aspen \u2014 concentration up 282% vs. prior reading [2026-10-27]",
     "site": "Aspen",
