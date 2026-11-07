@@ -1,5 +1,23 @@
 [
   {
+    "id": "montrose|ev-d68|2026-10-26",
+    "title": "EV-D68 at Montrose \u2014 concentration up 194% vs. prior reading [2026-10-26]",
+    "site": "Montrose",
+    "pathogen": "EV-D68",
+    "date": "2026-10-26T06:00:00+00:00",
+    "value": 66100.0,
+    "reason": "concentration up 194% vs. prior reading"
+  },
+  {
+    "id": "boulder|ev-d68|2026-11-02",
+    "title": "EV-D68 at Boulder \u2014 concentration up 874% vs. prior reading [2026-11-02]",
+    "site": "Boulder",
+    "pathogen": "EV-D68",
+    "date": "2026-11-02T07:00:00+00:00",
+    "value": 77600.0,
+    "reason": "concentration up 874% vs. prior reading"
+  },
+  {
     "id": "pueblo|ev-d68|2026-10-29",
     "title": "EV-D68 at Pueblo \u2014 concentration up 200% vs. prior reading [2026-10-29]",
     "site": "Pueblo",
