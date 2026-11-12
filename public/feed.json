@@ -1,5 +1,86 @@
 [
   {
+    "id": "metro wastewater rwhtf - prc|sars-cov-2|2026-11-05",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - PRC \u2014 concentration up 221% vs. prior reading [2026-11-05]",
+    "site": "Metro Wastewater RWHTF - PRC",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 23000.0,
+    "reason": "concentration up 221% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - ntp|sars-cov-2|2026-11-05",
+    "title": "sars-cov-2 at Metro Wastewater RWHTF - NTP \u2014 concentration up 284% vs. prior reading [2026-11-05]",
+    "site": "Metro Wastewater RWHTF - NTP",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 14400.0,
+    "reason": "concentration up 284% vs. prior reading"
+  },
+  {
+    "id": "co springs - combined|sars-cov-2|2026-11-05",
+    "title": "sars-cov-2 at CO Springs - Combined \u2014 concentration up 327% vs. prior reading [2026-11-05]",
+    "site": "CO Springs - Combined",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 36100.0,
+    "reason": "concentration up 327% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - cc|ev-d68|2026-11-05",
+    "title": "EV-D68 at Metro Wastewater RWHTF - CC \u2014 concentration up 329% vs. prior reading [2026-11-05]",
+    "site": "Metro Wastewater RWHTF - CC",
+    "pathogen": "EV-D68",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 46300.0,
+    "reason": "concentration up 329% vs. prior reading"
+  },
+  {
+    "id": "aurora|sars-cov-2|2026-11-05",
+    "title": "sars-cov-2 at Aurora \u2014 concentration up 344% vs. prior reading [2026-11-05]",
+    "site": "Aurora",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 40800.0,
+    "reason": "concentration up 344% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - prc|ev-d68|2026-11-05",
+    "title": "EV-D68 at Metro Wastewater RWHTF - PRC \u2014 concentration up 351% vs. prior reading [2026-11-05]",
+    "site": "Metro Wastewater RWHTF - PRC",
+    "pathogen": "EV-D68",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 30000.0,
+    "reason": "concentration up 351% vs. prior reading"
+  },
+  {
+    "id": "steamboat springs|ev-d68|2026-11-04",
+    "title": "EV-D68 at Steamboat Springs \u2014 concentration up 421% vs. prior reading [2026-11-04]",
+    "site": "Steamboat Springs",
+    "pathogen": "EV-D68",
+    "date": "2026-11-04T07:00:00+00:00",
+    "value": 57300.0,
+    "reason": "concentration up 421% vs. prior reading"
+  },
+  {
+    "id": "metro wastewater rwhtf - ntp|ev-d68|2026-11-05",
+    "title": "EV-D68 at Metro Wastewater RWHTF - NTP \u2014 concentration up 651% vs. prior reading [2026-11-05]",
+    "site": "Metro Wastewater RWHTF - NTP",
+    "pathogen": "EV-D68",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 52000.0,
+    "reason": "concentration up 651% vs. prior reading"
+  },
+  {
+    "id": "steamboat springs|sars-cov-2|2026-11-04",
+    "title": "sars-cov-2 at Steamboat Springs \u2014 concentration up 670% vs. prior reading [2026-11-04]",
+    "site": "Steamboat Springs",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-04T07:00:00+00:00",
+    "value": 91600.0,
+    "reason": "concentration up 670% vs. prior reading"
+  },
+  {
     "id": "montrose|ev-d68|2026-10-26",
     "title": "EV-D68 at Montrose \u2014 concentration up 194% vs. prior reading [2026-10-26]",
     "site": "Montrose",
