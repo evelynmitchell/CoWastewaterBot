@@ -1,5 +1,5 @@
 {
-  "latest_date": "2026-11-05T07:00:00+00:00",
+  "latest_date": "2026-11-12T07:00:00+00:00",
   "seen_keys": [
     "alamosa|ev-d68|2026-10-08",
     "alamosa|ev-d68|2026-10-22",
@@ -46,6 +46,7 @@
     "durango|sars-cov-2|2026-07-13",
     "durango|sars-cov-2|2026-09-14",
     "durango|sars-cov-2|2026-10-01",
+    "durango|sars-cov-2|2026-11-05",
     "fort collins - drake|ev-d68|2026-08-03",
     "fort collins - drake|ev-d68|2026-09-10",
     "fort collins - drake|ev-d68|2026-09-17",
@@ -81,6 +82,8 @@
     "highlands ranch water and sanitation district|sars-cov-2|2026-10-14",
     "highlands ranch water and sanitation district|sars-cov-2|2026-10-21",
     "la junta|ev-d68|2026-10-22",
+    "la junta|ev-d68|2026-11-05",
+    "la junta|ev-d68|2026-11-12",
     "metro wastewater rwhtf - cc|ev-d68|2026-09-14",
     "metro wastewater rwhtf - cc|ev-d68|2026-09-24",
     "metro wastewater rwhtf - cc|ev-d68|2026-10-01",
@@ -112,6 +115,7 @@
     "montrose|ev-d68|2026-10-14",
     "montrose|ev-d68|2026-10-26",
     "montrose|sars-cov-2|2026-09-28",
+    "montrose|sars-cov-2|2026-11-04",
     "pueblo|ev-d68|2026-10-29",
     "pueblo|sars-cov-2|2026-10-01",
     "silverthorne/dillon|ev-d68|2026-10-14",

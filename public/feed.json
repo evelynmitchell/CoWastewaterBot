@@ -1,5 +1,41 @@
 [
   {
+    "id": "durango|sars-cov-2|2026-11-05",
+    "title": "sars-cov-2 at Durango \u2014 concentration up 202% vs. prior reading [2026-11-05]",
+    "site": "Durango",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 14300.0,
+    "reason": "concentration up 202% vs. prior reading"
+  },
+  {
+    "id": "la junta|ev-d68|2026-11-05",
+    "title": "EV-D68 at La Junta \u2014 concentration up 206% vs. prior reading [2026-11-05]",
+    "site": "La Junta",
+    "pathogen": "EV-D68",
+    "date": "2026-11-05T07:00:00+00:00",
+    "value": 32700.0,
+    "reason": "concentration up 206% vs. prior reading"
+  },
+  {
+    "id": "montrose|sars-cov-2|2026-11-04",
+    "title": "sars-cov-2 at Montrose \u2014 concentration up 213% vs. prior reading [2026-11-04]",
+    "site": "Montrose",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-04T07:00:00+00:00",
+    "value": 14800.0,
+    "reason": "concentration up 213% vs. prior reading"
+  },
+  {
+    "id": "la junta|ev-d68|2026-11-12",
+    "title": "EV-D68 at La Junta \u2014 concentration up 246% vs. prior reading [2026-11-12]",
+    "site": "La Junta",
+    "pathogen": "EV-D68",
+    "date": "2026-11-12T07:00:00+00:00",
+    "value": 113000.0,
+    "reason": "concentration up 246% vs. prior reading"
+  },
+  {
     "id": "metro wastewater rwhtf - prc|sars-cov-2|2026-11-05",
     "title": "sars-cov-2 at Metro Wastewater RWHTF - PRC \u2014 concentration up 221% vs. prior reading [2026-11-05]",
     "site": "Metro Wastewater RWHTF - PRC",
