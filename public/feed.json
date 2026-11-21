@@ -1,5 +1,32 @@
 [
   {
+    "id": "aspen|sars-cov-2|2026-11-17",
+    "title": "sars-cov-2 at Aspen \u2014 concentration up 379% vs. prior reading [2026-11-17]",
+    "site": "Aspen",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-17T07:00:00+00:00",
+    "value": 140000.0,
+    "reason": "concentration up 379% vs. prior reading"
+  },
+  {
+    "id": "steamboat springs|sars-cov-2|2026-11-16",
+    "title": "sars-cov-2 at Steamboat Springs \u2014 concentration up 383% vs. prior reading [2026-11-16]",
+    "site": "Steamboat Springs",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-16T07:00:00+00:00",
+    "value": 113000.0,
+    "reason": "concentration up 383% vs. prior reading"
+  },
+  {
+    "id": "silverthorne/dillon|ev-d68|2026-11-16",
+    "title": "EV-D68 at Silverthorne/Dillon \u2014 concentration up 491% vs. prior reading [2026-11-16]",
+    "site": "Silverthorne/Dillon",
+    "pathogen": "EV-D68",
+    "date": "2026-11-16T07:00:00+00:00",
+    "value": 38800.0,
+    "reason": "concentration up 491% vs. prior reading"
+  },
+  {
     "id": "durango|sars-cov-2|2026-11-05",
     "title": "sars-cov-2 at Durango \u2014 concentration up 202% vs. prior reading [2026-11-05]",
     "site": "Durango",

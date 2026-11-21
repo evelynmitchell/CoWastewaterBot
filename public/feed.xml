@@ -2,13 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-11-12T07:00:00+00:00</updated>
+  <updated>2026-11-17T07:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>aspen|sars-cov-2|2026-11-17</id>
+    <title>sars-cov-2 at Aspen — concentration up 379% vs. prior reading [2026-11-17]</title>
+    <updated>2026-11-17T07:00:00+00:00</updated>
+    <content>sars-cov-2 at Aspen — concentration up 379% vs. prior reading [2026-11-17]
+Concentration: 140000.0
+Why flagged: concentration up 379% vs. prior reading</content>
+    <published>2026-11-17T07:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>steamboat springs|sars-cov-2|2026-11-16</id>
+    <title>sars-cov-2 at Steamboat Springs — concentration up 383% vs. prior reading [2026-11-16]</title>
+    <updated>2026-11-16T07:00:00+00:00</updated>
+    <content>sars-cov-2 at Steamboat Springs — concentration up 383% vs. prior reading [2026-11-16]
+Concentration: 113000.0
+Why flagged: concentration up 383% vs. prior reading</content>
+    <published>2026-11-16T07:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>silverthorne/dillon|ev-d68|2026-11-16</id>
+    <title>EV-D68 at Silverthorne/Dillon — concentration up 491% vs. prior reading [2026-11-16]</title>
+    <updated>2026-11-16T07:00:00+00:00</updated>
+    <content>EV-D68 at Silverthorne/Dillon — concentration up 491% vs. prior reading [2026-11-16]
+Concentration: 38800.0
+Why flagged: concentration up 491% vs. prior reading</content>
+    <published>2026-11-16T07:00:00+00:00</published>
+  </entry>
   <entry>
     <id>durango|sars-cov-2|2026-11-05</id>
     <title>sars-cov-2 at Durango — concentration up 202% vs. prior reading [2026-11-05]</title>
