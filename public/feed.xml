@@ -2,13 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>urn:cowastewaterbot:notable-changes</id>
   <title>Colorado Wastewater Surveillance — notable changes</title>
-  <updated>2026-11-17T07:00:00+00:00</updated>
+  <updated>2026-11-19T07:00:00+00:00</updated>
   <author>
     <name>CoWastewaterBot</name>
   </author>
   <link href="https://cdphe.colorado.gov/dcphr/wastewater" rel="alternate"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <subtitle>Notable changes in Colorado (CDPHE) wastewater surveillance data.</subtitle>
+  <entry>
+    <id>south platte|sars-cov-2|2026-11-18</id>
+    <title>sars-cov-2 at South Platte — concentration up 243% vs. prior reading [2026-11-18]</title>
+    <updated>2026-11-18T07:00:00+00:00</updated>
+    <content>sars-cov-2 at South Platte — concentration up 243% vs. prior reading [2026-11-18]
+Concentration: 28300.0
+Why flagged: concentration up 243% vs. prior reading</content>
+    <published>2026-11-18T07:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>alamosa|fluav|2026-11-19</id>
+    <title>FLUAV at Alamosa — concentration up 262% vs. prior reading [2026-11-19]</title>
+    <updated>2026-11-19T07:00:00+00:00</updated>
+    <content>FLUAV at Alamosa — concentration up 262% vs. prior reading [2026-11-19]
+Concentration: 104000.0
+Why flagged: concentration up 262% vs. prior reading</content>
+    <published>2026-11-19T07:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>pueblo|sars-cov-2|2026-11-19</id>
+    <title>sars-cov-2 at Pueblo — concentration up 573% vs. prior reading [2026-11-19]</title>
+    <updated>2026-11-19T07:00:00+00:00</updated>
+    <content>sars-cov-2 at Pueblo — concentration up 573% vs. prior reading [2026-11-19]
+Concentration: 76000.0
+Why flagged: concentration up 573% vs. prior reading</content>
+    <published>2026-11-19T07:00:00+00:00</published>
+  </entry>
   <entry>
     <id>aspen|sars-cov-2|2026-11-17</id>
     <title>sars-cov-2 at Aspen — concentration up 379% vs. prior reading [2026-11-17]</title>

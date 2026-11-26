@@ -1,5 +1,32 @@
 [
   {
+    "id": "south platte|sars-cov-2|2026-11-18",
+    "title": "sars-cov-2 at South Platte \u2014 concentration up 243% vs. prior reading [2026-11-18]",
+    "site": "South Platte",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-18T07:00:00+00:00",
+    "value": 28300.0,
+    "reason": "concentration up 243% vs. prior reading"
+  },
+  {
+    "id": "alamosa|fluav|2026-11-19",
+    "title": "FLUAV at Alamosa \u2014 concentration up 262% vs. prior reading [2026-11-19]",
+    "site": "Alamosa",
+    "pathogen": "FLUAV",
+    "date": "2026-11-19T07:00:00+00:00",
+    "value": 104000.0,
+    "reason": "concentration up 262% vs. prior reading"
+  },
+  {
+    "id": "pueblo|sars-cov-2|2026-11-19",
+    "title": "sars-cov-2 at Pueblo \u2014 concentration up 573% vs. prior reading [2026-11-19]",
+    "site": "Pueblo",
+    "pathogen": "sars-cov-2",
+    "date": "2026-11-19T07:00:00+00:00",
+    "value": 76000.0,
+    "reason": "concentration up 573% vs. prior reading"
+  },
+  {
     "id": "aspen|sars-cov-2|2026-11-17",
     "title": "sars-cov-2 at Aspen \u2014 concentration up 379% vs. prior reading [2026-11-17]",
     "site": "Aspen",

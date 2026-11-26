@@ -1,8 +1,9 @@
 {
-  "latest_date": "2026-11-17T07:00:00+00:00",
+  "latest_date": "2026-11-19T07:00:00+00:00",
   "seen_keys": [
     "alamosa|ev-d68|2026-10-08",
     "alamosa|ev-d68|2026-10-22",
+    "alamosa|fluav|2026-11-19",
     "alamosa|flubv|2026-07-09",
     "alamosa|sars-cov-2|2026-07-09",
     "alamosa|sars-cov-2|2026-07-16",
@@ -119,6 +120,7 @@
     "montrose|sars-cov-2|2026-11-04",
     "pueblo|ev-d68|2026-10-29",
     "pueblo|sars-cov-2|2026-10-01",
+    "pueblo|sars-cov-2|2026-11-19",
     "silverthorne/dillon|ev-d68|2026-10-14",
     "silverthorne/dillon|ev-d68|2026-11-16",
     "silverthorne/dillon|sars-cov-2|2026-09-23",
@@ -128,6 +130,7 @@
     "south platte|ev-d68|2026-10-19",
     "south platte|sars-cov-2|2026-07-22",
     "south platte|sars-cov-2|2026-09-16",
+    "south platte|sars-cov-2|2026-11-18",
     "steamboat springs|ev-d68|2026-07-22",
     "steamboat springs|ev-d68|2026-11-04",
     "steamboat springs|sars-cov-2|2026-07-08",
